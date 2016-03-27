@@ -19,6 +19,14 @@ body {
 	
 }
 
+.code {
+	font-family: monospace;
+	background-color: #47667F;
+	font-size: 80%;
+	padding: 15px;
+	overflow: auto;
+}
+
 nav {
 	padding: 20px;
 	color: $text-color;

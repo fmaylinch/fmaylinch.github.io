@@ -14,6 +14,13 @@ body {
   -ms-flex-direction: column;
   flex-direction: column; }
 
+.code {
+  font-family: monospace;
+  background-color: #47667F;
+  font-size: 80%;
+  padding: 15px;
+  overflow: auto; }
+
 nav {
   padding: 20px;
   color: #D5E2EB;
