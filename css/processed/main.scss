@@ -15,11 +15,8 @@ body {
 	flex-direction: column;
 }
 
-.content {
-	
-}
-
 .code {
+	align-self: flex-start;
 	font-family: monospace;
 	background-color: #47667F;
 	font-size: 80%;
@@ -35,6 +32,22 @@ nav {
 	border-radius: 5px;
 	margin-bottom: 50px;
 }
+
+@media(max-width: 500px) {
+	body {
+		padding: 30px;
+	}
+	nav {
+		margin-bottom: 25px;
+	}
+}
+@media(max-width: 1000px) {
+	.code {
+		/* flex-start makes the code overflow the screen */
+		align-self: stretch;
+	}
+}
+
 
 section {
 	display: flex;
@@ -54,10 +67,6 @@ section h3 {
 	border-radius: 5px;
 }
 
-.section-content {
-	
-}
-
 section ul {
 	padding-left: 0px;
 }
@@ -70,24 +79,3 @@ section li {
 a {
 	color: $text-color;
 }
-
-.vscroll {
-	flex: 1;
-	border: 10px solid red;
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
-}
-
-.box {
-	min-width: 100px;
-	height: 250px;
-}
-
-.box1 { background: darkolivegreen; }
-.box2 {
-	background: maroon;
-}
-.box3 { background: darkcyan; }
-.box4 { background: orange; }
-.box5 { background: turquoise; }
