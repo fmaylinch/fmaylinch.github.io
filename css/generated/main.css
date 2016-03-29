@@ -30,7 +30,18 @@ nav {
   font-size: 30px;
   background-color: #3E5A73;
   border-radius: 5px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+
+nav img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px; }
 
 @media (max-width: 500px) {
   body {

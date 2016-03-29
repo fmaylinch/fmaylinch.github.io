@@ -31,7 +31,18 @@ nav {
 	background-color: $box-color;
 	border-radius: 5px;
 	margin-bottom: 50px;
+	display: flex;
+	align-items: flex-end;
 }
+
+$nav-img-size: 70px;
+
+nav img {
+	width: $nav-img-size;
+	height: $nav-img-size;
+	margin-right: 20px;
+}
+
 
 @media(max-width: 500px) {
 	body {
