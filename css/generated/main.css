@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box; }
 
-/* #6C98BE */
 body {
   background: #51728E;
   padding: 50px; }
@@ -87,3 +86,6 @@ section li {
 
 a {
   color: #D5E2EB; }
+
+iframe#content {
+  height: calc(100vh - 100px); }
