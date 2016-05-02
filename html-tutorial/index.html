@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	
+  <title>HTML Tutorial</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- normalize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  
+  <!-- prism syntax highlighter -->
+  <link href="prismjs/prism.css" rel="stylesheet" />
+  <script src="prismjs/prism.js"></script>
+  
+  <!-- our css -->
+  <script src="main.js"></script>
+  
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    
+  <h1>HTML Tutorial</h1>
+  
+  <h2>0. Introduction</h2>
+  
+  <p>
+    This is a simple tutorial that will get you started quickly with HTML.
+  </p>
+  <p>
+    Although simple, it's meant to be quite comprehensive. You will do things quite close to what professionals do.
+    Anyway, we encourage you to widen your knowledge by reading the resources we include at the end.
+  </p>
+  
+  <h2>1. Preparation</h2>
+  
+  <h3>1.1 Download an editor</h3>
+  
+  <p>
+    In order to follow this tutorial you need a code text editor.
+    I recommend
+    <a href="http://brackets.io/">Brackets</a>
+    but you could use others like
+    <a href="https://www.sublimetext.com/">Sublime Text</a>,
+    <a href="https://notepad-plus-plus.org/">Notepad++</a>,
+    <a href="https://atom.io/">Atom</a>, etc.
+  </p>
+  
+  <h3>1.2 Download the startup files</h3>
+
+  <p>
+    After installing your preferred editor, create a folder in your
+    computer. That's where you will add your project files.
+    For now, add these two files inside that folder (right click and save):
+    <a href="startup/index.html">index.html</a> and
+    <a href="startup/main.css">main.css</a>.
+  </p>
+  
+  <h3>1.3 Open the files in the editor and browser</h3>
+  
+  <p>
+    Open the folder in your editor. You can drag and drop the folder from the file explorer to the editor.
+    Then open the <code>index.html</code> file. For now we will just edit this file.
+  </p>
+  
+  <p>
+    Now open the <code>index.html</code> in a browser.
+    If you use Brackets you can use the
+    <a href="https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview">Live Preview</a> feature:
+    after opening <code>index.html</code>
+    select <strong>File &gt; Live Preview</strong>
+    (or click the "lightning bolt" icon)
+  </p>
+  
+  <p>
+    So now you should see the HTML code in the editor
+    and the page in the browser, that should look like this:
+  </p>
+  
+  <iframe src="startup/index.html" width="400" height="150"></iframe>
+  
+  <p>
+    It should look pretty similar.
+    If you don't see the title in green color maybe forgot to download the <code>main.css</code> file. 
+  </p>
+  
+  
+  <h2>2. HTML elements and tags</h2>
+  
+  <p>
+    In the code of <code>index.html</code> you should now focus on the bottom part, that looks like this:
+  </p>
+  
+  <pre class="line-numbers" data-start="17">
+    <code class="language-html">
+      <!-- You see these elements on the browser -->
+      <h1>My HTML page</h1>
+      <p>I will use this page to practice HTML.</p>
+    </code>
+  </pre>
+  
+  <p>
+    Those are HTML <strong>elements</strong>.
+    Notice that they are placed between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.
+    What you put inside there is displayed in the browser.
+  </p>
+  
+  <p>The line 17 is a comment. That's ignored by the browser, so it's not displayed actually.</p>
+  
+  <p>
+    The line 18 is a header. Notice the <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code> that surround the title text.
+  </p>
+
+  <p>
+    The line 19 is a paragraph. Notice the <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code>.
+  </p>
+  
+  <p>
+    As you see, HTML elements are surrounded by those strange pieces of text like <code>&lt;h1&gt;</code> or <code>&lt;p&gt;</code>.
+    Those are called <strong>tags</strong>. Each tag has a meaning. There are a number of them; for now, let's learn:
+  </p>
+
+  <ul>
+    <li><code>h1</code> is a big header</li>
+    <li><code>h2</code> is slightly smaller header</li>
+    <li><code>h3</code> is an enven smaller header</li>
+    <li><code>p</code> is a paragraph</li>
+    <li><code>img</code> is an image</li>
+  </ul>
+  
+  <h2>3. Tags and attributes</h2>
+
+  <p>
+    Let's add a couple of <code>h2</code> elements to our page, and also an <code>img</code>.
+    Modify your <code>index.html</code> so it looks like this:
+  </p>
+  
+  <pre class="line-numbers" data-start="17" data-line="4,5">
+    <code class="language-html">
+      <!-- You see these elements on the browser -->
+      <h1>My HTML page</h1>
+      <h2>First steps</h2>
+      <p>I will use this page to learn HTML.</p>
+      <h2>Adding images</h2>
+      <img width="200px" src="http://images.freeimages.com/images/previews/6d4/little-cat-1409488.jpg">
+    </code>
+  </pre>
+
+  <p>
+    If you use Brackets Live Preview you will already see the changes in your browser.
+    Otherwise, save the <code>index.html</code> file and reload the page in your browser.
+  </p>
+  
+  <p>
+    You should see the smaller header below the paragraph, and below that, an image.
+  </p>
+  
+  <iframe src="startup/index-2.html" width="400" height="400"></iframe>
+
+  <p>
+    Notice that the <code>img</code> element only uses one tag.
+    Most elements use an opening and a closing tag to surround the content of the element,
+    but a few elements like <code>img</code> use only the opening tag.
+  </p>
+  <p>
+    Also, notice that the <code>img</code> element indicates the address of the image using <code>src="image url address"</code> <em>inside</em> the tag.
+    That's an <strong>attribute</strong> of the <code>img</code> tag.
+  </p>
+  <p>
+    Each tag supports a number of attributes.
+    If you use any, you need to write them inside the opening tag, separated by spaces.
+    Some attributes are required and others optional.
+    The <code>src</code> attribute is required for the <code>img</code> element.
+    On the other side, the <code>width</code> attribute is optional. If you remove it,
+    the image will still be displayed, but with the original size.
+  </p>
+  
+</body>
+</html>
