@@ -4,6 +4,7 @@ body {
 
 iframe {
   border: 1px solid lightgrey;
+  max-width: 100%;
 }
 
 .soon {
@@ -34,6 +35,18 @@ section > h2 {
   background-color: #272822;
   border-radius: 0.3em;
   color: white;
+}
+
+@media (max-width:500px) {
+  
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
 }
 
 .line-highlight {
