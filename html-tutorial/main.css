@@ -6,6 +6,10 @@ iframe {
   border: 1px solid lightgrey;
 }
 
+.soon {
+  color: grey;
+}
+
 a {
   color: black;
 }
