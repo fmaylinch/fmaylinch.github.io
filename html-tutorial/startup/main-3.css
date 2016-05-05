@@ -1,0 +1,14 @@
+h1 {
+  color: forestgreen;
+}
+
+h2 {
+  font-size: 18px;
+  color: white;
+  background-color: forestgreen;
+  padding: 10px;
+}
+
+body {
+  padding: 20px;
+}

@@ -1,7 +1,39 @@
 body {
-    padding: 10px;
+  padding: 30px;
 }
 
 iframe {
-    border: 3px solid lightgrey;
+  border: 1px solid lightgrey;
 }
+
+a {
+  color: black;
+}
+
+table.definitions td {
+  padding-left: 20px;
+}
+
+section {
+  border: 1px solid lightgrey;
+  border-radius: 0.3em;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+section > h2 {
+  margin-top: 10px;
+  margin-left: -40px;
+  padding: 8px 30px;
+  display: inline-block;
+  /* Similar properties to code blocks */
+  background-color: #272822;
+  border-radius: 0.3em;
+  color: white;
+}
+
+.line-highlight {
+  background-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.12) 70%, rgba(255, 255, 255, 0));
+}
+

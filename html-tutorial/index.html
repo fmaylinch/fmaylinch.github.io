@@ -27,160 +27,447 @@
 
 <body>
     
-  <h1>HTML Tutorial</h1>
+  <h1>HTML / CSS Tutorial</h1>
   
-  <h2>0. Introduction</h2>
+  <h3>Quick and painless introduction to HTML and CSS</h3>
   
-  <p>
-    This is a simple tutorial that will get you started quickly with HTML.
-  </p>
-  <p>
-    Although simple, it's meant to be quite comprehensive. You will do things quite close to what professionals do.
-    Anyway, we encourage you to widen your knowledge by reading the resources we include at the end.
-  </p>
-  
-  <h2>1. Preparation</h2>
-  
-  <h3>1.1 Download an editor</h3>
-  
-  <p>
-    In order to follow this tutorial you need a code text editor.
-    I recommend
-    <a href="http://brackets.io/">Brackets</a>
-    but you could use others like
-    <a href="https://www.sublimetext.com/">Sublime Text</a>,
-    <a href="https://notepad-plus-plus.org/">Notepad++</a>,
-    <a href="https://atom.io/">Atom</a>, etc.
-  </p>
-  
-  <h3>1.2 Download the startup files</h3>
+  <section>
 
-  <p>
-    After installing your preferred editor, create a folder in your
-    computer. That's where you will add your project files.
-    For now, add these two files inside that folder (right click and save):
-    <a href="startup/index.html">index.html</a> and
-    <a href="startup/main.css">main.css</a>.
-  </p>
+    <h2>0. Introduction</h2>
   
-  <h3>1.3 Open the files in the editor and browser</h3>
+    <p>
+      This is a simple tutorial that will get you started quickly with HTML and CSS.
+    </p>
+    <p>
+      Although simple, it's meant to be quite comprehensive. You will learn quite a lot here.
+      Anyway, we encourage you to widen your knowledge by reading the resources we include at the end.
+    </p>
+    
+  </section>
   
-  <p>
-    Open the folder in your editor. You can drag and drop the folder from the file explorer to the editor.
-    Then open the <code>index.html</code> file. For now we will just edit this file.
-  </p>
-  
-  <p>
-    Now open the <code>index.html</code> in a browser.
-    If you use Brackets you can use the
-    <a href="https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview">Live Preview</a> feature:
-    after opening <code>index.html</code>
-    select <strong>File &gt; Live Preview</strong>
-    (or click the "lightning bolt" icon)
-  </p>
-  
-  <p>
-    So now you should see the HTML code in the editor
-    and the page in the browser, that should look like this:
-  </p>
-  
-  <iframe src="startup/index.html" width="400" height="150"></iframe>
-  
-  <p>
-    It should look pretty similar.
-    If you don't see the title in green color maybe forgot to download the <code>main.css</code> file. 
-  </p>
-  
-  
-  <h2>2. HTML elements and tags</h2>
-  
-  <p>
-    In the code of <code>index.html</code> you should now focus on the bottom part, that looks like this:
-  </p>
-  
-  <pre class="line-numbers" data-start="17">
-    <code class="language-html">
-      <!-- You see these elements on the browser -->
-      <h1>My HTML page</h1>
-      <p>I will use this page to practice HTML.</p>
-    </code>
-  </pre>
-  
-  <p>
-    Those are HTML <strong>elements</strong>.
-    Notice that they are placed between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.
-    What you put inside there is displayed in the browser.
-  </p>
-  
-  <p>The line 17 is a comment. That's ignored by the browser, so it's not displayed actually.</p>
-  
-  <p>
-    The line 18 is a header. Notice the <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code> that surround the title text.
-  </p>
+  <section>
 
-  <p>
-    The line 19 is a paragraph. Notice the <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code>.
-  </p>
+    <h2>1. Preparation</h2>
   
-  <p>
-    As you see, HTML elements are surrounded by those strange pieces of text like <code>&lt;h1&gt;</code> or <code>&lt;p&gt;</code>.
-    Those are called <strong>tags</strong>. Each tag has a meaning. There are a number of them; for now, let's learn:
-  </p>
+    <h3>1.1 Download an editor</h3>
 
-  <ul>
-    <li><code>h1</code> is a big header</li>
-    <li><code>h2</code> is slightly smaller header</li>
-    <li><code>h3</code> is an enven smaller header</li>
-    <li><code>p</code> is a paragraph</li>
-    <li><code>img</code> is an image</li>
-  </ul>
-  
-  <h2>3. Tags and attributes</h2>
+    <p>
+      In order to follow this tutorial you need a code text editor.
+      I recommend <a href="http://brackets.io/">Brackets</a>
+      but you could use others like
+      <a href="https://www.sublimetext.com/">Sublime Text</a>,
+      <a href="https://notepad-plus-plus.org/">Notepad++</a>,
+      <a href="https://atom.io/">Atom</a>, etc.
+    </p>
 
-  <p>
-    Let's add a couple of <code>h2</code> elements to our page, and also an <code>img</code>.
-    Modify your <code>index.html</code> so it looks like this:
-  </p>
-  
-  <pre class="line-numbers" data-start="17" data-line="4,5">
-    <code class="language-html">
-      <!-- You see these elements on the browser -->
-      <h1>My HTML page</h1>
-      <h2>First steps</h2>
-      <p>I will use this page to learn HTML.</p>
-      <h2>Adding images</h2>
-      <img width="200px" src="http://images.freeimages.com/images/previews/6d4/little-cat-1409488.jpg">
-    </code>
-  </pre>
+    <h3>1.2 Download the startup files</h3>
 
-  <p>
-    If you use Brackets Live Preview you will already see the changes in your browser.
-    Otherwise, save the <code>index.html</code> file and reload the page in your browser.
-  </p>
-  
-  <p>
-    You should see the smaller header below the paragraph, and below that, an image.
-  </p>
-  
-  <iframe src="startup/index-2.html" width="400" height="400"></iframe>
+    <p>
+      After installing your preferred editor, create a folder in your
+      computer. That's where you will add your project files.
+      For now, add these two files inside that folder (right click and save):
+      <a href="startup/index.html">index.html</a> and
+      <a href="startup/main.css">main.css</a>.
+    </p>
 
-  <p>
-    Notice that the <code>img</code> element only uses one tag.
-    Most elements use an opening and a closing tag to surround the content of the element,
-    but a few elements like <code>img</code> use only the opening tag.
-  </p>
-  <p>
-    Also, notice that the <code>img</code> element indicates the address of the image using <code>src="image url address"</code> <em>inside</em> the tag.
-    That's an <strong>attribute</strong> of the <code>img</code> tag.
-  </p>
-  <p>
-    Each tag supports a number of attributes.
-    If you use any, you need to write them inside the opening tag, separated by spaces.
-    Some attributes are required and others optional.
-    The <code>src</code> attribute is required for the <code>img</code> element.
-    On the other side, the <code>width</code> attribute is optional. If you remove it,
-    the image will still be displayed, but with the original size.
-  </p>
+    <h3>1.3 Open the files in the editor and browser</h3>
+
+    <p>
+      Open the folder in your editor. You can drag and drop the folder from the file explorer to the editor.
+      Then open the <code>index.html</code> file. For now we will just edit this file.
+    </p>
+
+    <p>
+      Now open the <code>index.html</code> in a browser.
+      If you use Brackets you can use the
+      <a href="https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview">Live Preview</a> feature:
+      after opening <code>index.html</code>
+      select <strong>File &gt; Live Preview</strong>
+      (or click the "lightning bolt" icon)
+    </p>
+
+    <p>
+      So now you should see the HTML code in the editor
+      and the page in the browser, that should look like this:
+    </p>
+
+    <iframe src="startup/index.html" width="400" height="150"></iframe>
+
+    <p>
+      It should look pretty similar.
+      If you don't see the title in green color maybe forgot to download the <code>main.css</code> file. 
+    </p>
+  
+  </section>
+  
+  <section>
+  
+    <h2>2. HTML elements and tags</h2>
+
+    <p>
+      In the code of <code>index.html</code> you should now focus on the bottom part, that looks like this:
+    </p>
+
+    <pre class="line-numbers" data-start="17">
+      <code class="prism language-html">
+        <!-- You see these elements on the browser -->
+        <h1>My HTML page</h1>
+        <p>I will use this page to learn HTML.</p>
+      </code>
+    </pre>
+
+    <p>
+      Those are HTML <strong>elements</strong>.
+      Notice that they are placed between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.
+      The browser displays what you put inside there.
+    </p>
+
+    <ul>
+      <li>Line 17 is a comment. Texts between <code>&lt;!--</code> and <code>--&gt;</code> are ignored by the browser, not displayed.</li>
+      <li>Line 18 is a header. Notice the <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code> that surround the text.</li>
+      <li>Line 19 is a paragraph. Notice the <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code>.</li>
+    </ul>
+    <p>
+
+    <p>
+      As you see, HTML elements are surrounded by those pieces of text with angle brackets like <code>&lt;h1&gt;</code> or <code>&lt;p&gt;</code>.
+      Those are called <strong>tags</strong>. Each tag has a meaning. There are a number of them. For now, let's see some:
+    </p>
+
+    <table class="definitions">
+      <tr>
+        <td><code>h1</code></td>
+        <td>big header</td>
+      </tr>
+      <tr>
+        <td><code>h2</code></td>
+        <td>slightly smaller header</td>
+      </tr>
+      <tr>
+        <td><code>h3</code></td>
+        <td>even smaller header</td>
+      </tr>
+      <tr>
+        <td><code>p</code></td>
+        <td>paragraph</td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td>link</td>
+      </tr>
+      <tr>
+        <td><code>img</code></td>
+        <td>image</td>
+      </tr>
+    </table>
+
+  </section>
+  
+  <section>
+
+    <h2>3. Tags and their attributes</h2>
+
+    <p>
+      Let's add some HTML elements to our page, using the tags <code>h2</code>, <code>img</code> and <code>a</code>.
+      Modify your <code>index.html</code> so it looks like this (new and modified lines are highlighted):
+    </p>
+
+    <pre class="line-numbers" data-start="17" data-line="19-23">
+      <code class="prism language-html">
+        <!-- You see these elements on the browser -->
+        <h1>My HTML page</h1>
+        <h2>Introduction</h2>
+        <p>I will use this page to display <a href="http://www.cutestpaw.com/tag/cats">cat pictures</a>.</p>
+        <h2>Some pictures</h2>
+        <img height="150px" src="http://images.freeimages.com/images/previews/6d4/little-cat-1409488.jpg">
+        <img height="150px" src="http://www.cutestpaw.com/wp-content/uploads/2016/02/My-cat.jpg">
+      </code>
+    </pre>
+
+    <p>
+      If you use Brackets Live Preview you will already see the changes in your browser.
+      Otherwise, save the <code>index.html</code> file and reload the page in your browser,
+      which should look like this:
+    </p>
+
+    <iframe src="startup/index-2.html" width="600" height="425"></iframe>
+
+    <p>
+      Notice that the <code>img</code> element uses just one tag.
+      Most elements use an opening (e.g. <code>&lt;h1&gt;</code>) and a closing tag (e.g. <code>&lt;/h1&gt;</code>) to surround the content of the element,
+      but a few elements like <code>img</code> use only the opening tag <code>&lt;img&gt;</code>.
+    </p>
+    <p>
+      Also, notice that the <code>a</code> and <code>img</code> elements have some values <em>inside</em> the opening tag.
+      Those are the <strong>attributes</strong> of the element.
+    </p>
+    <p>
+      Each element accepts some attributes.
+      For example, the <code>a</code> element needs the <code>href</code> attribute
+      to indicate the destination address of the link.
+      Likewise, the <code>img</code> element needs the <code>src</code> attribute for the image url address.
+    </p>
+    <p>
+      Some attributes are optional. The <code>height</code> attribute can be used on an <code>img</code>,
+      but if you remove it the image will still be displayed, only with the original size.
+    </p>
+  
+  </section>
+  
+  <section>
+
+    <h2>4. Style using CSS properties</h2>
+  
+    <p>
+      You may wonder why the title is shown in green.
+      The styles for the HTML elements are indicated in CSS files.
+      For this tutorial you downloaded <code>main.css</code>.
+      If you open that file in your editor, you will see the way
+      we style the <code>h1</code> element in green:
+    </p>
+
+    <pre class="line-numbers">
+      <code class="prism language-css">
+        h1 {
+            color: forestgreen;
+        }
+      </code>
+    </pre>
+
+    <p>
+      That's a <strong>CSS rule</strong>. It says:
+      take all the <code>h1</code> elements and paint them in green
+      (actually <em>forest green</em>, which is much more cool than just plain green).
+      There are many <a href="http://www.w3schools.com/colors/colors_names.asp">available colors</a> and you can
+      even create your <a href="http://www.w3schools.com/colors/default.asp">exact desired shade</a>.
+    </p>
+
+    <p>
+      In that CSS rule, <code>color</code> is a <strong>property</strong> and <code>forestgreen</code> is the <strong>value</strong> you choose for it.
+      In each CSS rule you may set several properties.
+      There are <a href="http://www.w3schools.com/cssref/">a lot of properties</a> to choose from.
+      Let's see some popular ones:
+    </p>
+
+    <table class="definitions">
+      <tr>
+        <td><code>font-size</code></td>
+        <td>changes the text size</td>
+      </tr>
+      <tr>
+        <td><code>color</code></td>
+        <td>changes the text color</td>
+      </tr>
+      <tr>
+        <td><code>background-color</code></td>
+        <td>changes the background color</td>
+      </tr>
+      <tr>
+        <td><code>width</code></td>
+        <td>sets the width of the element</td>
+      </tr>
+      <tr>
+        <td><code>height</code></td>
+        <td>sets the height the element</td>
+      </tr>
+      <tr>
+        <td><code>margin</code></td>
+        <td>adds a margin around the element</td>
+      </tr>
+      <tr>
+        <td><code>padding</code></td>
+        <td>adds padding to the element (like an inner margin)</td>
+      </tr>
+    </table>
+
+    <p>
+      Text-related properties like <code>font-size</code> and <code>color</code>
+      only apply to text elements like <code>h1</code>, <code>h2</code> and <code>p</code>.
+      Other properties like <code>margin</code> and <code>padding</code> can be
+      used in most elements.
+    </p>
+
+    <p>
+      For example, let's change the font size, text color, background color and padding of
+      <code>h2</code> elements. To do that, add the highlighted lines to your <code>main.css</code>:
+    </p>
+
+    <pre class="line-numbers" data-line="5-10">
+      <code class="prism language-css">
+        h1 {
+          color: forestgreen;
+        }
+
+        h2 {
+          font-size: 18px;
+          color: white;
+          background-color: forestgreen;
+          padding: 10px;
+        }
+      </code>
+    </pre>
+
+    <p>
+      Now your page should look like this:
+    </p>
+
+    <iframe src="startup/index-3.html" width="600" height="450"></iframe>
+
+    <h3>4.1. Default property values</h3>
+
+    <p>
+      Some HTML elements have default values for some properties.
+      For example, the <code>h1</code> element has a big font size.
+      And the <code>h2</code> has a slightly smaller font, but bigger
+      than <code>p</code>.
+    </p>
+    <p>
+      The elements <code>h1</code>, <code>h2</code> and <code>p</code> also have some default top and bottom margin (that's why the text
+      blocks are separated by some white space).
+      The <code>img</code> element doesn't have that default margin.
+    </p>
+    <p>
+      Each browser (Chrome, Firefox, Safari, Explorer) may have different defaults.
+      To normalize that, we included a CSS called <code>normalize.css</code>.
+      You don't need to know how it works now, anyway.
+    </p>
+  
+  </section>
+  
+  <section>
+
+    <h2>5. The <code>display</code> property</h2>
+
+    <p>
+      After setting a background color to the <code>h2</code> elements, it has become
+      visible that the <code>h2</code> elements take all the width of the window, not
+      just the width of the text. That's because <code>h2</code> elements are displayed as a "block".
+    </p>
+
+    <p>
+      This is related to the <strong><code>display</code></strong> CSS property. Each HTML element has a default value for the <code>display</code> property. The most common values are:
+    </p>
+
+    <table class="definitions">
+      <tr>
+        <td><code>block</code></td>
+        <td>the element takes all the available width of its container</td>
+      </tr>
+      <tr>
+        <td><code>inline-block</code></td>
+        <td>the element only takes the necessary width, i.e. the width of what it contains</td>
+      </tr>
+      <tr>
+        <td><code>inline</code></td>
+        <td>similar to <code>inline-block</code>, but you can't change its size or vertical margin</td>
+      </tr>
+    </table>
+
+    <p>
+      The <code>h1</code>, <code>h2</code> and <code>p</code> elements have <code>display:block</code>, so they take all the width of the container.
+      With "container" we mean the browser window for now, but later we will see that elements may be nested (one element may contain another).
+    </p>
+    <p>
+      The <code>img</code> element has <code>display:inline-block</code>, so it only takes the width of the image.
+      That's why the second image is displayed next to the first one and not below.
+    </p>
+
+    <p>
+      The <code>a</code> element has <code>display:inline</code>.
+      Like <code>img</code>, the <code>a</code> element only takes the necessary size
+      (the width of the text it contains). But, being an <code>inline</code> element, you
+      can't set vertical margin or size to them.
+    </p>
+    <p>
+      To see how size and margin affect inline elements,
+      add these to your <code>main.css</code> file and tweak the values
+      to check how they affect the <code>a</code> element.
+    </p>
+    
+    <pre>
+      <code class="prism language-css">
+        a {
+          /* properties that don't affect inline elements: */
+          width: 300px;
+          height: 100px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          /* but horizontal margins do affect: */
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+      </code>
+    </pre>
+    
+    <p>
+      After trying that code, you can remove it if you want.
+    </p>
+    <p>
+      Notice that you can set the margin for each side individually. You
+      can do the same with the padding.
+    </p>
+    <p>
+      Also see that you can add comments, like in HTML, but
+      the characters to start and end a CSS comment are <code>/*</code> and <code>*/</code>.
+    </p>
+    
+  </section>
+  
+  <section>
+
+    <h2>6. Container elements</h2>
+  
+    <p>
+      There are HTML elements that are only used to contain text or other elements inside.
+      They are used as containers, to group elements and to style them.
+      The container elements are:
+    </p>
+    
+    <table class="definitions">
+      <tr>
+        <td><code>div</code></td>
+        <td>container with <code>display:block</code></td>
+      </tr>
+      <tr>
+        <td><code>span</code></td>
+        <td>container with <code>display:inline</code></td>
+      </tr>
+    </table>
+        
+    <p>
+      There's no container with <code>display:inline-block</code> but you can easily create one.
+      We will see how later, when we talk about CSS <em>classes</em>.
+    </p>
+    
+    <div class="soon">
+      
+      <p><em>To be continued...</em></p>
+      
+      <p>Soon:</p>
+      <ul>
+        <li>The box model</li>
+        <li>Fonts, google fonts, font awesome</li>
+        <li>Flexbox layout</li>
+        <li>Media queries</li>
+        <li>jQuery to react to clicks or hovers</li>
+        <li>CSS3 animations (trigger via jQuery)</li>
+      </ul>
+    </div>
+    
+  </section>
+  
+  <section>
+    
+    <h2>A. Resources</h2>
+    
+    <ul>
+      <li><a href="http://learn.shayhowe.com/">Learn to Code HTML & CSS</a></li>
+      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+      <li><a href="http://flexbox.io/">Flexbox video tutorials</a></li>
+      
+    </ul>
+  
+  </section>
   
 </body>
 </html>

@@ -1,7 +1,7 @@
-body {
-    margin: 20px;
+h1 {
+  color: forestgreen;
 }
 
-h1 {
-    color: darkgreen;
+body {
+  padding: 20px;
 }
