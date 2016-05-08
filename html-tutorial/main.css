@@ -11,6 +11,17 @@ iframe {
   color: grey;
 }
 
+.optional {
+  color: grey;
+}
+.optional a {
+  color: grey;
+}
+
+.dim {
+  color: lightgrey;
+}
+
 a {
   color: black;
 }
@@ -35,6 +46,31 @@ section > h2 {
   background-color: #272822;
   border-radius: 0.3em;
   color: white;
+}
+
+.box-model div {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 35px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.box-model span {
+  text-align: center;
+  line-height: 35px;
+}
+.box-margin {
+  background-color: #e0e0e0;
+}
+.box-border {
+  background-color: #5fb95f;
+}
+.box-padding {
+  background-color: #e0e0e0;
+}
+.box-content {
+  background-color: white;
+  padding-top: 35px;
 }
 
 @media (max-width:500px) {

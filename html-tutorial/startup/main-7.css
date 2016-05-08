@@ -1,0 +1,25 @@
+h1 {
+  color: forestgreen;
+}
+
+h2 {
+  font-size: 18px;
+  color: white;
+  background-color: forestgreen;
+  padding: 10px;
+}
+
+.small-title {
+  display: inline-block;
+}
+
+.section {
+  border: 1px solid darkseagreen;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+body {
+  padding: 20px;
+}

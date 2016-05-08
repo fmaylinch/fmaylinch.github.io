@@ -271,12 +271,16 @@
         <td>sets the height the element</td>
       </tr>
       <tr>
+        <td><code>border</code></td>
+        <td>adds a border around the content of the element</td>
+      </tr>
+      <tr>
         <td><code>margin</code></td>
-        <td>adds a margin around the element</td>
+        <td>adds a margin around the element (outside the border)</td>
       </tr>
       <tr>
         <td><code>padding</code></td>
-        <td>adds padding to the element (like an inner margin)</td>
+        <td>adds margin between the element and the border</td>
       </tr>
     </table>
 
@@ -285,6 +289,10 @@
       only apply to text elements like <code>h1</code>, <code>h2</code> and <code>p</code>.
       Other properties like <code>margin</code> and <code>padding</code> can be
       used in most elements.
+    </p>
+    
+    <p class="optional">
+      <a href="#box-model-section">Later</a> we'll talk in more detail about the padding, border and margin.
     </p>
 
     <p>
@@ -318,20 +326,41 @@
     <p>
       Some HTML elements have default values for some properties.
       For example, the <code>h1</code> element has a big font size.
-      And the <code>h2</code> has a slightly smaller font, but bigger
-      than <code>p</code>.
+      The <code>h2</code> has a slightly smaller font, but bigger
+      than <code>p</code>. And links appear in blue.
     </p>
     <p>
       The elements <code>h1</code>, <code>h2</code> and <code>p</code> also have some default top and bottom margin (that's why the text
-      blocks are separated by some white space).
+      blocks are separated by some space).
       The <code>img</code> element doesn't have that default margin.
     </p>
-    <p>
-      Each browser (Chrome, Firefox, Safari, Explorer) may have different defaults.
-      To normalize that, we included a CSS called <code>normalize.css</code>.
-      You don't need to know how it works now, anyway.
+    
+    <p class="optional">
+      Optional notes:
     </p>
-  
+    
+    <p class="optional">
+      Each browser brand (Chrome, Safari, Firefox, IE) may have slightly different defaults.
+      To normalize that we included <a target="_blank" href="https://necolas.github.io/normalize.css/"><code>normalize.css</code></a>
+      in the <code>index.html</code> you downloaded.
+    </p>
+    
+    <p class="optional">
+      Alert readers may have noticed that,
+      although we said that images don't have default margins,
+      the images are actually separated by a
+      little space. That's not a margin, just space between the elements.
+      We won't go into detail about this now, but you can remove that space if
+      you write the two <code>img</code> elements together, without any space or
+      line breaks between them:
+    </p>
+    
+    <pre class="line-numbers" data-start="22">
+      <code class="prism language-html">
+        <img height="150px" src="…"><img height="150px" src="…">
+      </code>
+    </pre>
+    
   </section>
   
   <section>
@@ -359,56 +388,77 @@
       </tr>
       <tr>
         <td><code>inline</code></td>
-        <td>similar to <code>inline-block</code>, but you can't change its size or vertical margin</td>
+        <td>
+          similar to <code>inline-block</code>, but you can't change its size,
+          and the vertical padding/margin don't push adjacent elements away
+          (we'll talk about this in a moment)
+        </td>
       </tr>
     </table>
 
     <p>
-      The <code>h1</code>, <code>h2</code> and <code>p</code> elements have <code>display:block</code>, so they take all the width of the container.
+      The <code>h1</code>, <code>h2</code> and <code>p</code> elements have <strong><code>display:block</code></strong>, so they take all the width of the container.
       With "container" we mean the browser window for now, but later we will see that elements may be nested (one element may contain another).
     </p>
     <p>
-      The <code>img</code> element has <code>display:inline-block</code>, so it only takes the width of the image.
-      That's why the second image is displayed next to the first one and not below (unless you're reading this in a cell phone).
+      The <code>img</code> element has <strong><code>display:inline-block</code></strong>, so it only takes the width of the image.
+      That's why the second image is displayed next to the first one and not below (unless you're reading this on a small screen).
     </p>
-
     <p>
-      The <code>a</code> element has <code>display:inline</code>.
+      The <code>a</code> element (link) has <strong><code>display:inline</code></strong>.
       Like <code>img</code>, the <code>a</code> element only takes the necessary size
-      (the width of the text it contains). But, being an <code>inline</code> element, you
-      can't set vertical margin or size to them.
+      (the width of the text it contains).
     </p>
+    
+    <h3>5.1. About <code>display:inline</code></h3>
+    
     <p>
-      To see how size and margin affect inline elements,
-      add these to your <code>main.css</code> file and tweak the values
-      to check how they affect the <code>a</code> element.
+      The best way to understand how size (<code>width</code> and <code>height</code>),
+      <code>margin</code> and <code>padding</code> affect <code>inline</code> elements
+      is to play a little with those CSS properties.
+    </p>
+    
+    <p>
+      Add the following lines to your <code>main.css</code> file and tweak the values
+      to check how they affect the link and the adjacent elements (above, below and on each side).
     </p>
     
     <pre>
       <code class="prism language-css">
         a {
-          /* properties that don't affect inline elements: */
+          /* size and vertical margins don't affect inline elements: */
           width: 300px;
           height: 100px;
           margin-top: 20px;
           margin-bottom: 20px;
+          
           /* but horizontal margins do affect: */
           margin-left: 20px;
           margin-right: 20px;
+
+          /* add background color to see padding */          
+          background-color: cyan;
+          
+          /* horizontal padding affect as expected */
+          padding-left: 20px;
+          padding-right: 20px;
+
+          /* vertical padding affect, but don't push elements above or below */
+          padding-top: 50px;
+          padding-bottom: 50px;
         }
       </code>
     </pre>
     
     <p>
-      After trying that code, you can remove it if you want.
-    </p>
-    <p>
-      Notice that you can set the margin for each side individually. You
-      can do the same with the padding.
+      Notice that you can set the margin/padding for each side individually.
     </p>
     <p>
       Also see that you can add comments, like in HTML, but
       the characters to start and end a CSS comment are <code>/*</code> and <code>*/</code>.
+    </p>
+    <p>
+      After trying that code, you can remove it if you want.
     </p>
     
   </section>
@@ -420,7 +470,11 @@
     <p>
       There are HTML elements that are only used to contain text or other elements inside.
       They are used as containers, to group elements and to style them.
-      The container elements are:
+      The container itself may not be visible in the browser, unless you
+      add some style to it.
+    </p>
+    <p>
+      The default container elements are:
     </p>
     
     <table class="definitions">
@@ -433,24 +487,351 @@
         <td>container with <code>display:inline</code></td>
       </tr>
     </table>
-        
+
     <p>
-      There's no container with <code>display:inline-block</code> but you can easily create one.
-      We will see how later, when we talk about CSS <em>classes</em>.
+      Let's see an example of a <code>div</code> containing a <code>p</code> and an <code>img</code>.
+      Inside the paragraph we'll insert a <code>span</code> surrounding some text.
     </p>
     
-    <div class="soon">
+    <pre>
+      <code class="prism language-html">
+        <div>
+          <p>This is a paragraph <span>inside a div</span> as an example.</p>
+          <img src="…">
+        </div>
+      </code>
+    </pre>
+    
+    <p>
+      Note that the elements inside the <code>div</code> are <em>indented</em> a little bit,
+      to make it more clear that they are inside. That's a convention so HTML code easier to read.
+    </p>
+    
+    <h3>6.1. And the <code>inline-block</code> container?</h3>
+        
+    <p>
+      There's no default container with <code>display:inline-block</code> but you can easily create one.
+      You could set <code>display:inline-block</code> to all <code>div</code> elements, but don't do that.
+      Later we will see how to create an inline-block element without <em>breaking</em> the <code>div</code>s,
+      when we talk about CSS <em>classes</em>.
+    </p>
+    
+    <h3>6.2. block > inline-block > inline</h3>
+    
+    <p>
+      Container elements usually only contain elements of equal or lower category*.
+      Here I mean that <code>block</code> elements may contain any kind of elements inside,
+      while <code>inline-block</code> elements may only contain other <code>inline-block</code> or <code>inline</code> elements, and
+      <code>inline</code> elements should only contain other <code>inline</code> elements.
+    </p>
+    <p>
+      <em>* Disclaimer: "category" is not an official term. I use it here to simplify the explanation.</em>
+    </p>
+    
+    <p>
+      Try to respect those rules, with only one exception:
+      the <code>a</code> (link) element, although being <code>inline</code>,
+      may contain any other kind of elements like images (which are <code>inline-block</code>)
+      or even a <code>div</code> (which in turn may contains other elements inside).
+      This way we can turn an image or a full width banner into a big clickable area.
+    </p>
+
+  </section>
+  
+  <section>
+
+    <h2>7. CSS class selectors</h2>
+    
+    <p>Let's remember the first CSS rule we saw:</p>
+    
+    <pre class="line-numbers">
+      <code class="prism language-css">
+        h1 {
+            color: forestgreen;
+        }
+      </code>
+    </pre>
+    
+    <p>
+      In that rule, the <code>h1</code> is a <strong>selector</strong>.
+      I this case, it <em>selects</em> all the <code>h1</code> elements and
+      applies all the properties indicated in the rule.
+      As you've seen, properties are indicated
+      between curly braces <code>{ }</code> and each property is terminated with a semicolon <code>;</code>.
+    </p>
+    
+    <p>
+      The selector is the first thing in a CSS rule, just before the opening curly brace <code>{</code>.
+    </p>
+    
+    <p>
+      You've seen that a selector may be the name of a <strong>tag</strong> (a <em>tag selector</em>),
+      and in that case it selects all elements with that tag.
+      But what if we want to select only some elements, let's say some <code>h2</code>
+      elements, but not all of them?
+    </p>
+    
+    <p>
+      You can mark some elements with a word, and use that word as the selector, to
+      just alter those elements. You do that with an <strong>attribute</strong>
+      called <strong><code>class</code></strong>. (Do you remember attributes like
+      <code>src</code> or <code>height</code>? <code>class</code> is another,
+      and it's used a lot).
+    </p>
+    
+    <h3>7.1. Example of using a class</h3>
+    
+    <p>
+      Let's say we want to turn the first <code>h2</code> element of our page to
+      <code>inline-block</code> so it only takes the width of the text, not all the width of the window.
+    </p>
+    <p>
+      The first step is to mark <em>only</em> that element with a class.
+      Choose a name for the class (for example <code>small-title</code>)
+      and use that name as the <em>value</em> of the class <em>attribute</em>:
+    </p>
+    
+    <pre class="line-numbers" data-start="19" data-line="19">
+      <code class="prism language-html">
+        <h2 class="small-title">Introduction</h2>
+        <p>I will use this page to display <a href="http://www.cutestpaw.com/tag/cats">cat pictures</a>.</p>
+        <h2>Some pictures</h2>
+      </code>
+    </pre>
+    
+    <p>
+      Now in the CSS file (<code>main.css</code>), add these lines to set <code>display:inline-block</code>
+      to the marked element using <code>small-title</code> class as the selector. But pay attention, when using a <em>class selector</em>
+      you must <strong>prefix the class name with a dot</strong>:
+    </p>
+    
+    <pre>
+      <code class="prism language-css">
+        .small-title {
+            display: inline-block;
+        }
+      </code>
+    </pre>
+    
+    <p>
+      Don't forget the dot or it won't work (it's a common mistake!). Now your page should look like this:
+    </p>
+    
+    <iframe src="startup/index-4.html" width="600" height="470"></iframe>
+    
+    <p>
+      Now the first <code>h2</code> header only takes the width of the text, which is visible thanks to the background color.
+    </p>
+    
+    <p class="optional">
+      Optional note: if you're a perfectionist, you may have noticed that the margin between
+      the main <code>h1</code> header and the first <code>h2</code> header is a bit taller than before.
+      That's because <a target="_blank" href="https://css-tricks.com/what-you-should-know-about-collapsing-margins/">margins may collapse sometimes</a>.
+      It's out of the scope of this tutorial but you may read about that if you're curious.
+    </p>
+
+  </section>
+  
+  <section>
+
+    <h2>8. Example of containers and class selectors</h2>
+    
+    <p>
+      Starting from the last changes to our page, let's see how to use continers and class selectors.
+    </p>
+    
+    <p>
+      If we want all the <code>h2</code> to look the same, we can add the
+      <code>class="small-title"</code> also to the second <code>h2</code> element.
+    </p>
+    
+    <p>
+      In this simple example you could
+      have used the <code>h2</code> tag selector directly, which would affect all <code>h2</code>
+      elements without the need of a class selector, but it's usually a good idea to
+      mark your elements with classes, instead of altering all elements. That way
+      you have more control on where to apply styles.
+    </p>
+    
+    <p>
+      So go ahead, add <code>class="small-title"</code> to the other <code>h2</code>
+      element, and your page will look like this:
+    </p>
+    
+    <iframe src="startup/index-5.html" width="600" height="600"></iframe>
+    
+    <p>
+      Oops, we broke it!
+    </p>
+    <p>
+      Stop for a moment and try to discover what happened
+      before reading more.
+    </p>
+    
+    <p class="dim">Space left for thinking (yes, this is styled using a class, you're clever!)</p>
+    
+    <p>
+      Go it? What happened is that now that the <code>h2</code> elements are <code>inline-block</code>
+      they only take the necessary width, so there's spare room for the images to be placed next to them.
+    </p>
+    
+    <p>
+      At this point we should mention that in HTML elements are distributed from left to right
+      and from top to bottom. HTML elements in your code are displayed side to side
+      in the browser if there's horizontal room for them, and they move (wrap) to
+      the line below when there's no more room.
+    </p>
+    
+    <p>
+      But we had no problem with the first <code>h2</code>, right? That's because after the first <code>h2</code> comes a paragraph,
+      and <code>p</code> is a <code>block</code> element, so it wants to take all the available width of the window, and to do that it
+      moves to the next line. In other words, the <code>p</code> doesn't want to stay next to the <code>h2</code>
+      because the <code>p</code> wants all the width for it (<code>block</code> elements are selfish).
+    </p>
+    
+    <p>
+      To fix the page, you can surround the <code>h2</code> elements with a <code>div</code>, since
+      <code>div</code> is a <code>block</code> element and therefore won't allow other elements next to it:
+    </p>
+    
+    <pre class="line-numbers" data-start="19" data-line="19,21,23,25">
+      <code class="prism language-html">
+        <div>
+          <h2 class="small-title">Introduction</h2>
+        </div>
+        <p>I will use this page to display <a href="http://www.cutestpaw.com/tag/cats">cat pictures</a>.</p>
+        <div>
+          <h2 class="small-title">Some pictures</h2>
+        </div>
+      </code>
+    </pre>
+    
+    <p>
+      And now our page is pretty again:
+    </p>
+
+    <iframe src="startup/index-6.html" width="600" height="500"></iframe>
+    
+  </section>
+  
+  <section id="box-model-section">
+
+    <h2>9. The box model</h2>
+       
+    <p>
+      Each HTML element is displayed in the browser as a rectangle, a box.
+      The box has 4 areas:
+    </p>
       
-      <p><em>To be continued...</em></p>
+    <div class="box-model">
+      <div class="box-margin">
+        <span>Margin</span>
+        <div class="box-border">
+          <span>Border</span>
+          <div class="box-padding">
+            <span>Padding</span>
+            <div class="box-content">
+              <span>Content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       
+    <ul>
+      <li><strong>Content</strong> - The content is usually the only visible area. It's where the text and images are placed.</li>
+      <li><strong>Padding</strong> - Margin around the content. Elements have no padding by default. If you add it, it's transparent by default but it's affected by the <code>background-color</code>.</li>
+      <li><strong>Border</strong> - Line around the padding. Elements have no border by default, but you can add it.</li>
+      <li><strong>Margin</strong> - Margin outside the border that is always transparent.</li>
+    </ul>
+       
+    <h3>9.1 Example using CSS properties and classes</h3>
+       
+    <p>
+      Let's see an example so you understand the box model.
+      We'll add two <code>div</code> <strong>containers</strong> that surround
+      each of the two sections of our page, and then a <strong>class selector</strong>
+      to set some <strong>properties</strong> on each section such as padding, border and margin.
+    </p>
+       
+    <p>
+      First surround each section with a <code>div</code>. To style them easily,
+      those <code>div</code>s will have a <strong>class</strong> that we will call <code>section</code>:
+    </p>
+
+        
+    <pre class="line-numbers" data-start="17" data-line="21,26,28,34">
+      <code class="prism language-html">
+        <!-- You see these elements on the browser -->
+        
+        <h1>My HTML page</h1>
+
+        <div class="section">
+          <div>
+            <h2 class="small-title">Introduction</h2>
+          </div>
+          <p>I will use this page to display <a href="http://www.cutestpaw.com/tag/cats">cat pictures</a>.</p>
+        </div>
+
+        <div class="section">
+          <div>
+            <h2 class="small-title">Some pictures</h2>
+          </div>
+          <img height="150px" src="http://images.freeimages.com/images/previews/6d4/little-cat-1409488.jpg">
+          <img height="150px" src="http://www.cutestpaw.com/wp-content/uploads/2016/02/My-cat.jpg">
+        </div>
+      </code>
+    </pre>
+    
+    <p>
+      We have separated the lines a little bit to make it clearer.
+      The browser ignores the empty lines but they're useful to make the code easier to read.
+    </p>
+    
+    <p>
+      Now we need to add the following lines to style the sections.
+      We'll use a class selector that selects the <code>section</code> class:
+    </p>
+    
+    <pre>
+      <code class="prism language-css">
+        .section {
+          border: 1px solid lightgray;
+          border-radius: 5px;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+      </code>
+    </pre>
+    
+    <p>
+      Look at the properties we added and think about what they do.
+      Remember you can find information about these properties and
+      many more. You can <a target="_blank" href="https://www.google.es/webhp?#q=css%20property%20border">Google for any of them</a> or browse this <a target="_blank" href="http://www.w3schools.com/cssref/">reference page</a>.
+    </p>
+    
+    <p>Your page should now look like this:</p>
+    
+    <iframe src="startup/index-7.html" width="600" height="600"></iframe>
+
+  </section>
+  
+  <section>
+
+    <h2>X. Soon...</h2>
+
+      <div class="soon">
       
-      <p>Soon:</p>
       <ul>
-        <li>The box model</li>
-        <li>Fonts, google fonts, font awesome</li>
-        <li>Flexbox layout</li>
-        <li>Media queries</li>
-        <li>jQuery to react to clicks or hovers</li>
-        <li>CSS3 animations (trigger via jQuery)</li>
+        <li>Google Fonts and Font Awesome icons</li>
+        <li>Flexbox layout: master layout positioning</li>
+        <li>Media queries: make your page responsive for mobile phones</li>
+        <li>Advanced:</li>
+        <ul>
+          <li>jQuery to react to clicks or hovers</li>
+          <li>CSS3 animations (trigger via jQuery)</li>
+          <li>Emmet plugin</li>
+        </ul>
       </ul>
     </div>
     
@@ -461,9 +842,9 @@
     <h2>A. Resources</h2>
     
     <ul>
-      <li><a href="http://learn.shayhowe.com/">Learn to Code HTML & CSS</a></li>
-      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
-      <li><a href="http://flexbox.io/">Flexbox video tutorials</a></li>
+      <li><a target="_blank" href="http://learn.shayhowe.com/">Learn to Code HTML & CSS</a></li>
+      <li><a target="_blank" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+      <li><a target="_blank" href="http://flexbox.io/">Flexbox video tutorials</a></li>
       
     </ul>
   
