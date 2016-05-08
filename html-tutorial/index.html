@@ -316,6 +316,11 @@
     </pre>
 
     <p>
+      For dimensions you can use pixels (e.g. <code>200px</code>) or a percentage of the available space (e.g. <code>50%</code>).
+      There are <a target="_blank" href="http://www.w3schools.com/cssref/css_units.asp">other units</a> too.
+    </p>
+   
+    <p>
       Now your page should look like this:
     </p>
 
@@ -422,6 +427,11 @@
       Add the following lines to your <code>main.css</code> file and tweak the values
       to check how they affect the link and the adjacent elements (above, below and on each side).
     </p>
+    <p>
+      Remember that you can use <a target="_blank" href="http://www.w3schools.com/cssref/css_units.asp">different units</a> for the dimensions.
+      The <a target="_blank" href="http://www.w3schools.com/cssref/pr_dim_line-height.asp">line-height</a> accepts additional units besides the common ones.
+    </p>
+    
     
     <pre>
       <code class="prism language-css">
@@ -436,14 +446,17 @@
           margin-left: 20px;
           margin-right: 20px;
 
+          /* instead of height, you can use this */
+          line-height: normal;
+         
           /* add background color to see padding */          
           background-color: cyan;
           
-          /* horizontal padding affect as expected */
+          /* horizontal paddings affect as expected */
           padding-left: 20px;
           padding-right: 20px;
 
-          /* vertical padding affect, but don't push elements above or below */
+          /* vertical paddings affect, but don't push elements above or below */
           padding-top: 50px;
           padding-bottom: 50px;
         }
@@ -456,9 +469,6 @@
     <p>
       Also see that you can add comments, like in HTML, but
       the characters to start and end a CSS comment are <code>/*</code> and <code>*/</code>.
-    </p>
-    <p>
-      After trying that code, you can remove it if you want.
     </p>
     
   </section>
@@ -827,18 +837,27 @@
       <div class="soon">
       
       <ul>
-        <li>Styled inline containers (strong, b, em, i, u)</li>
-        <li>Lists (ul, ol, li) and tables (table, tr, td)</li>
-        <li>Google Fonts and Font Awesome icons</li>
-        <li>Flexbox layout: master layout positioning</li>
-        <li>HTML5 tags (header, footer, section, article, aside)</li>
-        <li>Media queries: make your page responsive for mobile phones</li>
-        <li>Grids</li>
-        <li>Advanced:</li>
+        <li>More elements and styles:</li>
+        <ul>
+          <li>Styling text: spans (strong, em, ...), Google fonts, FontAwesome</li>
+          <li>Lists (ul, ol, li) and tables (table, tr, td)</li>
+        </ul>
+        <li>Mastering layouts:</li>
+        <ul>
+          <li>Flexbox layout</li>
+          <li>HTML5 tags (header, footer, section, article, aside)</li>
+          <li>Media queries: make your page responsive for mobile phones</li>
+          <li>Grids</li>
+        </ul>
+        <li>Dynamic pages:</li>
         <ul>
           <li>jQuery to react to clicks or hovers</li>
           <li>CSS3 animations (trigger via jQuery)</li>
+        </ul>
+        <li>Tools:</li>
+        <ul>
           <li>Emmet plugin</li>
+          <li>Autoprefixer</li>
         </ul>
       </ul>
     </div>
