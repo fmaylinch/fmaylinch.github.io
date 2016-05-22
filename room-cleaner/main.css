@@ -16,10 +16,28 @@ body {
 .buttons {
   display: inline-flex;
   flex-direction: column;
-  align-self: flex-start;
-  margin-left: 20px;
-  margin-right: 20px;
 }
+
+@media (min-width: 801px) {
+  .buttons {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+  .buttons {
+    margin: 20px 0;
+  }
+  .CodeMirror {
+    width: 100%;
+  }
+}
+
 
 .buttons > * {
   margin-bottom: 10px;
