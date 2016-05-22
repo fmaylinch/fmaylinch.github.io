@@ -10,6 +10,8 @@ function RobotInterface(game) {
   // (It's like this class is the logic)
   self.fakeRobot = new Robot($('<div>'));
   self.numTilesCleaned = 0;
+  self.successMessageDisplayed = false;
+  self.cleningRandomRoom = false;
 
   self.nextTile = function() {
     var nextPosition = self.fakeRobot.nextPosition();
@@ -30,11 +32,18 @@ function RobotInterface(game) {
     } else {
       // console.log("Can't move");
     }
-
+    
     self.game.actions.push(function() {
       self.game.move();
     });
-
+    
+    if (self.cleningRandomRoom && self.isRoomClean() && !self.successMessageDisplayed) {
+      self.game.actions.push(function() {
+        self.successMessageDisplayed = true;
+        $('#success-message').slideDown();
+      });
+    }
+    
   };
 
   self.left = function() {

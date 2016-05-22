@@ -24,11 +24,14 @@ $(document).ready(function() {
   $("#run").click(function() {
     console.log("Preparing random room to try the robot!");
     resetGame(true);
+    window.robot.cleningRandomRoom = true;
     eval(editor.doc.getValue());
+    window.robot.cleningRandomRoom = false;
   });
 
   $("#test").click(function() {
     console.log("Testing code!");
+    window.robot.cleningRandomRoom = false;
     eval(editor.doc.getValue());
   });
   
@@ -42,6 +45,8 @@ $(document).ready(function() {
 
 function resetGame(regenerateRoom) {
 
+  $('#success-message').hide();
+  
   if (window.game) {
     window.game.stop();
   }
@@ -66,8 +71,9 @@ function resetGame(regenerateRoom) {
   window.game = new Game(room, new Robot(robotImg, tileSize));
   game.start();
   
-  window.robot = new RobotInterface(game);
+  var robot = new RobotInterface(game);
   robot.cleanCurrentTile();
+  window.robot = robot; // so it is accessible from console
 
   console.log("Robot prepared!");
 }
