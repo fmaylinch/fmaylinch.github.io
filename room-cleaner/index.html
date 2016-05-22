@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Your HTML page</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="code-mirror/codemirror.css">
+
+  <link rel="stylesheet" href="main.css">
+  
+</head>
+
+<body>
+
+  <h1>Room cleaner JS</h1>
+  
+  <div class="main">
+    
+    <div id="game-container">
+      <div id="rows-container"></div>
+    </div>
+    
+    <div class="buttons">
+      <button id="run" class="btn btn-success">RUN IN RANDOM ROOM</button>
+      <select id="level" class="form-control"></select>
+      <button id="test" class="btn btn-primary">Test Code</button>
+      <button id="reset" class="btn btn-danger">Reset Room</button>
+    </div>
+    
+    
+<textarea id="code">
+// Move the robot
+robot.right();
+robot.move();
+robot.left();
+
+// Check that robot can move forward
+if (robot.canMove()) {
+  robot.move();
+}
+
+// Check room is completely clean.
+// Open the browser console to see the logs.
+// You can run commands from the console too!
+if (robot.isRoomClean()) {
+  robot.log("Room clean!");
+} else {
+  robot.log("Still work to do!");
+}
+</textarea>
+    
+  </div>
+  
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  
+  <!-- CodeMirror -->
+  <script src="code-mirror/codemirror.js"></script>
+  <script src="code-mirror/javascript.js"></script>
+  
+  
+  <script src="js/util.js"></script>
+  <script src="js/robot.js"></script>
+  <script src="js/room.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/robot-interface.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

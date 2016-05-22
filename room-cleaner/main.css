@@ -1,0 +1,62 @@
+
+body {
+  padding: 20px;
+}
+
+.main {
+  margin-top: 30px;
+  display: flex;
+}
+
+.CodeMirror {
+  font-size: 18px;
+  height: 500px;
+}
+
+.buttons {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buttons > * {
+  margin-bottom: 10px;
+}
+
+#game-container {
+  display: inline-block;
+  position: relative;
+}
+
+#robot {
+  position: absolute;
+  padding: 4px 4px;
+  display: none;
+}
+
+#rows-container {
+  display: inline-flex;
+  flex-direction: column;
+  /* border: 1px solid #80c3fc; */
+}
+
+.tile-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.tile {
+  box-sizing: border-box;
+}
+
+.tile-clean {
+  background-color: #aae5ff; 
+  border: 1px solid #94bde2;
+}
+
+.tile-dirty {
+  background-color: #90b5c6; 
+  border: 1px solid #7896b1;
+}
