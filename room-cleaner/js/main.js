@@ -84,7 +84,7 @@ function resetGame(regenerateRoom) {
   
   if (regenerateRoom) {
     var level = parseInt($('#level').val());
-    generateRoomForLevel(level);
+    currentRoomMap = generateRoomForLevel(level);
   }
   
   var columns = getMaxColumns(currentRoomMap);
@@ -132,22 +132,88 @@ function generateRoomForLevel(level) {
   } else if (level === 3) {
     numRows = getRandomInt(3,4);
     numColumns = getRandomInt(3,4);
+  } else if (level === 4) {
+    numRows = getRandomInt(4,5);
+    numColumns = getRandomInt(4,5);
+  } else if (level >= 5) {
+    numRows = getRandomInt(6,7);
+    numColumns = getRandomInt(6,7);
   }
   
-  currentRoomMap = generateRoom(numRows, numColumns);
+  var roomMap = generateRoom(numRows, numColumns);
   
-  if (level === 3) {
-    var emptyCorner = getRandomInt(1,3);
-    if (emptyCorner === 1) {
-      currentRoomMap[0][numColumns-1] = STATE_EMPTY;
-    } else if (emptyCorner === 2) {
-      currentRoomMap[numRows-1][numColumns-1] = STATE_EMPTY;
-    } else if (emptyCorner === 3) {
-      currentRoomMap[numRows-1][0] = STATE_EMPTY;
+  // empty corners
+  var emptyCorners = ['top-right', 'bottom-right', 'bottom-left'];
+  shuffle(emptyCorners);
+    
+  // Empty corner of 1x1
+  if (level >= 3 && level != 5) {
+    
+    var emptyCorner = emptyCorners.shift();
+    
+    if (emptyCorner === 'top-right') {
+      emptyRect(roomMap, 0, numColumns-1, 1, 1);
+    } else if (emptyCorner === 'bottom-right') {
+      emptyRect(roomMap, numRows-1, numColumns-1, 1, 1);
+    } else if (emptyCorner === 'bottom-left') {
+      emptyRect(roomMap, numRows-1, 0, 1, 1);
+    }
+    
+  }
+  
+  // Empty corner of 2x2
+  if (level >= 4 && level != 5) {
+    
+    var emptyCorner = emptyCorners.shift();
+    
+    if (emptyCorner === 'top-right') {
+      emptyRect(roomMap, 0, numColumns-2, 2, 2);
+    } else if (emptyCorner === 'bottom-right') {
+      emptyRect(roomMap, numRows-2, numColumns-2, 2, 2);
+    } else if (emptyCorner === 'bottom-left') {
+      emptyRect(roomMap, numRows-2, 0, 2, 2);
+    }
+  }
+  
+  // Since it's inner, we can also use top-left
+  // Won't touch the starting tile
+  emptyCorners.push('top-left');
+  shuffle(emptyCorners);
+  
+  // Empty rect of 2x2 inside the room
+  if (level >= 5) {
+    
+    var emptyCorner = emptyCorners.shift();
+
+    if (emptyCorner === 'top-right') {
+      emptyRect(roomMap, 1, numColumns-3, 2, 2);
+    } else if (emptyCorner === 'bottom-right') {
+      emptyRect(roomMap, numRows-3, numColumns-3, 2, 2);
+    } else if (emptyCorner === 'bottom-left') {
+      emptyRect(roomMap, numRows-3, 1, 2, 2);
+    } else if (emptyCorner === 'top-left') {
+      emptyRect(roomMap, 1, 1, 2, 2);
+    }
+  }
+  
+  return roomMap;
+}
+
+
+function emptyRect(roomMap, row, col, numRows, numCols) {
+  
+  for (var r=0; r<numRows; r++) {
+    for (var c=0; c<numCols; c++) {
+      try {
+        roomMap[row+r][col+c] = STATE_EMPTY;
+      } catch (e) {
+        console.error(e);
+        console.log("row", row, "col", col);
+        console.log(roomMap);
+      }
     }
   }
 }
-
 
 function generateRoom(numRows, numColumns) {
   
