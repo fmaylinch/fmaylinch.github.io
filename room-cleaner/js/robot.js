@@ -14,15 +14,17 @@ function Robot(img, tileSize) {
   img.css({transform: "rotate(90deg)"});
   
   self.rotateRight = function() {
-    var targetAngle = self.angle + 90;
-    if (targetAngle > 360) targetAngle -= 360;
-    rotate(self.img, self.angle, self.angle = targetAngle, self.rotationTime);
+    var from = self.angle;
+    var to = self.angle + 90;
+    self.angle = to < 360 ? to : to-360;
+    rotate(self.img, from, to, self.rotationTime);
   }
   
   self.rotateLeft = function() {
-    var targetAngle = self.angle - 90;
-    if (targetAngle < 0) targetAngle += 360;
-    rotate(self.img, self.angle, self.angle = targetAngle, self.rotationTime);
+    var from = self.angle;
+    var to = self.angle - 90;
+    self.angle = to >= 0 ? to : to+360;
+    rotate(self.img, from, to, self.rotationTime);
   }
   
   self.nextPosition = function() {
