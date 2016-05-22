@@ -13,7 +13,7 @@ body {
   height: 500px;
 }
 
-#success-message {
+.alert {
   display: none;
   margin-top: 20px;
 }

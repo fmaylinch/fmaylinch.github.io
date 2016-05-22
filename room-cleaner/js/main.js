@@ -1,10 +1,5 @@
 
-var STATE_DIRTY = '.';
-var STATE_CLEAN = 'o';
-var STATE_EMPTY = ' ';
-
 var currentRoomMap;
-
 
 $(document).ready(function() {
 
@@ -16,23 +11,30 @@ $(document).ready(function() {
   
   // Init levels
   var level = $("#level");
-  for (var i=1; i<=6; i++) {
+  for (var i=1; i<=MAX_LEVEL; i++) {
     level.append($('<option>').val(i).text('Level ' + i));
   }
   level.val(1);
 
   $("#run").click(function() {
+    
     console.log("Preparing random room to try the robot!");
     resetGame(true);
-    window.robot.cleningRandomRoom = true;
-    eval(editor.doc.getValue());
-    window.robot.cleningRandomRoom = false;
+    
+    var error = tryCode(editor);
+    
+    if (!error && robot.isRoomClean()) {
+      
+      self.game.actions.push(function() {
+        onRoomCompleted();
+      });
+    }
+
   });
 
   $("#test").click(function() {
     console.log("Testing code!");
-    window.robot.cleningRandomRoom = false;
-    eval(editor.doc.getValue());
+    tryCode(editor);
   });
   
   $("#reset").click(function() {
@@ -43,9 +45,38 @@ $(document).ready(function() {
 });
 
 
+function tryCode(editor) {
+  try {
+    $('#error-message').hide();
+    eval(editor.doc.getValue());
+  } catch(e) {
+    $('#error-message').text('Oops: ' + e).slideDown();
+    return e;
+  }
+}
+
+
+function onRoomCompleted() {
+
+  var message = '<strong>Well done!</strong>';
+
+  var level = $("#level");
+  var value = parseInt(level.val());
+  if (value+1 <= MAX_LEVEL) {
+    level.val(value+1);
+    message += " Now try level " + (value+1) + "!";
+  } else {
+    message += " You're a clean code master!";
+  }
+
+  $('#success-message').html(message).slideDown();
+}
+
+
 function resetGame(regenerateRoom) {
 
   $('#success-message').hide();
+  $('#error-message').hide();
   
   if (window.game) {
     window.game.stop();
@@ -53,7 +84,7 @@ function resetGame(regenerateRoom) {
   
   if (regenerateRoom) {
     var level = parseInt($('#level').val());
-    generateRoom(level);
+    generateRoomForLevel(level);
   }
   
   var columns = getMaxColumns(currentRoomMap);
@@ -78,6 +109,7 @@ function resetGame(regenerateRoom) {
   console.log("Robot prepared!");
 }
 
+
 function getMaxColumns(roomMap) {
   
   return roomMap
@@ -85,54 +117,52 @@ function getMaxColumns(roomMap) {
     .reduce(function(a,b) { return a>b ? a : b; });
 }
 
-function generateRoom(level) {
-    
-  var size = level + 1;
-  
-  currentRoomMap = [];
-  
-  var numRows = getRandomInt(size, size+1);
-  var numTiles = getRandomInt(size, size+1);
 
-  // Break points to vary row width
+function generateRoomForLevel(level) {
   
-  var levelZero = level-1; // Zero based
-  var breakPointLevel = levelZero % 3;
-
-  var breakPoint1 = -1;
-  var breakPoint2 = -1;
-  var breakPoint3 = Math.floor(numRows/2);
+  var numRows;
+  var numColumns;
   
-  if (breakPointLevel === 1) {
-    breakPoint1 = Math.floor(numRows/2);
-  } else if (breakPointLevel === 2) {
-    breakPoint1 = Math.floor(numRows/3);
-    breakPoint2 = Math.floor(numRows*2/3);
-  } else if (level >= 4) {
-    breakPoint1 = Math.floor(numRows/2);
+  if (level === 1) {
+    numRows = 2;
+    numColumns = 2;
+  } else if (level === 2) {
+    numRows = getRandomInt(2,4);
+    numColumns = getRandomInt(2,4);
+  } else if (level === 3) {
+    numRows = getRandomInt(3,4);
+    numColumns = getRandomInt(3,4);
   }
   
-  var randomBrk;
+  currentRoomMap = generateRoom(numRows, numColumns);
+  
+  if (level === 3) {
+    var emptyCorner = getRandomInt(1,3);
+    if (emptyCorner === 1) {
+      currentRoomMap[0][numColumns-1] = STATE_EMPTY;
+    } else if (emptyCorner === 2) {
+      currentRoomMap[numRows-1][numColumns-1] = STATE_EMPTY;
+    } else if (emptyCorner === 3) {
+      currentRoomMap[numRows-1][0] = STATE_EMPTY;
+    }
+  }
+}
+
+
+function generateRoom(numRows, numColumns) {
+  
+  var roomMap = [];
   
   for (var i=0; i<numRows; i++) {
     
     var rowArray = [];
     
-    if (i === breakPoint1) {
-      randomBrk = getRandomInt(0, 1) == 0 ? -1 : 1;
-      numTiles += (level - 1) * randomBrk;
-    } else if (i === breakPoint2) {
-      numTiles += (level - 1) * (-randomBrk);
+    for (var j=0; j<numColumns; j++) {
+      rowArray.push(STATE_DIRTY);
     }
     
-    for (var j=0; j<numTiles; j++) {
-      var tile = '.';
-      // Empty tile for level >= 4
-      if (level >= 4 && i === breakPoint3 && j === breakPoint1) {
-        tile = ' ';
-      }
-      rowArray.push(tile);
-    }
-    currentRoomMap.push(rowArray);
+    roomMap.push(rowArray);
   }
+  
+  return roomMap;
 }

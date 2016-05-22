@@ -25,7 +25,8 @@
     
     <div id="game-container">
       <div id="rows-container"></div>
-      <div id="success-message" class="alert alert-success" role="alert"><strong>Well done!</strong> Room is completely clean!</div>
+      <div id="success-message" class="alert alert-success" role="alert"></div>
+      <div id="error-message" class="alert alert-danger" role="alert"></div>
     </div>
     
     <div class="buttons">
@@ -68,6 +69,7 @@ if (robot.isRoomClean()) {
   <script src="code-mirror/javascript.js"></script>
   
   
+  <script src="js/constants.js"></script>
   <script src="js/util.js"></script>
   <script src="js/robot.js"></script>
   <script src="js/room.js"></script>
