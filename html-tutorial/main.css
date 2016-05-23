@@ -52,8 +52,6 @@ section > h2 {
   display: flex;
   flex-direction: column;
   padding-bottom: 35px;
-  padding-left: 35px;
-  padding-right: 35px;
 }
 .box-model span {
   text-align: center;
@@ -71,8 +69,10 @@ section > h2 {
 .box-content {
   background-color: white;
   padding-top: 35px;
-  padding-left: 0;
-  padding-right: 0;
+}
+.box-padded {
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 @media (min-width:701px) {

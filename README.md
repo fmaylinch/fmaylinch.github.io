@@ -4,9 +4,9 @@
 
 ### Install node.js
 
-* Install Node Version Manager `nvm`
-* `nvm install 4.4.0` to download and install node.js 4.4.0
-* `nvm alias default 4.4.0` to set that default node.js (maybe not necessary)
+* Install Node Version Manager `nvm`, then...
+* `nvm install 6.2.0` to download and install node.js 6.2.0
+* `nvm alias default 6.2.0` to set that default node.js
 
 ### Install Gulp
 

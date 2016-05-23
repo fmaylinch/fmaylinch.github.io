@@ -131,7 +131,7 @@
 
     <p>
       As you see, HTML elements are surrounded by those pieces of text with angle brackets like <code>&lt;h1&gt;</code> or <code>&lt;p&gt;</code>.
-      Those are called <strong>tags</strong>. Each tag has a meaning. There are a number of them. For now, let's see some:
+      Those are called <strong>tags</strong>. Each tag has a meaning. There are <a href="http://www.w3schools.com/tags/">many tags</a> but, for now, let's focus on a few:
     </p>
 
     <table class="definitions">
@@ -514,7 +514,7 @@
     
     <p>
       Note that the elements inside the <code>div</code> are <em>indented</em> a little bit,
-      to make it more clear that they are inside. That's a convention so HTML code easier to read.
+      to make it more clear that they are inside. That's a convention so HTML code is easier to read.
     </p>
     
     <h3>6.1. And the <code>inline-block</code> container?</h3>
@@ -526,24 +526,15 @@
       when we talk about CSS <em>classes</em>.
     </p>
     
-    <h3>6.2. block > inline-block > inline</h3>
+    <h3>6.2. Containtment rules</h3>
     
     <p>
-      Container elements usually only contain elements of equal or lower category*.
-      Here I mean that <code>block</code> elements may contain any kind of elements inside,
-      while <code>inline-block</code> elements may only contain other <code>inline-block</code> or <code>inline</code> elements, and
-      <code>inline</code> elements should only contain other <code>inline</code> elements.
-    </p>
-    <p>
-      <em>* Disclaimer: "category" is not an official term. I use it here to simplify the explanation.</em>
-    </p>
-    
-    <p>
-      Try to respect those rules, with only one exception:
+      <code>inline</code> elements usually can only contain other <code>inline</code> elements,
+      with one exception:
       the <code>a</code> (link) element, although being <code>inline</code>,
       may contain any other kind of elements like images (which are <code>inline-block</code>)
       or even a <code>div</code> (which in turn may contains other elements inside).
-      This way we can turn an image or a full width banner into a big clickable area.
+      This way we can turn an image or a big banner into a clickable area.
     </p>
 
   </section>
@@ -564,7 +555,7 @@
     
     <p>
       In that rule, the <code>h1</code> is a <strong>selector</strong>.
-      I this case, it <em>selects</em> all the <code>h1</code> elements and
+      In this case, it <em>selects</em> all the <code>h1</code> elements and
       applies all the properties indicated in the rule.
       As you've seen, properties are indicated
       between curly braces <code>{ }</code> and each property is terminated with a semicolon <code>;</code>.
@@ -738,11 +729,11 @@
     </p>
       
     <div class="box-model">
-      <div class="box-margin">
+      <div class="box-margin box-padded">
         <span>Margin</span>
-        <div class="box-border">
+        <div class="box-border box-padded">
           <span>Border</span>
-          <div class="box-padding">
+          <div class="box-padding box-padded">
             <span>Padding</span>
             <div class="box-content">
               <span>Content</span>
@@ -839,25 +830,25 @@
       <ul>
         <li>More elements and styles:</li>
         <ul>
-          <li>Styling text: spans (strong, em, ...), Google fonts, FontAwesome</li>
+          <li>Styling text: spans (strong, em, ...), <a href="https://google-webfonts-helper.herokuapp.com/fonts/">Google fonts</a>, <a href="http://fontawesome.io/">FontAwesome</a></li>
           <li>Lists (ul, ol, li) and tables (table, tr, td)</li>
         </ul>
         <li>Mastering layouts:</li>
         <ul>
-          <li>Flexbox layout</li>
+          <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox layout</a></li>
           <li>HTML5 tags (header, footer, section, article, aside)</li>
           <li>Media queries: make your page responsive for mobile phones</li>
           <li>Grids</li>
         </ul>
         <li>Dynamic pages:</li>
         <ul>
-          <li>jQuery to react to clicks or hovers</li>
+          <li><a href="https://jquery.com/">jQuery</a> to react to clicks or hovers</li>
           <li>CSS3 animations (trigger via jQuery)</li>
         </ul>
         <li>Tools:</li>
         <ul>
-          <li>Emmet plugin</li>
-          <li>Autoprefixer</li>
+          <li><a href="http://emmet.io/">Emmet</a> plugin</li>
+          <li><a href="http://autoprefixer.github.io/">Autoprefixer</a></li>
         </ul>
       </ul>
     </div>
