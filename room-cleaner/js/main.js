@@ -9,31 +9,29 @@ $(document).ready(function() {
     continueComments: "Enter"
   });
   
-  // Init levels
-  var level = $("#level");
-  for (var i=1; i<=MAX_LEVEL; i++) {
-    level.append($('<option>').val(i).text('Level ' + i));
-  }
-  level.val(1);
+  initLevelSelect(MAX_LEVEL);
 
   $("#run").click(function() {
     
-    console.log("Preparing random room to try the robot!");
     resetGame(true);
     
     var error = tryCode(editor);
     
-    if (!error && robot.isRoomClean()) {
-      
-      self.game.actions.push(function() {
-        onRoomCompleted();
-      });
+    if (!error) {
+      if (robot.isRoomClean()) {
+        self.game.actions.push(function() {
+          onRoomCompleted();
+        });        
+      } else {
+        self.game.actions.push(function() {
+          onRoomNotCompleted();
+        });        
+      }
     }
 
   });
 
   $("#test").click(function() {
-    console.log("Testing code!");
     tryCode(editor);
   });
   
@@ -47,7 +45,7 @@ $(document).ready(function() {
 
 function tryCode(editor) {
   try {
-    $('#error-message').hide();
+    $('.alert').hide();
     eval(editor.doc.getValue());
   } catch(e) {
     $('#error-message').text('Oops: ' + e).slideDown();
@@ -72,18 +70,22 @@ function onRoomCompleted() {
   $('#success-message').html(message).slideDown();
 }
 
+function onRoomNotCompleted() {
+
+  $('#warning-message').text("You need to clean the whole room!").slideDown();
+}
+
 
 function resetGame(regenerateRoom) {
 
-  $('#success-message').hide();
-  $('#error-message').hide();
+  $('.alert').hide();
   
   if (window.game) {
     window.game.stop();
   }
   
   if (regenerateRoom) {
-    var level = parseInt($('#level').val());
+    var level = parseInt($("#level").val());
     currentRoomMap = generateRoomForLevel(level);
   }
   
@@ -105,8 +107,6 @@ function resetGame(regenerateRoom) {
   var robot = new RobotInterface(game);
   robot.cleanCurrentTile();
   window.robot = robot; // so it is accessible from console
-
-  console.log("Robot prepared!");
 }
 
 
@@ -231,4 +231,15 @@ function generateRoom(numRows, numColumns) {
   }
   
   return roomMap;
+}
+
+function initLevelSelect(maxLevel) {
+  
+  var level = $("#level");
+  
+  for (var i=1; i<=maxLevel; i++) {
+    level.append($('<option>').val(i).text('Level ' + i));
+  }
+  
+  level.val(1);
 }
