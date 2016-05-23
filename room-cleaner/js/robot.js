@@ -5,8 +5,7 @@ function Robot(img, tileSize) {
   self.position = {row:0, column:0};
   self.img = img;
   self.angle = 90;
-  self.rotationTime = 500;
-  self.moveTime = 800;
+  self.animationTime = 800;
   self.tileSize = tileSize;
   
   img.show();
@@ -17,14 +16,14 @@ function Robot(img, tileSize) {
     var from = self.angle;
     var to = self.angle + 90;
     self.angle = to < 360 ? to : to-360;
-    rotate(self.img, from, to, self.rotationTime);
+    rotate(self.img, from, to, self.animationTime/1.5);
   }
   
   self.rotateLeft = function() {
     var from = self.angle;
     var to = self.angle - 90;
     self.angle = to >= 0 ? to : to+360;
-    rotate(self.img, from, to, self.rotationTime);
+    rotate(self.img, from, to, self.animationTime/1.5);
   }
   
   self.nextPosition = function() {
@@ -76,7 +75,7 @@ function Robot(img, tileSize) {
     var animation1 = {left: left + "px", top: top + "px"};
     var animation2 = {left: left0 + "px", top: top0 + "px"};
 
-    var time = self.moveTime * fraction * 1.5;
+    var time = self.animationTime * fraction * 1.5;
     
     self.img.animate(animation1, time, function() {
       self.img.animate(animation2, time);
@@ -90,6 +89,6 @@ function Robot(img, tileSize) {
     
     var animation = {left: left + "px", top: top + "px"};
     
-    self.img.animate(animation, self.moveTime);
+    self.img.animate(animation, self.animationTime);
   };
 }

@@ -39,6 +39,10 @@ $(document).ready(function() {
     resetGame(false);
   });
   
+  $('#speed').change(function() {
+    updateGameSpeed();
+  });
+  
   resetGame(true);
 });
 
@@ -102,11 +106,23 @@ function resetGame(regenerateRoom) {
   $('#game-container').append(robotImg);
   
   window.game = new Game(room, new Robot(robotImg, tileSize));
+  
+  updateGameSpeed();
+  
   game.start();
   
   var robot = new RobotInterface(game);
   robot.cleanCurrentTile();
   window.robot = robot; // so it is accessible from console
+}
+
+
+function updateGameSpeed() {
+  var speedFactor = $('#speed').val();
+  var robotTime = 800 / speedFactor;
+  window.game.robot.animationTime = robotTime;
+  var actionTime = 1000 / speedFactor;
+  window.game.actionTime = actionTime;
 }
 
 
