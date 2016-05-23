@@ -60,7 +60,10 @@ function Room(roomMap, rowsDiv, tileSize) {
   
   self.turnTileClean = function(position) {
     var tile = self.getTile(position);
-    tile.removeClass("tile-dirty").addClass("tile-clean");
+    if (tile.hasClass("tile-dirty")) {
+      tile.switchClass("tile-dirty", "tile-clean", 300);
+      // tile.removeClass("tile-dirty").addClass("tile-clean");
+    }
   }
 
   self.getTile = function(position) {
