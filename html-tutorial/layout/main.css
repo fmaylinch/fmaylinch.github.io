@@ -214,16 +214,17 @@ footer {
   #menu-mobile .row {
     text-align: center;
     text-decoration: none;
-    line-height: 60px;
+    line-height: 42px;
     margin-top: 2px;
     background: rgba(0, 0, 0, 0.50);
     color: white;
-    font-size: 25px;  
+    font-size: 18px;
+    font-weight: 300;
   }
   
   #menu-mobile .fa {
-    line-height: 60px;
-    font-size: 35px;
+    line-height: 42px;
+    font-size: 30px;
     padding: 0 5px;
   }
 
