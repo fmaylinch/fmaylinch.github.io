@@ -178,14 +178,20 @@ footer {
   
   .header-image {
     background-size: 1000px auto;
-    background-position: 30%;
+    background-position: 30% 50%;
   }
 }
 
 @media (max-width: 800px) {
  
+  .header-image {
+    height: 250px;
+    background-position: 30% 45%;
+  }
+  
   .header {
     height: 60px;
+    padding: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
   
