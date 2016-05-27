@@ -2,45 +2,126 @@
 <html lang="en">
 
 <head>
-  <title>Your HTML page</title>
+  <title>Landing Page Example</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Normalize styles for every browser -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+  
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700' rel='stylesheet' type='text/css'>  
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  
+  <!-- Our style -->
   <link rel="stylesheet" href="main.css">
-  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  
 </head>
 
 <body>
 
-  <div class="header">
+  <div class="header-image">
+
+    <div class="header">
    
-     <div class="menu">
-       <a href="#">Cats</a>
-       <a href="#">Kitties</a>
-       <a href="#">Felines</a>
-     </div>
-  </div>
-  
-  <div class="content">
-   
-    <h1>HTML Layout</h1>
+      <div class="logo-container">
+        <div class="logo">
+          <i class="fa fa-leaf" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a class="option" href="#">Philosophy</a> ·
+        <a class="option" href="#">Work</a> ·
+        <a class="option" href="#">About us</a> · 
+        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+      </div>
+
+      <div id="menu-icon">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
     
-    <div class="section">
-            
-      <p>Nice layout with cute <a href="http://www.cutestpaw.com/tag/cats">kitties</a>.</p>
-      
-      <img height="150px" src="http://images.freeimages.com/images/previews/6d4/little-cat-1409488.jpg">
-      <img height="150px" src="http://www.cutestpaw.com/wp-content/uploads/2016/02/My-cat.jpg">
-      
+    </div>
+
+    <div id="menu-mobile-container">
+      <div id="menu-mobile">
+        <a class="row" href="#">Philosophy</a>
+        <a class="row" href="#">Work</a>
+        <a class="row" href="#">About us</a>
+        <div class="row">
+          <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
     </div>
     
   </div>
-  
-  <div class="footer">
-    &copy; PurrSoft
+
+  <div class="content">
+    
+    <h1>Flexible Colors</h1>
+    
+    <h2>Palettes that adapt to your needs</h2>
+    
+    <div class="textos">
+      <p> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ipsum ante, ultricies a maximus vel, finibus in metus. Etiam tempor est nec elementum rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ullamcorper quam nec egestas consectetur.
+      </p>
+      <p>
+        Nulla nec elit quis quam ullamcorper sagittis. Nulla facilisi. Vivamus consectetur iaculis orci. Integer lacinia, nulla non tempus efficitur, metus nulla fermentum magna, vitae interdum arcu diam eget justo. Nam iaculis laoreet ligula in ultricies. Vivamus consequat ullamcorper facilisis..
+      </p>
+    </div> 
+    
+    <div class="features">
+      
+      <div>
+        <i class="fa fa-moon-o feature1" aria-hidden="true"></i>          
+        <h2>Peace of Mind</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ipsum ante, ultricies a maximus vel, finibus in metus.</p>
+      </div>
+      
+      <div>
+        <i class="fa fa-sun-o feature2" aria-hidden="true"></i>          
+        <h2>Alive Designs</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ipsum ante, ultricies a maximus vel, finibus in metus.</p>
+      </div>
+
+      <div>
+        <i class="fa fa-star-o feature3" aria-hidden="true"></i>          
+        <h2>Spark your Imagination</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ipsum ante, ultricies a maximus vel, finibus in metus.</p>
+      </div>
+
+    </div>
+     
   </div>
+  
+  <footer>
+    By David and Ferran
+  </footer>
+  
+  
+  <!-- Scripts -->
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  
+  <script>
+  
+    $(document).ready(function() {
+      $('#menu-icon').click(function() {
+        $('#menu-mobile-container').slideToggle();
+      });      
+    });
+    
+  </script>
 
 </body>
 
