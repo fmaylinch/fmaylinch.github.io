@@ -137,6 +137,10 @@
   align-items: center;
 }
 
+.features h2 {
+  text-align: center;
+}
+
 .features hr {
   width: 60%;
 }
