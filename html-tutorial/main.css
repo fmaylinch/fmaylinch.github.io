@@ -1,5 +1,7 @@
+
 body {
   padding: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 iframe {
@@ -7,14 +9,15 @@ iframe {
   max-width: 100%;
 }
 
-.soon {
+section > p code, section td code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.soon, .soon a {
   color: grey;
 }
 
-.optional {
-  color: grey;
-}
-.optional a {
+.optional, .optional a {
   color: grey;
 }
 
@@ -32,20 +35,25 @@ table.definitions td {
 
 section {
   border: 1px solid lightgrey;
-  border-radius: 0.3em;
+  border-radius: 2px;
   padding: 30px;
   margin-bottom: 20px;
 }
 
 section > h2 {
-  margin-top: 10px;
-  margin-left: -40px;
-  padding: 8px 30px;
+  margin-top: 0;
+  
+  margin-left: -45px;
+  padding: 8px 45px;
   display: inline-block;
-  /* Similar properties to code blocks */
-  background-color: #272822;
-  border-radius: 0.3em;
+  border-radius: 2px;
+  background-color: #414141;
   color: white;
+  box-shadow: 5px 5px 12px 0px rgba(112,112,112,1);
+}
+
+pre[class*="language-"] {
+    border-radius: 3px;
 }
 
 .box-model div {
@@ -91,6 +99,16 @@ section > h2 {
   section {
     padding: 10px;
     margin-bottom: 20px;
+  }
+  
+  section > h2 {
+    font-size: 22px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-left: -15px;
+    margin-right: -5px;
+    margin-bottom: 30px;
+    display: block;
   }
 }
 
