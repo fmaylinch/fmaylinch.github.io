@@ -1,0 +1,23 @@
+
+nav {
+  height: 80px;
+  color: white;
+  background-color: rgba(0,0,0,0.2);
+}
+
+header {
+  height: 400px;
+  background-image: url(../header.jpg);
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+main {
+  padding: 30px;
+}
+
+footer {
+  padding: 15px 30px;
+  color: white;
+  background-color: rgb(11, 23, 36);
+}

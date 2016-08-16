@@ -1,0 +1,160 @@
+
+body {
+  padding: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header h1 {
+  font-family: 'Cousine', monospace;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header h3 {
+  margin-top: 0;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+iframe {
+  border: 1px solid lightgrey;
+  max-width: 100%;
+}
+
+section > p code, section td code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.soon, .soon a {
+  color: grey;
+}
+
+.optional, .optional a {
+  color: grey;
+}
+
+.dim {
+  color: lightgrey;
+}
+
+.song {
+  color: grey;
+  font-style: italic;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+a {
+  color: black;
+}
+
+table.definitions td {
+  padding-left: 20px;
+}
+
+section {
+  box-shadow: 5px 5px 12px 0px rgba(112,112,112,1);
+  border-radius: 2px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+section > h2 {
+  margin-top: 0;
+  margin-left: -20px;
+  padding: 10px 20px 8px;
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 5px 5px 12px 0px rgba(112,112,112,1);
+  
+  font-family: 'Cousine', monospace;
+  font-weight: 700;
+}
+
+pre[class*="language-"] {
+    border-radius: 3px;
+}
+
+.box-model div {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 35px;
+}
+.box-model span {
+  text-align: center;
+  line-height: 35px;
+}
+.box-margin {
+  background-color: #e0e0e0;
+}
+.box-border {
+  background-color: #5fb95f;
+}
+.box-padding {
+  background-color: #e0e0e0;
+}
+.box-content {
+  background-color: white;
+  padding-top: 35px;
+}
+.box-padded {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+@media (min-width:701px) {
+  
+  .box-model {
+    margin: 40px 10%;
+  }
+  
+  /* Different rotations for section headers */
+  section:nth-of-type(1) > h2 {
+    transform: rotate(-3deg);
+  }
+  section:nth-of-type(2) > h2 {
+    transform: rotate(1deg);
+  }
+  section:nth-of-type(3) > h2 {
+    transform: rotate(-4deg);
+  }
+  section:nth-of-type(4) > h2 {
+    transform: rotate(-1deg);
+  }
+  section:nth-of-type(5) > h2 {
+    transform: rotate(2deg);
+  }
+}
+
+@media (max-width:700px) {
+  
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  section > h2 {
+    font-size: 22px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: 30px;
+    display: block;
+  }
+}
+
+.line-highlight {
+  background-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.12) 70%, rgba(255, 255, 255, 0));
+}
+
