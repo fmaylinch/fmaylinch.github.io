@@ -2,6 +2,7 @@
 body {
   padding: 30px;
   font-family: 'Open Sans', sans-serif;
+  background: #f9f9f9;
 }
 
 header h1 {
@@ -60,6 +61,7 @@ section {
   border-radius: 2px;
   padding: 30px;
   margin-bottom: 20px;
+  background: white;
 }
 
 section > h2 {
