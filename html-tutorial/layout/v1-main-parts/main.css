@@ -1,0 +1,20 @@
+
+nav {
+  height: 50px;
+  background-color: cadetblue;
+}
+
+.header-image {
+  height: 150px;
+  background-color: paleturquoise;
+}
+
+main {
+  height: 200px;
+  background-color: lightcyan;
+}
+
+footer {
+  height: 50px;
+  background-color: cadetblue;
+}

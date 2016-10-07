@@ -833,7 +833,169 @@
     
     <iframe src="layout/index.html" width="100%" height="600"></iframe>
     
-  </section>
+    <h3>10.1 Main parts of the layout</h3>
+    
+    <p>
+      When starting a layout, we should think about what main parts our layout will have,
+      without worrying about the details inside of each part.
+    </p>
+    
+    <p>
+      For example, in the layout above we want, from top to bottom:
+    </p>
+     
+    <ul>
+      <li>Navigation menu</li>
+      <li>Image banner</li>
+      <li>Contents</li>
+      <li>Footer</li>
+    </ul>
+    
+    <p>
+      For now, forget about the transparency of the navigation menu (suppose it's opaque),
+      and also don't worry about the contents (we will analyze that later).
+    </p>
+    
+    <p>
+      With those sections, we can start the first version of our layout.
+      It's just 4 simple <code>div</code> elements. Note that sometimes we
+      use other <a target="_blank" href="http://www.w3schools.com/html/html5_semantic_elements.asp"><code>div</code>-like elements</a>
+      such us <code>header</code>,
+      <code>nav</code>, <code>main</code> and <code>footer.</code> Those
+      elements behave exactly like <code>div</code>, they're just used to
+      make our HTML clearer and more meaningful.
+    </p>
+
+    <p>
+      Browse the <a target="_blank" href="layout/v1-main-parts/">code here</a>.
+    </p>
+    
+    <iframe src="layout/v1-main-parts/index.html" width="100%" height="450"></iframe>
+    
+    <h3>10.2 Image banner</h3>
+    
+    <p>
+      Now we will set the big image between the navigation menu bar and the contents section.
+      We will do that using the <code><a target="_blank" href="http://www.w3schools.com/cssref/pr_background-image.asp">background-image</a></code>
+      property and other related <a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_background.asp">background properties</a>.
+      The <code>background-image</code> property is useful to set a background image to a <code>div</code>, especially
+      when you want to add some other content over the image.
+    </p>
+    
+    <p>
+      Browse the <a target="_blank" href="layout/v2-header-image/">code here</a>.
+    </p>
+
+    <iframe src="layout/v2-header-image/index.html" width="100%" height="450"></iframe>
+
+    <h3>10.3 Transparent nav bar</h3>
+    
+    <p>
+      We will now turn the top nav bar transparent. In order to do that, we will remove
+      the <code>div</code> that contains the image and set the image directly to the
+      <code>header</code>. Remember (or browse the previous code again) that the <code>header</code> element contained the <code>nav</code>
+      element (the navigation menu bar) and a <code>div</code> that contained the image.
+    </p>
+    
+    <p>
+      Besides setting the <code>background-image</code> to the <code>header</code>, we also
+      set a transparent background to the <code>nav</code>.
+    </p>
+    
+    <p>
+      Browse the <a target="_blank" href="layout/v3-transparent-nav-bar/">code here</a>.
+    </p>
+
+    <iframe src="layout/v3-transparent-nav-bar/index.html" width="100%" height="450"></iframe>
+
+    <h3>10.4 Main content</h3>
+    
+    <p>
+      We will start adding elements to our <code>main</code> section.
+      For now we just added some simple text elements, without much CSS changes.
+      For the paragraphs it's very common to use some <a target="_blank" href="http://lipsum.com/">random latin text</a>
+      when prototyping the designs.
+    </p>
+    
+    <p>
+      Browse the <a target="_blank" href="layout/v4-start-main-content/">code here</a>.
+    </p>
+    
+    <iframe src="layout/v4-start-main-content/index.html" width="100%" height="600"></iframe>
+
+    <h3>10.5 Horizontal layout</h3>
+    
+    <p>
+      Now we will lay out the paragraphs horizontally.
+      There are many ways to do that, take this approach as a simple example
+      and experiment with the settings we used.
+    </p>
+    
+    <p>
+      Here we use a <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox</a> container.
+      We wrapped the paragraphs into a <code>div</code>, and set the <code>display</code>
+      property of that element to <code>flex</code>. That turns the element into a
+      flexbox container. The child elements (the paragraphs) are laid out horizontally
+      by default (although we also set the <code>flex-direction</code> property to <code>row</code>,
+      but you can remove that because it's the default value).
+    </p>
+    
+    <p>
+      To make the paragraphs take the same amount of space we could have set a <code>width</code>
+      of <code>50%</code> but they would appear together, without any space between. So,
+      we decided to set their width to <code>49%</code> and use a very handy flexbox property
+      called <code>justify-content</code>, that organizes the children horizontally
+      (or vertically if the <code>flex-direction</code> was <code>column</code>).
+      For that property we use the value <code>space-between</code>, that puts
+      the remaining space between the child elements (since we set <code>49%</code> for each
+      child, there's a remaining 1+1=2% of space that will be placed between the paragraphs).
+    </p>
+    
+    <p>
+      Browse the <a target="_blank" href="layout/v5-horizontal-layout/">code here</a>.
+    </p>
+
+    <iframe src="layout/v5-horizontal-layout/index.html" width="100%" height="600"></iframe>
+
+    <h3>10.6 Center with flexbox</h3>
+    
+    <p>
+      With flexbox it is very easy to align content to the left, right, center or,
+      as we saw in the previous example, place the remaining space between.
+    </p>
+    
+    <p>
+      We will now use flexbox to center the <code>h1</code> and <code>h2</code>
+      elements. Without flexbox you could use <code>text-align:center</code>,
+      but centering with flexbox can be used with any elements, even complex
+      <code>div</code>s with something inside.
+    </p>
+    
+    <p>
+      To center the text headers, we wrap them inside a <code>div</code>,
+      make that <code>div</code> a flexbox container. Since flexbox arranges elements
+      horizontally by default, we need to change <code>flex-direction</code> to
+      <code>column</code>, so they are displayed vertically. Then we set
+      <code>align-items: center</code>.
+    </p>
+    
+    <p>
+      Note we don't want to use <code>justify-content</code> now because it
+      would arrange elements vertically (since <code>flex-direction</code> is
+      <code>column</code>, i.e. vertical). <code>align-items</code> is similar
+      to <code>justify-content</code> but <code>align-items</code> arranges
+      elements in the cross axis, so if <code>flex-direction</code> is vertical
+      <code>align-items</code> moves elements horizontally. And that's what we
+      want, we want to center elements horizontally.
+    </p>
+
+    <p>
+      Browse the <a target="_blank" href="layout/v6-flexbox-center/">code here</a>.
+    </p>
+
+    <iframe src="layout/v6-flexbox-center/index.html" width="100%" height="600"></iframe>
+
+    </section>
   
   <section>
 
