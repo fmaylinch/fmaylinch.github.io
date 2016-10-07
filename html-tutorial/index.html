@@ -867,7 +867,7 @@
     </p>
 
     <p>
-      Browse the <a target="_blank" href="layout/v1-main-parts/">code here</a>.
+      <a target="_blank" href="layout/v1-main-parts/">Open the example in a new tab</a>.
     </p>
     
     <iframe src="layout/v1-main-parts/index.html" width="100%" height="450"></iframe>
@@ -883,7 +883,7 @@
     </p>
     
     <p>
-      Browse the <a target="_blank" href="layout/v2-header-image/">code here</a>.
+      <a target="_blank" href="layout/v2-header-image/">Open the example in a new tab</a>.
     </p>
 
     <iframe src="layout/v2-header-image/index.html" width="100%" height="450"></iframe>
@@ -903,7 +903,7 @@
     </p>
     
     <p>
-      Browse the <a target="_blank" href="layout/v3-transparent-nav-bar/">code here</a>.
+      <a target="_blank" href="layout/v3-transparent-nav-bar/">Open the example in a new tab</a>.
     </p>
 
     <iframe src="layout/v3-transparent-nav-bar/index.html" width="100%" height="450"></iframe>
@@ -918,7 +918,7 @@
     </p>
     
     <p>
-      Browse the <a target="_blank" href="layout/v4-start-main-content/">code here</a>.
+      <a target="_blank" href="layout/v4-start-main-content/">Open the example in a new tab</a>.
     </p>
     
     <iframe src="layout/v4-start-main-content/index.html" width="100%" height="600"></iframe>
@@ -927,7 +927,7 @@
     
     <p>
       Now we will lay out the paragraphs horizontally.
-      There are many ways to do that, take this approach as a simple example
+      There are many ways to do that; take this approach as a simple example
       and experiment with the settings we used.
     </p>
     
@@ -944,7 +944,7 @@
       To make the paragraphs take the same amount of space we could have set a <code>width</code>
       of <code>50%</code> but they would appear together, without any space between. So,
       we decided to set their width to <code>49%</code> and use a very handy flexbox property
-      called <code>justify-content</code>, that organizes the children horizontally
+      called <code>justify-content</code>, that arranges the children horizontally
       (or vertically if the <code>flex-direction</code> was <code>column</code>).
       For that property we use the value <code>space-between</code>, that puts
       the remaining space between the child elements (since we set <code>49%</code> for each
@@ -952,7 +952,7 @@
     </p>
     
     <p>
-      Browse the <a target="_blank" href="layout/v5-horizontal-layout/">code here</a>.
+      <a target="_blank" href="layout/v5-horizontal-layout/">Open the example in a new tab</a>.
     </p>
 
     <iframe src="layout/v5-horizontal-layout/index.html" width="100%" height="600"></iframe>
@@ -972,11 +972,10 @@
     </p>
     
     <p>
-      To center the text headers, we wrap them inside a <code>div</code>,
+      To center the text headers, we start wrapping them inside a <code>div</code>,
       make that <code>div</code> a flexbox container. Since flexbox arranges elements
-      horizontally by default, we need to change <code>flex-direction</code> to
-      <code>column</code>, so they are displayed vertically. Then we set
-      <code>align-items: center</code>.
+      horizontally by default, we need to set <code>flex-direction:column</code>,
+      so they are displayed vertically. Then we set <code>align-items:center</code>.
     </p>
     
     <p>
@@ -984,13 +983,13 @@
       would arrange elements vertically (since <code>flex-direction</code> is
       <code>column</code>, i.e. vertical). <code>align-items</code> is similar
       to <code>justify-content</code> but <code>align-items</code> arranges
-      elements in the cross axis, so if <code>flex-direction</code> is vertical
+      elements along the cross axis, so if <code>flex-direction</code> is vertical
       <code>align-items</code> moves elements horizontally. And that's what we
       want, we want to center elements horizontally.
     </p>
 
     <p>
-      Browse the <a target="_blank" href="layout/v6-flexbox-center/">code here</a>.
+      <a target="_blank" href="layout/v6-flexbox-center/">Open the example in a new tab</a>.
     </p>
 
     <iframe src="layout/v6-flexbox-center/index.html" width="100%" height="600"></iframe>
