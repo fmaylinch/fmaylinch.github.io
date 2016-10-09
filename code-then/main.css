@@ -39,6 +39,7 @@ main {
 @media (max-width:500px) {
   
   header {
+    height: 300px;
     font-size: 35px;
   }
   .content-header {
