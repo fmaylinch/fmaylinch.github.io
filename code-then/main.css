@@ -27,7 +27,7 @@ h1 {
 }
 
 main {
-  padding: 0px 80px;
+  padding: 0 80px;
 }
 
 @media (min-width:501px) {
@@ -47,7 +47,11 @@ main {
     background: #f4f4f4;
   }
   main {
-    padding: 0px 20px;
+    padding: 0 20px;
+  }
+  footer {
+    height: 70px;
+    padding: 0 20px;
   }
 }
 
