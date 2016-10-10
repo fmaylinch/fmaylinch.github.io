@@ -30,6 +30,29 @@ main {
   padding: 0 80px;
 }
 
+.contents-cursor {
+  color: lightgrey;
+}
+
+.clickable:hover  {
+  text-decoration: underline;
+}
+
+footer {
+  color: white;
+  margin-top: 50px;
+  height: 100px;
+  background-image: url(stars.jpg);
+  background-position: center 30%;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+}
+
+footer a {
+  color: white;
+}
+
 @media (min-width:501px) {
   .mobile-separator {
     display: none;
@@ -53,29 +76,6 @@ main {
     height: 70px;
     padding: 0 20px;
   }
-}
-
-.contents-cursor {
-  color: lightgrey;
-}
-
-.clickable:hover  {
-  text-decoration: underline;
-}
-
-footer {
-  color: white;
-  margin-top: 50px;
-  height: 100px;
-  background-image: url(stars.jpg);
-  background-position: center 30%;
-  padding: 0 80px;
-  display: flex;
-  align-items: center;
-}
-
-footer a {
-  color: white;
 }
 
 /* Typed: animated blinking cursor */
