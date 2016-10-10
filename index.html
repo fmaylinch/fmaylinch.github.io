@@ -2,79 +2,318 @@
 <html lang="en">
 
 <head>
-	<title>Ferran Maylinch</title>
+  <title>Code Then</title>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- https://necolas.github.io/normalize.css/ -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<!-- Our (processed) CSS -->
-	<link rel="stylesheet" href="css/generated/main.css">
+  <!-- normalize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
 
-	<!-- jQuery (not minified) -->
-	<script src="js/jquery-2.2.1.js"></script>
-
-	<!-- Browser header color -->
-    <meta name="theme-color" content="#3E5A73"> <!-- Chrome, Firefox OS and Opera -->
-    <meta name="msapplication-navbutton-color" content="#3E5A73"> <!-- Windows Phone -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#3E5A73"> <!-- iOS Safari -->
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  
+  <!-- our css -->
+  <link rel="stylesheet" href="code-then/main.css">
 
 </head>
 
 <body>
+  
+  <!-- TODO: teacher with +10 years of experience in teaching and developing -->
 
-	<div class="main">
+  <header>
+    
+    <div>
+      <span>Code then...</span>
+      <br class="mobile-separator">
+      <span id="typed"/>
+    </div>
+    
+  </header>
 
-		<nav>
-			Ferran Maylinch
-		</nav>
+  <div class="content-header">
+    We teach you what you need to know about <code>code</code>, <code>then</code> what comes next is up to you. The possiblities are endless.
+  </div>
+        
+  <main>
+  
+    <h1>Philosophy<span class="contents-cursor typed-cursor">_</span></h1>
+    
+    <ul>
+      <li>Go into detail about programming to achieve a <strong>strong knowledge of core concepts</strong>.</li>
+      <li>Stress the <strong>importance of good code</strong>: indentation, meaningful names, documentation, avoid repetition, tests, ...</li>
+      <li><strong>Two classes per week</strong> so you can better assimilate what you learn.</li>
+      <li>Excercises so you can <strong>practice at home</strong>, with support from us when necessary.</li>
+      <li><strong>Up-to-date technologies</strong> that are in demand: git, flexbox, sass, angular, Java 8, reactive streams, SQL, No SQL, ...</li>
+      <li>Comparison between <strong>different languages</strong> (Java, JavaScript, Ruby, Python, Scala) to better understand the core concepts of coding.</li>
+      <li><strong>We care about what you learn</strong>.</li>
+    </ul>
+    
+    <h1>Course contents<span class="contents-cursor typed-cursor">_</span></h1>
+    
+    <p>
+      <button id="expand">Expand all</button>
+      <button id="collapse">Collapse all</button>
+    </p>
+    
+    <ol>
+     
+      <li>
+        <span class="clickable">The computer</span>
+        <ul>
+          <li>CPU</li>
+          <li>Memory (HD and RAM)</li>
+          <li>Input and output devices</li>
+          <li>Operative system</li>
+          <li>File system</li>
+          <li>Command line (terminal)</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Intro to programs</span>
+        <ul>
+          <li>High and low level Languages</li>
+          <li>Instructions/statements, flow</li>
+          <li>Code editors: Sublime, Brackets, Atom</li>
+          <li>First <em>Hello World</em> program</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Variables</span>
+        <ul>
+          <li>Definition, purpose, syntax, naming</li>
+          <li>Types: number, text, boolean</li>
+          <li>Values: literal, calculated</li>
+          <li>Declaration, assignment</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Expressions</span>
+        <ul>
+          <li>Definition, type, value</li>
+          <li>Math operators: <code>+ - * / %</code></li>
+          <li>Comparison operators: <code>== != &lt; &gt; &lt;= &gt;=</code></li>
+          <li>Shortcuts: <code>+= -= *= /=</code></li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Flow control</span>
+        <ul>
+          <li>Condition: <code>if/else</code>, <code>switch</code></li>
+          <li>Loop: <code>while</code>, <code>for</code></li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Advanced editors (IDEs)</span>
+        <ul>
+          <li>Eclipse</li>
+          <li>IntelliJ IDEA</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Functions</span>
+        <ul>
+          <li>Definition, purpose: avoid repetition, organise code</li>
+          <li>Declaration vs call</li>
+          <li>Parameters, arguments</li>
+          <li>Return type, return value</li>
+          <li>Pitfall: printing is not returning</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Version control systems</span>
+        <ul>
+          <li>Code repositories, versions, collaboration</li>
+          <li>Git (tool)</li>
+          <li>GitHub (site for repositories)</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Errors, testing</span>
+        <ul>
+          <li>It's easy to break code</li>
+          <li>Tests, automated tests</li>
+          <li>Exceptions: <code>try catch finally</code></li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">OOP (Classes, objects)</span>
+        <ul>
+          <li>Class (type)</li>
+          <li>Object (value)</li>
+          <li>Fields (variables inside a class)</li>
+          <li>Methods (functions inside a class)</li>
+          <li>The implicit variable <code>this</code></li>
+          <li>Constructor</li>
+          <li>Class members</li>
+        </ul>
+      </li>
 
-		<div class="content">
+      <li>
+        <span class="clickable">OOP: pointers and inheritance</span>
+        <ul>
+          <li>Pointers</li>
+          <li>Arguments by value or reference</li>
+          <li>Inheritance</li>
+          <li>Interfaces</li>
+        </ul>
+      </li>
 
-			<section>
+      <li>
+        <span class="clickable">Collections</span>
+        <ul>
+          <li>Lists and arrays</li>
+          <li>Maps/dictionaries</li>
+          <li>Trees</li>
+          <li>Sets</li>
+        </ul>
+      </li>
 
-				<h3>Info</h3>
+      <li>
+        <span class="clickable">Problem analysis</span>
+        <ul>
+          <li>Importance of naming</li>
+          <li>Divide and conquer</li>
+          <li>Very simple exercises: use variables, operators, <code>if</code>, <code>while</code>, collections</li>
+          <li>Intermediate exercises: organise code into functions</li>
+          <li>Complex exercises: detect classes, fields, organise code into classes and their methods</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Useful JDK classes</span>
+        <ul>
+          <li>JDK</li>
+          <li>Date, Math, String, wrappers (Integer, Double, etc)</li>
+          <li>IO streams, readers and writers</li>
+        </ul>
+      </li>                        
+      
+      <li>
+        <span class="clickable">Third party libraries</span>
+        <ul>
+          <li>Maven</li>
+          <li>Use a library: <code>commons-lang</code></li>
+          <li>Store objects as <code>JSON</code> using another library: <code>gson</code></li>
+          <li>Preview of JavaScript: JSON in action</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Callbacks and reactive streams</span>
+        <ul>
+          <li>Callbacks (functions as arguments)</li>
+          <li>Java 8 lambdas</li>
+          <li>Java 8 reactive streams</li>
+          <li>Map and filter collections (using custom code and streams)</li>
+          <li>See callbacks in other languages (e.g. JavaScript, Ruby)</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Advanced programming concepts</span>
+        <ul>
+          <li>Design patters (e.g. observer, template)</li>
+          <li>TDD</li>
+          <li>Regular expressions (optional)</li>
+          <li>Reflection (optional)</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Frontend (HTML/CSS)</span>
+        <ul>
+          <li>Browsers (display HTML/CSS)</li>
+          <li>HTML (XML) : content</li>
+          <li>CSS : style and layout</li>
+          <li>Flexbox : easier layout</li>
+          <li>CSS Media queries</li>
+          <li>Bootstrap : layout and style, responsive</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Frontend (JavaScript)</span>
+        <ul>
+          <li>JavaScript</li>
+          <li>jQuery</li>
+          <li>AJAX</li>
+        </ul>
+      </li>
 
-				<div class="section-content">
-					<p>
-						I'm a full-stack + mobile developer and teacher. You can contact me by <a href="mailto:ferran.maylinch@gmail.com">email</a> or <a href="https://www.linkedin.com/in/ferranmaylinch">LinkedIn</a>.
-					</p>
-				</div>
+      <li>
+        <span class="clickable">Frontend (advanced JS and CSS)</span>
+        <ul>
+          <li>Google Maps</li>
+          <li>NodeJS</li>
+          <li>SASS</li>
+          <li>Autoprefixer</li>
+          <li>AngularJS</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Connect frontend and backend</span>
+        <ul>
+          <li>Frameworks (Spring, Play, Dropwizard, Grails, JSF, ...)</li>
+          <li>Example: jQuery/AngularJS + API Dropwizard</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Databases</span>
+        <ul>
+          <li>Intro to DBs: tables and SQL</li>
+          <li>SQL</li>
+          <li>JDBC: SQL from Java</li>
+          <li>JPA: "automatic" SQL mapping</li>
+          <li>No-SQL databases, MongoDB</li>
+        </ul>
+      </li>
+      
+      <li>
+        <span class="clickable">Publish complete project to Heroku</span>
+        <ul>
+          <li>Frontend</li>
+          <li>Backend</li>
+          <li>Persistence</li>
+          <li>Deploy (Heroku)</li>
+        </ul>
+      </li>
+      
+    </ol>
+    
+    <h1>Contact<span class="contents-cursor typed-cursor">_</span></h1>
+    
+    <p>Any question? Interested? Write us to <a target="_blank" href="mailto:codethen@gmail.com?subject=About Code Then">codethen@gmail.com</a></p>
 
-			</section>
-			
-			<section>
-				
-				<h3>Resources</h3>
-
-				<div class="section-content">
-					<ul>
-
-						<li><a href="jess.html">Jess app</a> : Android app to practice JavaScript on the go!</li>
-						
-                        <li><a target="_blank" href="html-tutorial/index.html">HTML/CSS Tutorial</a> : Quick and painless introduction to HTML and CSS</li>
-
-                        <li><a target="_blank" href="code-tutorial/index.html">Programming tutorial</a> <em>(in progress)</em></li>
-
-						<li><a target="_blank" href="room-cleaner/index.html">Room Cleaner JS</a> : A JavaScript game with code to <em>clean</em>!</li>
-
-						<li><a target="_blank" href="https://gist.github.com/fmaylinch/4a708abcdb42bf2330e5"> Code cheat sheet</a> : Comparison between some languages</li>
-                      
-						<li><a target="_blank" href="https://gist.github.com/fmaylinch/fd5985aa4ed04ce3eba0"> About callbacks and reactive streams</a> <em>(in progress)</em></li>
-                      
-						<li><a target="_blank" href="https://github.com/fmaylinch/LayoutHelperApp">LayoutHelperApp</a> : App and helper classes to code iOS layouts</li>
-						
-						
-
-					</ul>
-				</div>
-
-			</section>
-
-		</div>
-
-	</div>
+  </main>
+  
+  <footer>
+    <div>
+      by <a target="_blank" href="fmaylinch.html">Ferran Maylinch</a>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  <!-- http://www.mattboldt.com/demos/typed-js/ -->
+  <script src="code-then/typed.min.js"></script>
+  <!-- our js -->
+  <script src="code-then/main.js"></script>
 
 </body>
+
 </html>

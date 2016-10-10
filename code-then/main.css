@@ -60,10 +60,18 @@ main {
 }
 
 footer {
+  color: white;
   margin-top: 50px;
   height: 100px;
   background-image: url(stars.jpg);
   background-position: center 30%;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+}
+
+footer a {
+  color: white;
 }
 
 /* Typed: animated blinking cursor */
