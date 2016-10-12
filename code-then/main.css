@@ -30,6 +30,15 @@ main {
   padding: 0 80px;
 }
 
+ol {
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+}
+
 .contents-cursor {
   color: lightgrey;
 }

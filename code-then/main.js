@@ -3,9 +3,10 @@ $(function() {
   displayTyped();  
   collapseContentDetails();
   setupContentButtons();
+  setupListItemNumbering();
 });
 
-
+// Display dynamically typed message
 function displayTyped() {
  
   $("#typed").typed({
@@ -15,6 +16,7 @@ function displayTyped() {
   });
 }
 
+// Collapse contents and make each section clickable (for toggling it)
 function collapseContentDetails() {
   
   $("ol ul").hide();
@@ -24,6 +26,7 @@ function collapseContentDetails() {
   });
 }
 
+// Setup buttons for expanding and collapsing contents
 function setupContentButtons() {
   
   $("#expand").click(function() {
@@ -32,5 +35,17 @@ function setupContentButtons() {
 
   $("#collapse").click(function() {
     $("ol ul").slideUp();
+  });
+}
+
+// Sets <ol start="x"> so list numbering is continuous.
+function setupListItemNumbering() {
+  
+  var start = 1;
+  
+  $(".section-title").each(function() {
+    var ol = $(this).next();
+    ol.attr('start', start);
+    start += ol.children().length;
   });
 }
