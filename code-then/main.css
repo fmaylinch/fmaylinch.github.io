@@ -15,7 +15,16 @@ header {
   justify-content: center;
 }
 
+button {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
 
+button:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
 
 .content-header {
   padding: 40px 80px;
@@ -45,6 +54,7 @@ ol {
 
 .clickable:hover  {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 footer {
