@@ -15,15 +15,26 @@ header {
   justify-content: center;
 }
 
+.highlight {
+  border: 1px solid darkgray;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
 button {
-  background-color: white;
+  background-color: rgb(80, 70, 160);
+  color: white;
   border: 1px solid grey;
   border-radius: 3px;
 }
 
 button:hover {
-  background-color: #f4f4f4;
+  background-color: rgb(95, 80, 190);
   cursor: pointer;
+}
+
+.milestone {
+  color: gray;
 }
 
 .content-header {
