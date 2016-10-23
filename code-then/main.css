@@ -15,6 +15,15 @@ header {
   justify-content: center;
 }
 
+.flag {
+  display: inline-flex;
+  position: absolute;
+  right: 50px;
+}
+.flag-text {
+  margin-left: 5px;
+}
+
 .highlight {
   border: 1px solid darkgray;
   padding: 10px;
@@ -47,6 +56,7 @@ h1 {
 }
 
 main {
+  position: relative;
   padding: 0 80px;
 }
 
@@ -98,6 +108,12 @@ footer a {
   .content-header {
     padding: 40px 20px;
     background: #f4f4f4;
+  }
+  .flag {
+    right: 20px;
+  }
+  .flag-text {
+    display: none;
   }
   main {
     padding: 0 20px;
