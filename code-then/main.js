@@ -1,10 +1,16 @@
 
 $(function() {
+  targetLinksToBlank();
   displayTyped();  
   collapseContentDetails();
   setupContentButtons();
   setupListItemNumbering();
 });
+
+// Set target="_blank" to links (except those with "target-self" class)
+function targetLinksToBlank() {
+  $("a:not(.target-self)").attr("target", "_blank");
+}
 
 // Display dynamically typed message
 function displayTyped() {
