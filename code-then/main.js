@@ -2,6 +2,7 @@
 $(function() {
   targetLinksToBlank();
   displayTyped();  
+  setupLanguageDropdown();
   collapseContentDetails();
   setupContentButtons();
   setupListItemNumbering();
@@ -19,6 +20,23 @@ function displayTyped() {
     strings: ["^500 Get a job", "^500 Build your idea", "^500 Have fun", "^500 Anything."],
     typeSpeed: 40,
     cursorChar: '_'
+  });
+}
+
+function setupLanguageDropdown() {
+  
+  var speed = 'fast';
+  
+  // Toggle dropdown
+  $('#language-button').click(function(event) {
+    event.preventDefault();
+    $('#languages').slideToggle(speed);
+  });
+  
+  // Current language just closes dropdown
+  $('#current-language').click(function(event) {
+    event.preventDefault();
+    $('#languages').slideUp(speed);
   });
 }
 

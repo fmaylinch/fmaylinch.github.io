@@ -2,6 +2,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dashed black;
+}
+
 header {
   background-image: url(stars.jpg);
   background-position: center center;
@@ -21,13 +27,31 @@ header {
   margin-right: 7px;
 }
 
-.flag {
-  display: inline-flex;
+.language-selector {
   position: absolute;
   right: 50px;
 }
-.flag-text {
+#language-button {
+  display: inline-block;
+  width: 120px;
+}
+.language-selector a {
+  border: none;
+}
+.flag-link {
+  display: flex;
+  margin-top: 8px;
+}
+.language-text {
   margin-left: 5px;
+}
+#languages {
+  display: none;
+  background: white;
+  margin-top: 7px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  padding-bottom: 5px;
 }
 
 .highlight {
@@ -121,10 +145,17 @@ footer a {
     padding: 40px 20px;
     background: #f4f4f4;
   }
+  .language-selector {
+    position: absolute;
+    right: 20px;
+  }
+  #language-button {
+    width: 46px;
+  }
   .flag {
     right: 20px;
   }
-  .flag-text {
+  .language-text {
     display: none;
   }
   main {
