@@ -1,3 +1,8 @@
+
+$main-color: #3E5A73;
+
+* { box-sizing: border-box; }
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -9,7 +14,7 @@ a {
 }
 
 header {
-  background-image: url(stars.jpg);
+  background-image: url(../../code-then/stars.jpg);
   background-position: center center;
   height: 400px;
   color: white;
@@ -112,7 +117,7 @@ footer {
   color: white;
   margin-top: 50px;
   height: 100px;
-  background-image: url(stars.jpg);
+  background-image: url(../../code-then/stars.jpg);
   background-position: center 30%;
   padding: 0 80px;
   display: flex;
