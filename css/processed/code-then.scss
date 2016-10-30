@@ -1,5 +1,8 @@
+/* You can try SASS code here: http://www.sassmeister.com/ */
 
-$main-color: #3E5A73;
+$main-color: rgb(80, 70, 160);
+$main-color-light: rgb(100, 85, 200);
+$main-color-faint: rgb(150, 140, 240);
 
 * { box-sizing: border-box; }
 
@@ -10,7 +13,12 @@ body {
 a {
   color: black;
   text-decoration: none;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dotted gray;
+}
+
+a:hover {
+  color: $main-color-light;
+  border-bottom: 1px solid $main-color-light;
 }
 
 header {
@@ -24,6 +32,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header > div {
+  display: none;
 }
 
 .title-icon {
@@ -66,14 +78,21 @@ header {
 }
 
 button {
-  background-color: rgb(80, 70, 160);
+  background-color: $main-color;
   color: white;
   border: 1px solid grey;
   border-radius: 3px;
+  padding: 5px 12px;
+}
+#collapse {
+  display: none;
+}
+#expand {
+  margin-right: 20px;
 }
 
 button:hover {
-  background-color: rgb(95, 80, 190);
+  background-color: $main-color-light;
   cursor: pointer;
 }
 
@@ -98,6 +117,19 @@ main {
 ol {
   margin-top: 3px;
   margin-bottom: 10px;
+  padding-left: 20px;
+
+  > li {
+    list-style: none;
+  
+    > i {
+      color: $main-color-faint;
+    }
+  }
+  
+  ul {
+    display: none;
+  }
 }
 
 .section-title {
@@ -109,7 +141,8 @@ ol {
 }
 
 .clickable:hover  {
-  text-decoration: underline;
+  color: $main-color-light;
+  border-bottom: 1px dotted $main-color-light;
   cursor: pointer;
 }
 

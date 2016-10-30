@@ -1,3 +1,4 @@
+/* You can try SASS code here: http://www.sassmeister.com/ */
 * {
   box-sizing: border-box; }
 
@@ -7,7 +8,11 @@ body {
 a {
   color: black;
   text-decoration: none;
-  border-bottom: 1px dashed black; }
+  border-bottom: 1px dotted gray; }
+
+a:hover {
+  color: #6455c8;
+  border-bottom: 1px solid #6455c8; }
 
 header {
   background-image: url(../../code-then/stars.jpg);
@@ -26,6 +31,9 @@ header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+
+header > div {
+  display: none; }
 
 .title-icon {
   height: 45px;
@@ -69,10 +77,17 @@ button {
   background-color: #5046a0;
   color: white;
   border: 1px solid grey;
-  border-radius: 3px; }
+  border-radius: 3px;
+  padding: 5px 12px; }
+
+#collapse {
+  display: none; }
+
+#expand {
+  margin-right: 20px; }
 
 button:hover {
-  background-color: #5f50be;
+  background-color: #6455c8;
   cursor: pointer; }
 
 .milestone {
@@ -91,7 +106,14 @@ main {
 
 ol {
   margin-top: 3px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding-left: 20px; }
+  ol > li {
+    list-style: none; }
+    ol > li > i {
+      color: #968cf0; }
+  ol ul {
+    display: none; }
 
 .section-title {
   font-weight: bold; }
@@ -100,7 +122,8 @@ ol {
   color: lightgrey; }
 
 .clickable:hover {
-  text-decoration: underline;
+  color: #6455c8;
+  border-bottom: 1px dotted #6455c8;
   cursor: pointer; }
 
 footer {

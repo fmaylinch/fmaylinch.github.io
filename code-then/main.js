@@ -15,9 +15,11 @@ function targetLinksToBlank() {
 
 // Display dynamically typed message
 function displayTyped() {
- 
+  
+  $('header > div').fadeIn(2000);
+  
   $("#typed").typed({
-    strings: ["^500 Get a job", "^500 Build your idea", "^500 Have fun", "^500 Anything."],
+    strings: ["^2500 Get a job", "^500 Build your idea", "^500 Have fun", "^500 Anything."],
     typeSpeed: 40,
     cursorChar: '_'
   });
@@ -43,10 +45,13 @@ function setupLanguageDropdown() {
 // Collapse contents and make each section clickable (for toggling it)
 function collapseContentDetails() {
   
-  $("ol ul").hide();
-  
   $("ol > li").click(function() {
+    $("#collapse").show();
     $(this).find("ul").slideToggle();
+  });
+  
+  $("ol > li").each(function() {
+    $(this).prepend('<i class="fa fa-caret-down faint" aria-hidden="true"></i>');
   });
 }
 
@@ -54,6 +59,7 @@ function collapseContentDetails() {
 function setupContentButtons() {
   
   $("#expand").click(function() {
+    $("#collapse").show();
     $("ol ul").slideDown();
   });
 
