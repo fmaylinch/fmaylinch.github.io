@@ -47,6 +47,9 @@ function collapseContentDetails() {
   
   $("ol > li").click(function() {
     $("#collapse").show();
+    $(this).find('i')
+      .toggleClass('fa-caret-down')
+      .toggleClass('fa-caret-up');
     $(this).find("ul").slideToggle();
   });
   
@@ -59,11 +62,13 @@ function collapseContentDetails() {
 function setupContentButtons() {
   
   $("#expand").click(function() {
-    $("#collapse").show();
+    $("ol > li > i").removeClass("fa-caret-down").addClass("fa-caret-up");
     $("ol ul").slideDown();
+    $("#collapse").show();
   });
 
   $("#collapse").click(function() {
+    $("ol > li > i").removeClass("fa-caret-up").addClass("fa-caret-down");
     $("ol ul").slideUp();
   });
 }
