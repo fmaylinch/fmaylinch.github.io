@@ -16,10 +16,11 @@ import java.util.*; // Loads extra utilities
  * rename it, e.g. AnotherProgram.java,
  * and also change the class name right here below this line.
  */
+
 public class MyProgram { // The class name must match the file name
 
+	// Ignore this for now
 	public static void main(String[] args) {
-
 		new MyProgram().run(args);
 	}
 
@@ -29,7 +30,11 @@ public class MyProgram { // The class name must match the file name
 		// Your program starts here.
 		// It was loaded to RAM and starts running.
 
-		System.out.println("Hello there!");
+		System.out.println("I'm starting!");
+
+		System.out.println("I'm still running.");
+		
+		System.out.println("Uh oh, I'm reaching the end!");
 
 		//  The program ends here.
 		// It will stop and removed from RAM.
