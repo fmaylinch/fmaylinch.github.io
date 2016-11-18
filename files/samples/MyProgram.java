@@ -19,13 +19,7 @@ import java.util.*; // Loads extra utilities
 
 public class MyProgram { // The class name must match the file name
 
-	// Ignore this for now
 	public static void main(String[] args) {
-		new MyProgram().run(args);
-	}
-
-
-	void run(String[] args) {
 
 		// Your program starts here.
 		// It was loaded to RAM and starts running.
