@@ -4,12 +4,12 @@ import java.util.*; // Loads extra utilities
 /**
  * This is a example program.
  * Open the Terminal and go to the folder where this file is located.
- * Compile with: javac MyProgram.java
+ * Compile with: javac JavaSample.java
  * Compilation will check the code.
  * - If there's something wrong you will see an error.
- * - If it's right it doesn't say anything and generates MyProgram.class
- * The MyProgram.class file is the executable (runnable) file.
- * Run the program with: java MyProgram
+ * - If it's right it doesn't say anything and generates JavaSample.class
+ * The JavaSample.class file is the executable (runnable) file.
+ * Run the program with: java JavaSample
  * Note you don't include the class extension when running the program.
  *
  * To create a new program, you can copy this file,
@@ -17,7 +17,7 @@ import java.util.*; // Loads extra utilities
  * and also change the class name right here below this line.
  */
 
-public class MyProgram { // The class name must match the file name
+public class JavaSample { // The class name must match the file name
 
 	public static void main(String[] args) {
 
