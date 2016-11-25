@@ -1,7 +1,10 @@
 
 import java.util.*;
 
-public class ExpressionsSample {
+/**
+ *  Samples with expressions and conditions (if)
+ */
+public class ExpressionsIfSample {
 
 	public static void main(String[] args) {
 

@@ -1,7 +1,6 @@
 
 import java.util.*;
 
-
 /**
  *  Samples with loops (while, for)
  */
@@ -15,7 +14,7 @@ public class LoopsSample {
 		// equality:     ==  !=          operands are numbers (and more...)
 		// logic:        &&  ||  !       operands are booleans
 
-		// Remmber that a processor can:
+		// Remember that a processor can:
 		// 1- do simple math operations: + - * /
 		// 2- compare numbers: < > <= >= == !=
 		// 3- jump to any instruction in the program (used by: if, while, for)
