@@ -54,7 +54,7 @@ public class IfExercise {
 		// 4- Knowing that, let's say you have some price and age variables, with some values.
 		// If the person is adult, you want to check the price, and if it's huge (more than 1000) you
 		// want to apply a discount (but only if person is adult).
-		// On the other side, if the person is not an adult, you check if the price eis small (less than 10);
+		// On the other side, if the person is not an adult, you check if the price is small (less than 10);
 		// in that case you just give the product for free (set price to 0).
 
 

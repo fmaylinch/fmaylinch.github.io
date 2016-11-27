@@ -37,13 +37,13 @@ public class LoopsExercise {
 		// 4 - Display all the numbers
 
 
-		// 5 - Display just the numbers at even positions (12, 3, 8)
+		// 5 - Display just the numbers at even positions: 14, 3, 6
 
 
 		// 6 - Calculate the sum of all numbers
 
 
-		// 7 - Calculate the sum of the numbers at odd positions (7, 2, 7, 3)
+		// 7 - Calculate the sum of the numbers at odd positions: 7, 2, 7, 3
 
 
 		// 8 - Calculate the average of the numbers (total sum divided by number)
