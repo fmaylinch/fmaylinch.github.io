@@ -10,7 +10,7 @@ public class LoopsExercise {
 	public static void main(String[] args) {
 
 		// We'll work with this array
-		int[] numbers = { 7, 14, 2, 3, 7, 6, 3 };
+		int[] numbers = { 7, 14, 2, 7, 3, 6, 3 };
 
 
 		// For the exercises, suppose that you
@@ -37,13 +37,13 @@ public class LoopsExercise {
 		// 4 - Display all the numbers
 
 
-		// 5 - Display just the numbers at even positions: 14, 3, 6
+		// 5 - Display just the numbers at even positions: 14, 7, 6
 
 
 		// 6 - Calculate the sum of all numbers
 
 
-		// 7 - Calculate the sum of the numbers at odd positions: 7, 2, 7, 3
+		// 7 - Calculate the sum of the numbers at odd positions: 7, 2, 3, 3
 
 
 		// 8 - Calculate the average of the numbers (total sum divided by number)
