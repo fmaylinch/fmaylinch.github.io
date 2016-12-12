@@ -9,7 +9,6 @@ public class SmartHouseSample {
 		Tv tv = controller.getTv();
 
 		System.out.println("Oven: " + oven.toString());
-		System.out.println("Tv: " + tv.toString());
-
+		System.out.println("Tv: " + tv); // implicit call to toString()
 	}
 }
