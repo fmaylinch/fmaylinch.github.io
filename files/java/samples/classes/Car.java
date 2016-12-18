@@ -15,14 +15,11 @@ public class Car {
 	}
 
 	public String getBrand() {
-		return brand;
+		return this.brand;
 	}
 
-	// We don't make a setBrand() method, because we don't want to
-	// let the users of this class change it
-
 	public int getSpeed() {
-		return speed;
+		return this.speed;
 	}
 
 	public void setSpeed(int speed) {
@@ -34,5 +31,10 @@ public class Car {
 			// (it's up to the class developer)
 			throw new RuntimeException("Wrong speed: " + speed);
 		}
+	}
+
+	// We also implement toString(), to get a description of the car
+	public String toString() {
+		return this.brand + " at " + this.speed + "km/h";
 	}
 }

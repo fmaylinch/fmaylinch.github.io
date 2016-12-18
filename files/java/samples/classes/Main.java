@@ -2,8 +2,6 @@ package classes;
 
 /**
  * Example of how we build a correct class.
- *
- * Before the
  */
 public class Main {
 
@@ -24,7 +22,10 @@ public class Main {
 
 		Car car4 = new Car("Seat");
 		// car4.setBrand("Renault"); // We can't change the brand
-		car4.setSpeed(50); // We can set reasonable values
-		car4.setSpeed(-50); // If we do this, the program will crash, so we can't use weird values
+		car4.setSpeed(100); // We can set reasonable values
+		System.out.println("About the car: " + car4); // info about the car, produced by the toString() method
+
+		// TODO: uncomment this line and see what happens
+		// car4.setSpeed(-50); // If we do this, the program will crash, so we can't use weird values
 	}
 }

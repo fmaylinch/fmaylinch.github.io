@@ -19,7 +19,7 @@ public class CarV3 {
 	// let the users of this class change it
 
 	public int getSpeed() {
-		return speed;
+		return this.speed;
 	}
 
 	public void setSpeed(int speed) {
