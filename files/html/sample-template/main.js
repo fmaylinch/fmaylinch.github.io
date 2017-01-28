@@ -81,6 +81,7 @@ let options = document.querySelectorAll(".menu span");
 console.log(options);
 
 // For each option, when it's clicked: change the header to green
+// This is like in Java: for (Element option : options) { ... }
 for (let option of options) {
   option.onclick = changeHeaderToGreen;
 }
