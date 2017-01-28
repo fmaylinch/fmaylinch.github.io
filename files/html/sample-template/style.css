@@ -1,0 +1,62 @@
+
+header {
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.highlight-border {
+  border: 5px solid blue;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu > span {
+  margin: 10px;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+.image {
+  background-image: url('images/apples.jpg');
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image h1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 100px;
+}
+
+main {
+  padding-top: 20px;
+}
+
+.paragraphs > div {
+  font-size: 20px;
+}
+
+@media(max-width:767px) {
+  .paragraphs p {
+    padding: 20px;
+  }
+}
