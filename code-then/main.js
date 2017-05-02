@@ -1,7 +1,7 @@
 
 $(function() {
   targetLinksToBlank();
-  displayTyped();  
+  displayTyped();
   setupLanguageDropdown();
   collapseContentDetails();
   setupContentButtons();
@@ -15,26 +15,26 @@ function targetLinksToBlank() {
 
 // Display dynamically typed message
 function displayTyped() {
-  
+
   $('header > div').fadeIn(2000);
-  
+
   $("#typed").typed({
-    strings: ["^2500 Get a job", "^500 Build your idea", "^500 Have fun", "^500 Anything."],
+    strings: ["^2500get a job", "^500build your idea", "^500have fun", "^500do anything"],
     typeSpeed: 40,
-    cursorChar: '_'
+    cursorChar: ''
   });
 }
 
 function setupLanguageDropdown() {
-  
+
   var speed = 'fast';
-  
+
   // Toggle dropdown
   $('#language-button').click(function(event) {
     event.preventDefault();
     $('#languages').slideToggle(speed);
   });
-  
+
   // Current language just closes dropdown
   $('#current-language').click(function(event) {
     event.preventDefault();
@@ -44,15 +44,16 @@ function setupLanguageDropdown() {
 
 // Collapse contents and make each section clickable (for toggling it)
 function collapseContentDetails() {
-  
-  $("ol > li").click(function() {
+
+  $("ol > li > span").click(function() {
     $("#collapse").show();
-    $(this).find('i')
+    var li = $(this).parent();
+    li.find('i')
       .toggleClass('fa-caret-down')
       .toggleClass('fa-caret-up');
-    $(this).find("ul").slideToggle();
+    li.find("ul").slideToggle();
   });
-  
+
   $("ol > li").each(function() {
     $(this).prepend('<i class="fa fa-caret-down faint" aria-hidden="true"></i>');
   });
@@ -60,7 +61,7 @@ function collapseContentDetails() {
 
 // Setup buttons for expanding and collapsing contents
 function setupContentButtons() {
-  
+
   $("#expand").click(function() {
     $("ol > li > i").removeClass("fa-caret-down").addClass("fa-caret-up");
     $("ol ul").slideDown();
@@ -75,9 +76,9 @@ function setupContentButtons() {
 
 // Sets <ol start="x"> so list numbering is continuous.
 function setupListItemNumbering() {
-  
+
   var start = 1;
-  
+
   $(".section-title").each(function() {
     var ol = $(this).next();
     ol.attr('start', start);

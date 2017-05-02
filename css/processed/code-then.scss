@@ -1,13 +1,18 @@
 /* You can try SASS code here: http://www.sassmeister.com/ */
 
+$main-color-dark: #42388a;
 $main-color: rgb(80, 70, 160);
 $main-color-light: rgb(100, 85, 200);
-$main-color-faint: rgb(150, 140, 240);
+$main-color-lighter: rgb(139, 130, 219);
+$main-color-lightest: rgb(203, 198, 255);
+
+$font-code-then: 'Verdana', Geneva, sans-serif;
+$font-text: 'Open Sans', sans-serif;
 
 * { box-sizing: border-box; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font-text;
 }
 
 a {
@@ -17,21 +22,37 @@ a {
 }
 
 a:hover {
-  color: $main-color-light;
-  border-bottom: 1px solid $main-color-light;
+  color: $main-color-lighter;
+  border-bottom: 1px solid $main-color-lighter;
 }
 
 header {
+  /*
   background-image: url(../../code-then/stars.jpg);
   background-position: center center;
+  */
+  font-family: $font-code-then;
+  background-color: $main-color;
   height: 400px;
   color: white;
   font-size: 55px;
   text-align: center;
-  text-shadow: 2px 2px #000000;
+  /* text-shadow: 2px 2px #000000; */
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .symbol {
+    color: $main-color-dark;
+
+    &.dot {
+      font-family: $font-text;
+    }
+  }
+
+  .then {
+    color: $main-color-lightest;
+  }
 }
 
 header > div {
@@ -103,6 +124,10 @@ button:hover {
 .content-header {
   padding: 40px 80px;
   background: #f4f4f4;
+
+  code {
+    font-family: $font-code-then;
+  }
 }
 
 h1 {
@@ -121,12 +146,12 @@ ol {
 
   > li {
     list-style: none;
-  
+
     > i {
-      color: $main-color-faint;
+      color: $main-color-lighter;
     }
   }
-  
+
   ul {
     display: none;
   }
@@ -150,21 +175,29 @@ footer {
   color: white;
   margin-top: 50px;
   height: 100px;
+  background-color: $main-color;
+  /*
   background-image: url(../../code-then/stars.jpg);
   background-position: center 30%;
+  */
   padding: 0 80px;
   display: flex;
   align-items: center;
-}
 
-footer > div {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}   
+  a {
+    color: white;
+  }
 
-footer a {
-  color: white;
+  a:hover {
+    color: $main-color-lightest;
+    border-bottom: 1px solid $main-color-lightest;
+  }
+
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width:501px) {
@@ -174,7 +207,7 @@ footer a {
 }
 
 @media (max-width:500px) {
-  
+
   header {
     height: 300px;
     font-size: 35px;

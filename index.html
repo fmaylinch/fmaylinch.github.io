@@ -21,32 +21,38 @@
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <script src="https://use.fontawesome.com/486de957b6.js"></script>
-  
+
   <!-- our css -->
   <link rel="stylesheet" href="css/generated/code-then.css">
 
 </head>
 
 <body>
-  
+
   <!-- TODO: teacher with +10 years of experience in teaching and developing -->
 
   <header>
-    
+
     <div>
-      <span>Code then...</span>
-      <br class="mobile-separator">
-      <span id="typed"/>
+      <!--
+      --><span>code</span><!--
+      --><span class="symbol dot">.</span><!--
+      --><span class="then">then</span><!--
+      --><br class="mobile-separator"><!--
+      --><span class="symbol">(</span><!--
+      --><span id="typed"></span><!--
+      --><span class="symbol">)</span><!--
+      -->
     </div>
-    
+
   </header>
 
   <div class="content-header">
     Learn to <code>code</code>, <code>then</code> what comes next is up to you. The possibilities are endless.
   </div>
-        
+
   <main>
-  
+
     <div class="language-selector">
       <a id="language-button" href="#"><i class="fa fa-globe" aria-hidden="true"></i> <span class="language-text">Language</span> &nbsp; <i class="fa fa-caret-down" aria-hidden="true"></i></a>
       <div id="languages">
@@ -55,9 +61,9 @@
       </div>
     </div>
 
-      
+
     <h1><img class="title-icon" src="code-then/icons/ying-yang.svg"> Philosophy<span class="contents-cursor typed-cursor">_</span></h1>
-    
+
     <ul>
       <li>Coding is <strong>fun, useful, creative, rewarding</strong> and <strong>anyone can learn it</strong> given enough interest.</li>
       <li>We'll go into detail about programming to achieve a <strong>strong knowledge of core concepts</strong>.</li>
@@ -69,11 +75,11 @@
       <li>Comparison between <strong>different languages</strong> (Java, JavaScript, Ruby, Python, Scala) to better understand the core concepts of coding.</li>
       <li><strong>I care about what you learn</strong>.</li>
     </ul>
-    
-    
+
+
     <h1><img class="title-icon" src="code-then/icons/profile.svg"> About me<span class="contents-cursor typed-cursor">_</span></h1>
- 
- 
+
+
     <ul>
       <li>My name is <a href="https://www.linkedin.com/in/ferranmaylinch">Ferran Maylinch</a>.</li>
       <li>Back-end, front-end and mobile developer for +10 years, currently at <a href="https://www.gymforless.com">GymForLess</a>.</li>
@@ -81,23 +87,23 @@
       <li>Studied at <a href="http://www.upc.edu">UPC</a>, where I also started teaching.</li>
       <li>I like <a href="https://open.spotify.com/user/1134322859/playlist/60ljoz5G5Aam1PYDK0puo5">music</a>, <a href="http://www.filmaffinity.com/es/userratings.php?user_id=182676&orderby=0">movies</a>, sports and <a href="https://androidapping.wordpress.com">videogames</a>. Oh, <a href="http://codethen.com/fmaylinch.html">coding and teaching too</a>!</li>
     </ul>
-    
-    
+
+
     <h1><img class="title-icon" src="code-then/icons/book.svg"> Course contents<span class="contents-cursor typed-cursor">_</span></h1>
-    
+
     <p class="highlight">
       <i class="fa fa-lightbulb-o fa-lg" aria-hidden="true"></i>&nbsp; You may <strong>bring your project idea</strong>, or I can suggest one.
       I can tailor the exercises to help you build your project step by step.
     </p>
-    
+
     <p>
       <button id="expand"><i class="fa fa-caret-down" aria-hidden="true"></i> Expand all</button>
       <button id="collapse"><i class="fa fa-caret-up" aria-hidden="true"></i> Collapse all</button>
     </p>
-    
+
     <span class="section-title">Intro</span>
     <ol>
-     
+
       <li>
         <span class="clickable">The computer</span>
         <ul>
@@ -109,7 +115,7 @@
           <li>Command line (terminal)</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Intro to programs</span>
         <ul>
@@ -119,11 +125,11 @@
           <li>First <em>Hello World</em> program</li>
         </ul>
       </li>
-      
+
     </ol>
     <span class="section-title">Basics</span>
     <ol>
-     
+
       <li>
         <span class="clickable">Variables</span>
         <ul>
@@ -133,7 +139,7 @@
           <li>Declaration, assignment</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Expressions</span>
         <ul>
@@ -143,7 +149,7 @@
           <li>Shortcuts: <code>+= -= *= /=</code></li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Flow control</span>
         <ul>
@@ -151,7 +157,7 @@
           <li>Loop: <code>while</code>, <code>for</code></li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Advanced editors (IDEs)</span>
         <ul>
@@ -159,7 +165,7 @@
           <li>IntelliJ IDEA</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Functions</span>
         <ul>
@@ -174,7 +180,7 @@
     </ol>
     <span class="section-title">Coding in the real world</span>
     <ol>
-      
+
       <li>
         <span class="clickable">Version control systems</span>
         <ul>
@@ -183,7 +189,7 @@
           <li>GitHub (site for repositories)</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Errors, testing</span>
         <ul>
@@ -194,12 +200,12 @@
       </li>
 
     </ol>
-    
+
     <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you know the most important concepts of programming (really) and you can create simple programs</p>
-    
+
     <span class="section-title">Classes and objects</span>
     <ol>
-      
+
       <li>
         <span class="clickable">OOP (Classes, objects)</span>
         <ul>
@@ -243,7 +249,7 @@
           <li>Complex exercises: detect classes (concepts), methods and properties</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Useful JDK classes</span>
         <ul>
@@ -251,8 +257,8 @@
           <li>Date, Math, String, wrappers (Integer, Double, etc)</li>
           <li>IO streams, readers and writers (e.g. for files)</li>
         </ul>
-      </li>                        
-      
+      </li>
+
       <li>
         <span class="clickable">Third-party libraries</span>
         <ul>
@@ -266,7 +272,7 @@
     </ol>
     <span class="section-title">Advanced</span>
     <ol>
-      
+
       <li>
         <span class="clickable">Callbacks and reactive streams</span>
         <ul>
@@ -277,7 +283,7 @@
           <li>See callbacks in other languages (e.g. JavaScript, Ruby)</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Advanced programming concepts</span>
         <ul>
@@ -289,9 +295,9 @@
           <li>Reflection (optional)</li>
         </ul>
       </li>
-      
+
     </ol>
-    
+
     <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you're a programmer, able to build command-line applications, and may choose any path you like</p>
 
     <span class="section-title">Frontend (web)</span>
@@ -308,7 +314,7 @@
           <li>Bootstrap : responsive layout and style</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">JavaScript</span>
         <ul>
@@ -330,12 +336,12 @@
       </li>
 
     </ol>
-    
+
     <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you can build a web interface for your application</p>
 
     <span class="section-title">Full stack</span>
     <ol>
-      
+
       <li>
         <span class="clickable">Connect frontend and backend</span>
         <ul>
@@ -343,7 +349,7 @@
           <li>Example: jQuery/AngularJS + API Dropwizard</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Databases</span>
         <ul>
@@ -354,7 +360,7 @@
           <li>No-SQL databases, MongoDB</li>
         </ul>
       </li>
-      
+
       <li>
         <span class="clickable">Publish complete project to Heroku</span>
         <ul>
@@ -364,15 +370,15 @@
           <li>Deploy (Heroku)</li>
         </ul>
       </li>
-      
+
     </ol>
-    
+
     <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you can build a complete web application with a database and put it online</p>
 
     <br>
-    
+
     <h3>Why I organized the contents this way</h3>
-    
+
     <p>
       Many courses start with frontend topics like HTML/CSS.
       That may be more visually appealing and (deceptively) easier to grasp,
@@ -384,20 +390,20 @@
     </p>
 
     <h1><img class="title-icon" src="code-then/icons/email.svg"> Contact<span class="contents-cursor typed-cursor">_</span></h1>
-    
+
     <p>Interested? Any question? Write me to <a href="mailto:codethen@gmail.com?subject=About Code Then">codethen@gmail.com</a>!</p>
 
   </main>
-  
+
   <footer>
     <div>
       <span>by <a href="http://codethen.com/fmaylinch.html">Ferran Maylinch</a></span>
       <span>icons by <a href="https://thenounproject.com/charlenehea/collection/ios-toolbar-icons-glyph/">Heah Poh Lin</a></span>
     </div>
   </footer>
-  
+
   <!-- Scripts -->
-  
+
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
   <!-- http://www.mattboldt.com/demos/typed-js/ -->
