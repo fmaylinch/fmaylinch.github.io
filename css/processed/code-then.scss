@@ -42,7 +42,12 @@ header {
   align-items: center;
   justify-content: center;
 
+  div {
+    display: none;
+  }
+
   .symbol {
+    display: none;
     color: $main-color-dark;
 
     &.dot {
@@ -55,7 +60,7 @@ header {
   }
 }
 
-header > div {
+.symbol.dot {
   display: none;
 }
 

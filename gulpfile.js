@@ -21,14 +21,16 @@ gulp.task('css', function () {
 // Starts a local server and opens the web page.
 // Any change in CSS or HTML files reloads the browser.
 gulp.task('watch', function() {
- 
+
  	browserSync.init({
         server: "./"
     });
 
     // Watch .css files
     gulp.watch('css/processed/*.scss', ['css', browserSync.reload]);
- 
+
  	// Watch .html files
     gulp.watch("*.html", [browserSync.reload]);
 });
+
+gulp.task('default', ['watch']);

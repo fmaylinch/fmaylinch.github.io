@@ -35,14 +35,17 @@ header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  header div {
+    display: none; }
   header .symbol {
+    display: none;
     color: #42388a; }
     header .symbol.dot {
       font-family: "Open Sans", sans-serif; }
   header .then {
     color: #cbc6ff; }
 
-header > div {
+.symbol.dot {
   display: none; }
 
 .title-icon {

@@ -1,7 +1,7 @@
 
 $(function() {
   targetLinksToBlank();
-  displayTyped();
+  fadeInAndTyped();
   setupLanguageDropdown();
   collapseContentDetails();
   setupContentButtons();
@@ -14,15 +14,46 @@ function targetLinksToBlank() {
 }
 
 // Display dynamically typed message
-function displayTyped() {
+function fadeInAndTyped() {
 
-  $('header > div').fadeIn(2000);
+  $('.symbol').fadeTo(1, 0.01); // Just to take space since it's display:none
+
+  $('header > div').fadeIn(3000);
+
+  setTimeout( function() {
+    $('.symbol').fadeTo(3000, 1.0);
+  }, 2000);
+
+  setTimeout( function() {
+    displayTyped();
+  }, 5000);
+}
+
+function displayTyped() {
 
   $("#typed").typed({
     strings: ["^2500get a job", "^500build your idea", "^500have fun", "^500do anything"],
     typeSpeed: 40,
     cursorChar: ''
   });
+}
+
+// Custom typed test
+function displayTypedTest() {
+
+  var typed = $("#typed");
+  var text = "do anything";
+  var i = 0;
+
+  function typer() {
+    typed.text( typed.text() + text[i] );
+    i++;
+    if (i < text.length) {
+      setTimeout(typer, 50);
+    }
+  }
+
+  typer();
 }
 
 function setupLanguageDropdown() {
