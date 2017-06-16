@@ -10,7 +10,6 @@ public class JavaSample2 { // The class name must match the file name
 	public static void main(String[] args) {
 
 
-
 		System.out.println("--- Variables, values and types ---");
 
 		int age; // variable declaration (`int` is for integer numbers)
@@ -24,7 +23,6 @@ public class JavaSample2 { // The class name must match the file name
 
 		String numberAsText = "15"; // In Java, a number between quotes is just text, can't be used in operations
 
-
 		// We can print any value
 		System.out.println(name);
 		System.out.println(age);
@@ -37,6 +35,7 @@ public class JavaSample2 { // The class name must match the file name
 		// when printing, a number and a string may look similar
 		System.out.println(age);
 		System.out.println(numberAsText);
+
 
 
 		System.out.println("--- Expressions ---");
@@ -86,7 +85,6 @@ public class JavaSample2 { // The class name must match the file name
 			number = number - 1;
 		}
 		System.out.println("number is finally: " + number);
-
 
 
 	}
