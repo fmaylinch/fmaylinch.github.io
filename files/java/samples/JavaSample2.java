@@ -15,7 +15,7 @@ public class JavaSample2 { // The class name must match the file name
 		int age; // variable declaration (`int` is for integer numbers)
 		age = 15; // variable assignation
 
-		double price = 5.95; // declaration + assignation (`double` is for floating-point numbers)
+		double price = 65.95; // declaration + assignation (`double` is for floating-point numbers)
 
 		boolean open = true; // booleans may contain true or false
 
@@ -71,7 +71,18 @@ public class JavaSample2 { // The class name must match the file name
 		if (price > 100) {
 			System.out.println("The product is expensive");
 		} else {
-			System.out.println("The product is cheap, it only costs " + price);
+			System.out.println("The product is not expensive, it costs " + price);
+		}
+
+		// Several `else if` may be chained, with or without a final `else`
+		if (price > 1000) {
+			System.out.println("The product is way too expensive");
+		} else if (price > 100) {
+			System.out.println("The product is a bit expensive");
+		} else if (price > 50) {
+			System.out.println("The product price is OK, not bad");
+		} else {
+			System.out.println("The product is very cheap");
 		}
 
 
