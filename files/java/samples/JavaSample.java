@@ -24,10 +24,10 @@ public class JavaSample { // The class name must match the file name
 		// Your program starts here.
 		// It was loaded to RAM and starts running.
 
-		System.out.println("I'm starting!");
+		System.out.println("I'm starting!"); // prints text on the screen
 
 		System.out.println("I'm still running.");
-		
+
 		System.out.println("Uh oh, I'm reaching the end!");
 
 		//  The program ends here.
