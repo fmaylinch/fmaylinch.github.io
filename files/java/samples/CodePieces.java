@@ -7,10 +7,10 @@ class CodePieces { // class declaration
 
 	// In Java the curly braces { } surround a block of instructions
 
-	public static void main(String[] args) { // function declaration
+	public static void main(String[] args) { // function declaration (`main` is the entry point in Java)
 
-		int price; // variable declaration
-		price = 200; // variable assignment (expression)
+		int price; // variable declaration (type is indicated in statically-typed languages)
+		price = 200; // variable assignment (variable = expression)
 
 		double discount = 0.1; // declaration + assignment
 
@@ -23,6 +23,8 @@ class CodePieces { // class declaration
 		double height = 1.70;
 		boolean adult = true;
 		String name = "Alex";
+
+		// Also: long (64-bit), float (32-bit), char
 
 
 		if (price > 1000) { // if (boolean expression)
