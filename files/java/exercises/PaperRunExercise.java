@@ -1,4 +1,13 @@
 
+/**
+ * Complete the missing code (see TODO tags).
+ * Then write the PaperRun up to when you enter
+ * the percent() function for the second time.
+ *
+ * Note: Add a println() statement inside calculateSavings()
+ * so it prints the total amount each month.
+ */
+
 class PaperRunExercise {
 
 	public static void main(String[] args) {
