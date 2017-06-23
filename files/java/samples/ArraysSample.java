@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 class ArraysSample {
 
 	public static void main(String[] args) {
@@ -17,6 +20,15 @@ class ArraysSample {
 		for (int number : numbers) {
 			System.out.println(number); // we don't have the index in this case
 		}
+
+
+		System.out.println("--- Printing arrays ---");
+
+		// By default, Java prints arrays in a weird way
+		System.out.println("Array: " + numbers + "  ...wft??");
+
+		// Print array in a nice way
+		System.out.println("Array: " + Arrays.toString(numbers));
 
 
 		// Dynamically create array with some size
