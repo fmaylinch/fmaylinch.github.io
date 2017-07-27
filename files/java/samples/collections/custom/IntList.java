@@ -16,6 +16,7 @@ class IntList {
 		size = 0;
 	}
 
+	/** Gets element at specified index */
 	public IntElement get(int index) {
 
 		IntElement e = first;
@@ -26,7 +27,8 @@ class IntList {
 		
 		return e;
 	}
-	
+
+	/** Adds an element to the list */
 	public void add(IntElement e) {
 
 		if (last != null) {
@@ -39,8 +41,23 @@ class IntList {
 
 		size++;
 	}
-	
+
+	/** Gets number of elements in the list */
 	public int size() {
 		return size;
+	}
+
+
+	/** Tells if the list contains the given value */
+	public boolean contains(int value) {
+		return false; // TODO
+	}
+
+	/**
+	 * Removes the element at the given index.
+	 * @throws IndexOutOfBoundsException if the index is out of the list.
+	 */
+	public void remove(int index) {
+		// TODO
 	}
 }
