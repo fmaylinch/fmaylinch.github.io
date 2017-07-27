@@ -75,7 +75,7 @@ public class IfExercise {
 		// So let's say you want to check if price is big:
 		boolean isBigPrice = somePrice > 1000;
 		// Also if person is adult:
-		int someAge = 15;
+		int age = 15;
 		boolean isAdult = age >= 18;
 
 		// Now I want to offer a discount for adults that pay a big price so

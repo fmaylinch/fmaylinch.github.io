@@ -1,4 +1,3 @@
-package com.codethen.jsonexample;
 
 public class Gym {
 

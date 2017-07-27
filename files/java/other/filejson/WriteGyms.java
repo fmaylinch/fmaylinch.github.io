@@ -1,4 +1,3 @@
-package com.codethen.jsonexample;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
