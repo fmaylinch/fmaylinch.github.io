@@ -1,3 +1,4 @@
+package collections;
 
 // These imports are necessary for working with lists.
 // Some classes need to be imported (others like String are implicitly imported).
