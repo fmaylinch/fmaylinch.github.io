@@ -1,0 +1,14 @@
+
+.modified {
+  padding: 10px;
+  background-color: yellow;
+  border: 2px solid orange;
+}
+
+.highlighted {
+  color: red;
+  border: 1px dashed gray;
+  padding: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}

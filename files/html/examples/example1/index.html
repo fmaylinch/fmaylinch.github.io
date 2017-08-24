@@ -1,0 +1,77 @@
+<!doctype html>   <!-- including this is not mandatory but recommended -->
+<html lang="en">  <!-- we can specify the language of this page -->
+
+  <!-- head is used to specify html settings and include css and js files -->
+  <head>
+
+    <meta charset="UTF-8"> <!-- encoding of file -->
+
+    <!-- this makes the page look better on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HTML, CSS and JavaScript (and JQuery!)</title>
+
+    <!-- css files are included in the header -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <h1>HTML, CSS and JavaScript (and JQuery!)</h1>
+
+    <!-- This part is managed using vanilla javascript (without any libraries) -->
+    <div class="vanilla section">
+      <p class="result">Click button to perform search using vanilla javascript</p>
+      <input placeholder="type search" type="text">
+      <button>Search</button>
+      <div>
+        <p>In this example we only use plain javascript</p>
+      </div>
+    </div>
+
+    <!-- This part is managed using jQuery -->
+    <div class="jquery verbose section">
+      <p class="result">Click button to perform search using jQuery (verbose code)</p>
+      <input placeholder="type search" type="text">
+      <button>Search</button>
+      <div>
+        <p>In this example we use jQuery, step by step</p>
+      </div>
+    </div>
+
+    <!-- This part is managed using jQuery (simplified) -->
+    <div class="jquery inlined section">
+      <p class="result">Click button to perform search using jQuery (inlined code)</p>
+      <input placeholder="type search" type="text">
+      <button>Search</button>
+      <div>
+        <p>In this example we use jQuery, inlining variables to reduce code</p>
+      </div>
+    </div>
+
+    <!-- This part is managed using jQuery (improved) -->
+    <div class="jquery improved section">
+      <p class="result">Click button to perform search using jQuery (improved code)</p>
+      <input placeholder="type search" type="text">
+      <button>Search</button>
+      <div>
+        <p>In this example we use jQuery, extracting some elements to improve readibility and performance</p>
+      </div>
+    </div>
+
+
+    <!--
+      it is recommended to include javascript files at the end of the body
+      so the html is loaded first (displayed faster to the user)
+    -->
+
+    <!-- jQuery library from https://code.jquery.com/-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <!-- Our js files at the end, so we can use the libs loaded above (jQuery, etc) -->
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

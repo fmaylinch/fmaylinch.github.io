@@ -1,0 +1,20 @@
+
+/* some attributes like font-family or color propagate to children elements */
+body {
+  font-family: Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+  color: #394d5c;
+}
+
+/* style affects to all input and button elements */
+input, button {
+  font-size: 16px;
+}
+
+.section {
+  padding: 20px;
+  background-color: rgb(219, 227, 232); /* color in RGB format */
+  margin-bottom: 10px;
+}

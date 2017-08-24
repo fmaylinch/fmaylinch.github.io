@@ -1,0 +1,10 @@
+
+/* just affect <p> elements that are direct children of elements with class "section" */
+.section > p {
+  color: #446a85; /* color in hexadecimal RGB format (8 bits = 2 hex digits for each color) */
+}
+
+/* affects all <p> elements, but selector above is more specific, so it has precedence */
+p {
+  color: gray;
+}
