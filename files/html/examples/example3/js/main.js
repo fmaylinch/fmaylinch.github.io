@@ -104,6 +104,8 @@ document.querySelector(".ajax.section input").value = 'codethen';
 
 // AJAX example (using fetch function)
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
 setupExample(".fetch.section", (sectionDiv) => {
 
   const searchTerm = document.querySelector("input").value;
