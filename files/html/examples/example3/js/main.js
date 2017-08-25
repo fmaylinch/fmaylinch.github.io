@@ -46,8 +46,9 @@ setupExample(".functions.section", function(sectionDiv) {
   displayResult(sectionDiv, result);
 });
 
+// Note: from now on we now use arrow functions
 
-// Callbacks example (notice we now use arrow functions)
+// Callbacks example
 
 setupExample(".callbacks.section", (sectionDiv) => {
 
@@ -68,6 +69,38 @@ setupExample(".callbacks.section", (sectionDiv) => {
 
   displayResult(sectionDiv, result);
 });
+
+
+// AJAX example
+
+setupExample(".ajax.section", (sectionDiv) => {
+
+  const searchTerm = document.querySelector("input").value;
+
+  const url = 'https://api.github.com/search/repositories?q=' + searchTerm;
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+
+  xhr.onload = () => {
+    console.log("AJAX request finished correctly :)");
+    const dataStr = xhr.responseText;
+    const data = JSON.parse(dataStr);
+    const result = `Found ${data.total_count} repositories about ${searchTerm}`;
+    displayResult(sectionDiv, result);
+  };
+
+  xhr.onerror = () => {
+    console.log("AJAX request finished with an error :(");
+    displayResult(sectionDiv, `There was an error: ${xhr.statusText}`);
+  };
+
+  displayResult(sectionDiv, "sending request...");
+  xhr.send();
+});
+
+
+
 
 
 // Convenience functions
