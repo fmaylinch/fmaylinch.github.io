@@ -47,7 +47,27 @@ setupExample(".functions.section", function(sectionDiv) {
 });
 
 
+// Callbacks example (notice we now use arrow functions)
 
+setupExample(".callbacks.section", (sectionDiv) => {
+
+  const ordy = new Robot("Ordy");
+
+  const numbers = [10, 20];
+
+  ordy.performAction(() => {
+    console.log("the robot is washing the dishes");
+  });
+
+  ordy.performAction(() => {
+    console.log("the robot, just for fun, is adding a number to the array");
+    numbers.push(30);
+  });
+
+  const result = `robot: ${ordy}, numbers array: ${numbers}`;
+
+  displayResult(sectionDiv, result);
+});
 
 
 // Convenience functions

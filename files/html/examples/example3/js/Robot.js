@@ -15,6 +15,7 @@ class Robot {
   constructor(name) {
     this.name = name;
     this.energy = Robot.MAX_ENERGY; // Note: MAX_ENERGY is defined at the end
+    this.numActionsPerformed = 0;
   }
 
   /**
@@ -33,13 +34,16 @@ class Robot {
   /** Performs an action, given as a callback function */
   performAction(action) {
     action();
-    this.energy -= 10;
+    this.energy -= Robot.ENERGY_PER_ACTION;
+    this.numActionsPerformed++;
   }
 
   toString() {
-    return this.name + " (energy: " + this.energy + ")";
+    // template literal (explained in the main.js file)
+    return `${this.name} (energy: ${this.energy}, actions: ${this.numActionsPerformed})`;
   }
 }
 
 /** Note: This is a way of specifying class fields (in Java we use static) */
 Robot.MAX_ENERGY = 100;
+Robot.ENERGY_PER_ACTION = 10;
