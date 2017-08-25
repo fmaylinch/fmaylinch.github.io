@@ -25,10 +25,12 @@ class Robot {
     this.energy -= steps;
   }
 
+  /** Recharges the energy */
   recharge() {
     this.energy = Robot.MAX_ENERGY;
   }
 
+  /** Performs an action, given as a callback function */
   performAction(action) {
     action();
     this.energy -= 10;
