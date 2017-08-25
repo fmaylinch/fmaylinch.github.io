@@ -71,7 +71,7 @@ setupExample(".callbacks.section", (sectionDiv) => {
 });
 
 
-// AJAX example
+// AJAX example (using XMLHttpRequest class)
 
 setupExample(".ajax.section", (sectionDiv) => {
 
@@ -85,7 +85,7 @@ setupExample(".ajax.section", (sectionDiv) => {
   xhr.onload = () => {
     console.log("AJAX request finished correctly :)");
     const dataStr = xhr.responseText;
-    const data = JSON.parse(dataStr);
+    const data = JSON.parse(dataStr); // converts response to JSON object
     const result = `Found ${data.total_count} repositories about ${searchTerm}`;
     displayResult(sectionDiv, result);
   };
@@ -95,10 +95,37 @@ setupExample(".ajax.section", (sectionDiv) => {
     displayResult(sectionDiv, `There was an error: ${xhr.statusText}`);
   };
 
-  displayResult(sectionDiv, "sending request...");
+  displayResult(sectionDiv, "sending request with XMLHttpRequest...");
   xhr.send();
 });
 
+document.querySelector(".ajax.section input").value = 'codethen';
+
+
+// AJAX example (using fetch function)
+
+setupExample(".fetch.section", (sectionDiv) => {
+
+  const searchTerm = document.querySelector("input").value;
+
+  const url = 'https://api.github.com/search/repositories?q=' + searchTerm;
+
+  displayResult(sectionDiv, "sending request with fetch...");
+
+  fetch(url)
+    .then(x => x.json()) // gets response as JSON object, so it does JSON.parse() for us
+    .then(data => {
+      console.log("AJAX request finished correctly :)");
+      const result = `Found ${data.total_count} repositories about ${searchTerm}`;
+      displayResult(sectionDiv, result);
+    })
+    .catch(error => {
+      console.log("AJAX request finished with an error :(");
+      displayResult(sectionDiv, `There was an error: ${error}`);
+    });
+});
+
+document.querySelector(".fetch.section input").value = 'codethen';
 
 
 
