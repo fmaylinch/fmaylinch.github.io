@@ -12,6 +12,43 @@ setupOnClick(classesSection, function() {
 });
 
 
+// Functions example
+
+var functionsSection = getSection(".functions");
+setupOnClick(functionsSection, function() {
+
+  // Note: in JS you can define functions anywhere
+
+  // named function form
+  function square1(x) {
+    return x * x;
+  }
+
+  // anonymous function form...
+  const square2 = function(x) {
+    return x * x;
+  };
+
+  // arrow function form...
+  const square3 = x => x * x;
+
+  // Now we can call the 3 functions as usual
+  const a = 3;
+  console.log(a + "^2 is " + square1(a));
+  console.log(a + "^2 is " + square2(a));
+  console.log(a + "^2 is " + square3(a));
+
+  // Note: this is template literals (string interpolation), available in the latest JavaScript.
+  // You use `backticks` instead 'quotes' and inside you can use one or more ${expression}.
+  // The expressions will be calculated and the result will be injected in the final string.
+  const result = `${a}^2 is... ${square1(a)}, yes ${square2(a)}. I told you, it's ${square3(a)}.`;
+  console.log(result);
+
+  displayResult(functionsSection, result);
+});
+
+
+
 
 
 // Convenience functions
