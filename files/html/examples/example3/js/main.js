@@ -71,21 +71,25 @@ setupExample(".callbacks.section", (sectionDiv) => {
 });
 
 
+// AJAX examples
+
+/** All the AJAX examples use this end-point */
+const githubReposUrl = 'https://api.github.com/search/repositories';
+
 // AJAX example (using XMLHttpRequest class)
 
 setupExample(".ajax.section", (sectionDiv) => {
 
   const searchTerm = document.querySelector("input").value;
 
-  const url = 'https://api.github.com/search/repositories?q=' + searchTerm;
+  const url = githubReposUrl + '?q=' + searchTerm;
 
   const xhr = new XMLHttpRequest();
   xhr.open("GET", url);
 
   xhr.onload = () => {
     console.log("AJAX request finished correctly :)");
-    const dataStr = xhr.responseText;
-    const data = JSON.parse(dataStr); // converts response to JSON object
+    const data = JSON.parse(xhr.responseText); // converts response to JSON object
     const result = `Found ${data.total_count} repositories about ${searchTerm}`;
     displayResult(sectionDiv, result);
   };
@@ -110,12 +114,12 @@ setupExample(".fetch.section", (sectionDiv) => {
 
   const searchTerm = document.querySelector("input").value;
 
-  const url = 'https://api.github.com/search/repositories?q=' + searchTerm;
+  const url = githubReposUrl + '?q=' + searchTerm;
 
   displayResult(sectionDiv, "sending request with fetch...");
 
   fetch(url)
-    .then(x => x.json()) // gets response as JSON object, so it does JSON.parse() for us
+    .then(response => response.json()) // tranform response to JSON object (like doing JSON.parse)
     .then(data => {
       console.log("AJAX request finished correctly :)");
       const result = `Found ${data.total_count} repositories about ${searchTerm}`;
@@ -128,6 +132,38 @@ setupExample(".fetch.section", (sectionDiv) => {
 });
 
 document.querySelector(".fetch.section input").value = 'codethen';
+
+
+// AJAX example (using axios library)
+
+// axios is very similar to fetch, but has a couple of advantages, especially:
+// - it returns the response as JSON by default
+// - response enters the then() callback only if the response is OK (status is 2xx)
+// - it's easier to use in tests (although this is not used here)
+
+// https://github.com/mzabriskie/axios
+
+setupExample(".axios.section", (sectionDiv) => {
+
+  const searchTerm = document.querySelector("input").value;
+
+  const url = githubReposUrl + '?q=' + searchTerm;
+
+  displayResult(sectionDiv, "sending request with axios...");
+
+  axios.get(url)
+    .then(response => { // axios automatic transforms to JSON
+      console.log("AJAX request finished correctly :)");
+      const result = `Found ${response.data.total_count} repositories about ${searchTerm}`;
+      displayResult(sectionDiv, result);
+    })
+    .catch(error => {
+      console.log("AJAX request finished with an error :(");
+      displayResult(sectionDiv, `There was an error: ${error}`);
+    });
+});
+
+document.querySelector(".axios.section input").value = 'codethen';
 
 
 
