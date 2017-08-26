@@ -18,3 +18,7 @@ input, button {
   background-color: rgb(219, 227, 232); /* color in RGB format */
   margin-bottom: 10px;
 }
+
+.group .section {
+  background-color: rgb(202, 213, 219);
+}
