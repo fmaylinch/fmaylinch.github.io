@@ -177,7 +177,7 @@ document.querySelector(".axios.section input").value = 'codethen';
  */
 function setupExample(classSelector, sectionExample) {
 
-  var sectionContainer = document.querySelector(classSelector);
+  const sectionContainer = document.querySelector(classSelector);
 
   // querySelector() can be used on any element to look for elements inside
   // https://developer.mozilla.org/en/docs/Web/API/Element/querySelector
