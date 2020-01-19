@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AboutMe name="Ferran Maylinch Carrasco" />
+    <AboutMe name="Ferran Maylinch" />
   </div>
 </template>
 

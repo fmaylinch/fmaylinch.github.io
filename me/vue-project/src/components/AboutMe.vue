@@ -17,9 +17,9 @@
     <p>I am a <strong>team player</strong>, I strongly believe in helping each other.</p>
 
     <h3>Technologies</h3>
-    <p><i>Languages:</i> Java JavaScript Kotlin Swift Android CSS SQL</p>
-    <p><i>Frameworks:</i> Spring Dropwizard Quarkus React Angular Vue</p>
-    <p><i>Architecture:</i> AWS Heroku MongoDB RabbitMQ</p>
+    <p><i>Languages:</i> Java JavaScript Kotlin Scala Swift Android Python CSS SQL</p>
+    <p><i>Frameworks:</i> Spring Dropwizard Quarkus TDD React Angular Vue</p>
+    <p><i>Architecture:</i> AWS Heroku Node.js MongoDB Docker RabbitMQ</p>
 
     <h3>Languages</h3>
     <p><i>native</i> Spanish, Catalan, <i>advanced</i> English, <i>basic</i> Russian</p>
