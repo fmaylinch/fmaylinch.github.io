@@ -1,0 +1,59 @@
+<template>
+  <div>
+
+    <h1>{{name}}</h1>
+
+    <ul>
+      <li><a href="mailto:ferran.maylinch@gmail.com" target="_blank">ferran.maylinch@gmail.com</a></li>
+      <li><a href="cv.pdf" target="_blank">C.V. (PDF)</a></li>
+      <li><a href="https://www.linkedin.com/in/ferranmaylinch/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/fmaylinch/" target="_blank">GitHub</a></li>
+      <li><a href="https://stackoverflow.com/users/1121497/ferran-maylinch/" target="_blank">Stack Overflow</a></li>
+    </ul>
+
+    <h3>About me</h3>
+    <p>I am a software developer with <strong>+10 years of experience</strong>, and I also <strong>teach</strong> programming.</p>
+    <p>I pursue <strong>business goals</strong> while keeping a <strong>clean code</strong> structure, so others can continue my work.</p>
+    <p>I am a <strong>team player</strong>, I strongly believe in helping each other.</p>
+
+    <h3>Technologies</h3>
+    <p><i>Languages:</i> Java JavaScript Kotlin Swift Android CSS SQL</p>
+    <p><i>Frameworks:</i> Spring Dropwizard Quarkus React Angular Vue</p>
+    <p><i>Architecture:</i> AWS Heroku MongoDB RabbitMQ</p>
+
+    <h3>Languages</h3>
+    <p><i>native</i> Spanish, Catalan, <i>advanced</i> English, <i>basic</i> Russian</p>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'AboutMe',
+  props: {
+    name: String
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+i {
+  font-style: normal;
+  color: #9e9e9e;
+}
+</style>
