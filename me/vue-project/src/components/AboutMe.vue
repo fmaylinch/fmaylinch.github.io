@@ -12,9 +12,10 @@
     </ul>
 
     <h3>About me</h3>
-    <p>I am a software developer with <strong>+10 years of experience</strong>, and I also <strong>teach</strong> programming.</p>
+    <p>I am a software developer with <strong>+10 years of experience</strong></p>
+    <p>I also worked as a <strong>teacher</strong>, and recently I uploaded some <a href="https://www.youtube.com/playlist?list=PLYaFk7Tzx9nF7t6MoouS5pGHiSBZJEMHf" target="_blank">tutorials on YouTube</a>.</p>
     <p>I pursue <strong>business goals</strong> while keeping a <strong>clean code</strong> structure, so others can continue my work.</p>
-    <p>I am a <strong>team player</strong>, I strongly believe in helping each other.</p>
+    <p>Some of my hobbies are practicing sport, movies, reading and learning things like <a href="https://soundcloud.com/ferran-maylinch" target="_blank">guitar and music production</a>.</p>
 
     <h3>Technologies</h3>
     <p><i>Languages:</i> Java JavaScript Kotlin Scala Swift Android Python CSS SQL</p>
@@ -22,7 +23,7 @@
     <p><i>Architecture:</i> AWS Heroku Node.js MongoDB Docker RabbitMQ</p>
 
     <h3>Languages</h3>
-    <p><i>native</i> Spanish, Catalan, <i>advanced</i> English, <i>basic</i> Russian</p>
+    <p><i>native</i> Spanish, Catalan, <i>advanced</i> English, <i>intermediate</i> Russian</p>
 
   </div>
 </template>
