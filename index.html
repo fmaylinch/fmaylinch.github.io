@@ -1,417 +1,100 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Code Then</title>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Description -->
-  <meta itemprop="name" content="Code then...">
-  <meta itemprop="description" content="Learn to code, then the possibilities are endless.">
-  <meta name="Description" content="Learn to code, then the possibilities are endless.">
-  <!-- Image -->
-  <meta property="og:image" content="http://codethen.com/code-then/code-then-white.jpg" />
-  <meta itemprop="image" content="http://codethen.com/code-then/code-then-white.jpg">
-
-  <!-- normalize css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
-  <script src="https://use.fontawesome.com/486de957b6.js"></script>
-
-  <!-- our css -->
-  <link rel="stylesheet" href="css/generated/code-then.css">
-
-</head>
-
-<body>
-
-  <!-- TODO: teacher with +10 years of experience in teaching and developing -->
-
-  <header>
-
-    <div>
-      <!--
-      --><span>code</span><!--
-      --><span class="symbol dot">.</span><!--
-      --><span class="then">then</span><!--
-      --><br class="mobile-separator"><!--
-      --><span class="symbol">(</span><!--
-      --><span id="typed"></span><!--
-      --><span class="symbol">)</span><!--
-      -->
-    </div>
-
-  </header>
-
-  <div class="content-header">
-    Learn to <code>code</code>, <code>then</code> what comes next is up to you. The possibilities are endless.
-  </div>
-
-  <main>
-
-    <div class="language-selector">
-      <a id="language-button" href="#"><i class="fa fa-globe" aria-hidden="true"></i> <span class="language-text">Language</span> &nbsp; <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-      <div id="languages">
-        <a class="flag-link target-self" id="current-language" href="#"><img src="code-then/flags/uk.png" alt="English"> <span class="language-text">English</span></a>
-        <a class="flag-link target-self" href="es/index.html"><img src="code-then/flags/es.png" alt="Spanish"> <span class="language-text">Español</span></a>
-      </div>
-    </div>
-
-
-    <h1><img class="title-icon" src="code-then/icons/ying-yang.svg"> Philosophy</h1>
-
-    <ul>
-      <li>Coding is <strong>fun, useful, creative, rewarding</strong> and <strong>anyone can learn it</strong> given enough interest.</li>
-      <li>We'll go into detail about programming to achieve a <strong>strong knowledge of core concepts</strong>.</li>
-      <li>We'll see the <strong>importance of good code</strong>: indentation, meaningful names, documentation, avoid repetition, tests, ...</li>
-      <li><strong>Two classes of 2h per week</strong> so you have time to assimilate the course and combine it with work.</li>
-      <li><strong>Small class group </strong>(~5 students) to better attend your needs.</li>
-      <li>Exercises to <strong>practice at home</strong>, with my help when you need it.</li>
-      <li><strong>Up-to-date technologies</strong> that are in demand: git, angular, sass, flexbox, Java 8, reactive streams, SQL, No-SQL, ...</li>
-      <li>Comparison between <strong>different languages</strong> (Java, JavaScript, Ruby, Python, Scala) to better understand the core concepts of coding.</li>
-      <li><strong>I care about what you learn</strong>.</li>
-    </ul>
-
-
-    <h1><img class="title-icon" src="code-then/icons/profile.svg"> About me</h1>
-
-
-    <ul>
-      <li>My name is <a href="http://codethen.com/me">Ferran Maylinch</a>.</li>
-      <li>Back-end, front-end and mobile developer for +10 years, currently at <a href="https://www.gymforless.com">GymForLess</a>.</li>
-      <li>I've worked as a teacher at <a href="https://www.ironhack.com">Ironhack</a> and <a href="http://www.ubiqum.com">Ubiqum</a>.</li>
-      <li>Studied at <a href="http://www.upc.edu">UPC</a>, where I also started teaching.</li>
-      <li>I like <a href="https://open.spotify.com/user/1134322859/playlist/60ljoz5G5Aam1PYDK0puo5">music</a>, <a href="http://www.filmaffinity.com/es/userratings.php?user_id=182676&orderby=0">movies</a>, sports and <a href="https://androidapping.wordpress.com">videogames</a>. Oh, <a href="http://codethen.com/me">coding and teaching too</a>!</li>
-    </ul>
-
-
-    <h1><img class="title-icon" src="code-then/icons/book.svg"> Course contents</h1>
-
-    <p class="highlight">
-      <i class="fa fa-lightbulb-o fa-lg" aria-hidden="true"></i>&nbsp; You may <strong>bring your project idea</strong>, or I can suggest one.
-      I can tailor the exercises to help you build your project step by step.
-    </p>
-
-    <p>
-      <button id="expand"><i class="fa fa-caret-down" aria-hidden="true"></i> Expand all</button>
-      <button id="collapse"><i class="fa fa-caret-up" aria-hidden="true"></i> Collapse all</button>
-    </p>
-
-    <span class="section-title">Intro</span>
-    <ol>
-
-      <li>
-        <span class="clickable">The computer</span>
-        <ul>
-          <li>Processor (CPU)</li>
-          <li>Memory (HD and RAM)</li>
-          <li>Input and output devices</li>
-          <li>Operative system</li>
-          <li>File system</li>
-          <li>Command line (terminal)</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Intro to programs</span>
-        <ul>
-          <li>High and low level Languages</li>
-          <li>Instructions/statements, flow</li>
-          <li>Code editors: Sublime, Brackets, Atom</li>
-          <li>First <em>Hello World</em> program</li>
-        </ul>
-      </li>
-
-    </ol>
-    <span class="section-title">Basics</span>
-    <ol>
-
-      <li>
-        <span class="clickable">Variables</span>
-        <ul>
-          <li>Definition, purpose, syntax, naming</li>
-          <li>Types: number, text, boolean</li>
-          <li>Values: literal, calculated</li>
-          <li>Declaration, assignment</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Expressions</span>
-        <ul>
-          <li>Definition, type, value</li>
-          <li>Math operators: <code>+ - * / %</code></li>
-          <li>Comparison operators: <code>== != &lt; &gt; &lt;= &gt;=</code></li>
-          <li>Logic operators: <code>! &amp;&amp; ||</code></li>
-          <li>Shortcuts: <code>+= -= *= /=</code></li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Flow control</span>
-        <ul>
-          <li>Condition: <code>if/else</code>, <code>switch</code></li>
-          <li>Loop: <code>while</code>, <code>for</code></li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Advanced editors (IDEs)</span>
-        <ul>
-          <li>Eclipse</li>
-          <li>IntelliJ IDEA</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Functions</span>
-        <ul>
-          <li>Definition, purpose: avoid repetition, organise code</li>
-          <li>Declaration vs call</li>
-          <li>Parameters, arguments</li>
-          <li>Return type, return value</li>
-          <li>Pitfall: printing is not returning</li>
-        </ul>
-      </li>
-
-    </ol>
-    <span class="section-title">Coding in the real world</span>
-    <ol>
-
-      <li>
-        <span class="clickable">Version control systems</span>
-        <ul>
-          <li>Code repositories, versions, collaboration</li>
-          <li>Git (tool)</li>
-          <li>GitHub (site for repositories)</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Errors, testing</span>
-        <ul>
-          <li>It's easy to break code (Google, Stack Overflow, ...)</li>
-          <li>Tests, automated tests</li>
-          <li>Exceptions: <code>try catch finally</code></li>
-        </ul>
-      </li>
-
-    </ol>
-
-    <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you know the most important concepts of programming (really) and you can create simple programs</p>
-
-    <span class="section-title">Classes and objects</span>
-    <ol>
-
-      <li>
-        <span class="clickable">OOP (Classes, objects)</span>
-        <ul>
-          <li>Class (type)</li>
-          <li>Object (value)</li>
-          <li>Fields/properties (variables inside a class)</li>
-          <li>Methods (functions inside a class)</li>
-          <li>The implicit variable <code>this</code></li>
-          <li>Constructor</li>
-          <li>Class members (<code>static</code>)</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">OOP: pointers and inheritance</span>
-        <ul>
-          <li>Pointers</li>
-          <li>Arguments by value or reference</li>
-          <li>Inheritance</li>
-          <li>Interfaces</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Collections</span>
-        <ul>
-          <li>Lists and arrays</li>
-          <li>Maps/dictionaries</li>
-          <li>Trees</li>
-          <li>Sets</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Problem analysis</span>
-        <ul>
-          <li>Importance of naming</li>
-          <li>Divide and conquer</li>
-          <li>Very simple exercises: use variables, operators, <code>if</code>, <code>while</code>, collections</li>
-          <li>Intermediate exercises: organise code into functions</li>
-          <li>Complex exercises: detect classes (concepts), methods and properties</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Useful JDK classes</span>
-        <ul>
-          <li>JDK</li>
-          <li>Date, Math, String, wrappers (Integer, Double, etc)</li>
-          <li>IO streams, readers and writers (e.g. for files)</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Third-party libraries</span>
-        <ul>
-          <li>Maven</li>
-          <li>Use a library: <code>commons-lang</code></li>
-          <li>Store objects as <code>JSON</code> using another library: <code>gson</code></li>
-          <li>Preview of JavaScript: JSON in action</li>
-        </ul>
-      </li>
-
-    </ol>
-    <span class="section-title">Advanced</span>
-    <ol>
-
-      <li>
-        <span class="clickable">Callbacks and reactive streams</span>
-        <ul>
-          <li>Callbacks (functions as arguments)</li>
-          <li>Java 8 lambdas</li>
-          <li>Java 8 reactive streams</li>
-          <li>Map and filter collections (using custom code and streams)</li>
-          <li>See callbacks in other languages (e.g. JavaScript, Ruby)</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Advanced programming concepts</span>
-        <ul>
-          <li>Design patters (e.g. observer, template)</li>
-          <li>Kinds of classes (DTO, BO, util)</li>
-          <li>TDD</li>
-          <li>Threads</li>
-          <li>Regular expressions</li>
-          <li>Reflection (optional)</li>
-        </ul>
-      </li>
-
-    </ol>
-
-    <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you're a programmer, able to build command-line applications, and may choose any path you like</p>
-
-    <span class="section-title">Frontend (web)</span>
-    <ol>
-
-       <li>
-        <span class="clickable">HTML/CSS</span>
-        <ul>
-          <li>Browsers (display HTML/CSS)</li>
-          <li>HTML (XML) : content</li>
-          <li>CSS : style and layout</li>
-          <li>Flexbox : easier layout</li>
-          <li>CSS Media queries, for responsive layout</li>
-          <li>Bootstrap : responsive layout and style</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">JavaScript</span>
-        <ul>
-          <li>JavaScript</li>
-          <li>jQuery</li>
-          <li>AJAX</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Tools and frameworks</span>
-        <ul>
-          <li>Google Maps</li>
-          <li>NodeJS</li>
-          <li>SASS</li>
-          <li>Autoprefixer</li>
-          <li>AngularJS</li>
-        </ul>
-      </li>
-
-    </ol>
-
-    <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you can build a web interface for your application</p>
-
-    <span class="section-title">Full stack</span>
-    <ol>
-
-      <li>
-        <span class="clickable">Connect frontend and backend</span>
-        <ul>
-          <li>Frameworks (Spring, Play, Dropwizard, Grails, JSF, ...)</li>
-          <li>Example: jQuery/AngularJS + API Dropwizard</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Databases</span>
-        <ul>
-          <li>Intro to DBs: tables and SQL</li>
-          <li>SQL</li>
-          <li>JDBC: SQL from Java</li>
-          <li>JPA: "automatic" SQL mapping</li>
-          <li>No-SQL databases, MongoDB</li>
-        </ul>
-      </li>
-
-      <li>
-        <span class="clickable">Publish complete project to Heroku</span>
-        <ul>
-          <li>Frontend</li>
-          <li>Backend</li>
-          <li>Persistence</li>
-          <li>Deploy (Heroku)</li>
-        </ul>
-      </li>
-
-    </ol>
-
-    <p class="milestone"><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp; Here you can build a complete web application with a database and put it online</p>
-
-    <br>
-
-    <h3>Why I organized the contents this way</h3>
-
-    <p>
-      Many courses start with frontend topics like HTML/CSS.
-      That may be more visually appealing and (deceptively) easier to grasp,
-      but I think that it is important to first build a
-      solid foundation by learning the core programming concepts.
-      With that knowledge in your toolbelt, you will be better
-      prepared to learn any languages, tools or frameworks
-      you need to reach your goals. Moreover, you will enjoy programming much more.
-    </p>
-
-    <h1><img class="title-icon" src="code-then/icons/email.svg"> Contact</h1>
-
-    <p>Interested? Any question? Write me to <a href="mailto:codethen@gmail.com?subject=About Code Then">codethen@gmail.com</a>!</p>
-
-  </main>
-
-  <footer>
-    <div>
-      <span>by <a href="http://codethen.com/me">Ferran Maylinch</a></span>
-      <span>icons by <a href="https://thenounproject.com/charlenehea/collection/ios-toolbar-icons-glyph/">Heah Poh Lin</a></span>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-  <!-- http://www.mattboldt.com/demos/typed-js/ -->
-  <script src="code-then/typed.min.js"></script>
-  <!-- our js -->
-  <script src="code-then/main.js"></script>
-
-</body>
-
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Main</a></li>
+							<li><a href="#three">Play</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Hi, I'm <strong id="name">Ferran Maylinch</strong></h1>
+							<p>I <span id="activities">code and sometimes teach</span></p>
+							<p>Now I'm working at <span id="job"><a href="https://cloud.yandex.com/en/">Yandex Cloud</a></span></p>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 fade-up">
+						<div class="inner">
+							<ul class="actions">
+								<li><a href="#" class="button submit">Update data above (just for fun)</a></li>
+							</ul>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+<textarea name="message" id="message" rows="10">
+update("name", [ "May" ]);
+update("activities", [ "read", "write", link("try to write songs", "https://soundcloud.com/ferran-maylinch") ]);
+update("job", [ "coding", link("Security services", "https://cloud.yandex.com/en/services#security") ]);
+
+function update(id, values) {
+	document.getElementById(id).innerHTML = values.length == 1
+		? values[0]
+		: values.slice(0, values.length-1).join(", ") + " and " + values[values.length-1];
+}
+
+function link(text, url) {
+	return '<a target="_blank" href="' + url + '">' + text + '</a>';
+}
+</textarea>
+									</div>
+								</div>
+							</form>
+							<h3>Social Networks</h3>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
+								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>Thanks to <a href="http://html5up.net">HTML5 UP</a> for this HTML template</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		    <script src="assets/js/main2.js"></script>
+	</body>
 </html>
