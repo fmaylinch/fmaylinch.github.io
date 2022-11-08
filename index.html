@@ -34,7 +34,7 @@
 						<div class="inner">
 							<h1>Hi, I'm <strong id="name">Ferran Maylinch</strong></h1>
 							<p>I <span id="activities">frequently code and sometimes teach</span></p>
-							<p>Now I'm working at <span id="job"><a href="https://cloud.yandex.com/en/">Yandex Cloud</a></span></p>
+							<p>Now I'm working at <span id="job"><a target="_blank" href="https://cloud.yandex.com/en/">Yandex Cloud</a></span></p>
 						</div>
 					</section>
 
@@ -48,18 +48,23 @@
 								<div class="fields">
 									<div class="field">
 <textarea name="message" id="message" rows="10">
-update("name", [ "May" ]);
-update("activities", [ "read", "workout", link("write songs", "https://soundcloud.com/ferran-maylinch") ]);
-update("job", [ "becoming a " + link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch") ]);
+let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
+let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
 
-function update(id, values) {
-	document.getElementById(id).innerHTML = values.length == 1
-		? values[0]
-		: values.slice(0, values.length-1).join(", ") + " and " + values[values.length-1];
+update("#name", [ "May" ]);
+update("#activities", [ "read", "workout", music ]);
+update("#job", [ "becoming a " + youtuber ]);
+
+function update(selector, values) {
+  let value = values.length == 1
+    ? values[0]
+    : values.slice(0, values.length-1).join(", ") +
+      " and " + values[values.length-1];
+  document.querySelector(selector).innerHTML = value;
 }
 
 function link(text, url) {
-	return '<a target="_blank" href="' + url + '">' + text + '</a>';
+  return '<a target="_blank" href="' + url + '">' + text + '</a>';
 }
 </textarea>
 									</div>
