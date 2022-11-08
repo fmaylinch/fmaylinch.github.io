@@ -7,7 +7,9 @@ document.querySelector(".button.submit").addEventListener("click", function(e){
         var $sidebar_a = $sidebar.find('a');
         $sidebar_a[0].click();
         scrolledToIntro = true;
-        setTimeout(applyUpdates, 1500);
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let timeout = scrollTop === 0 ? 0 : 1000;
+        setTimeout(applyUpdates, timeout);
         // shrink intro section
         setTimeout( () => {
             $( "#intro" ).animate({'min-height': '0'}, 1500);
