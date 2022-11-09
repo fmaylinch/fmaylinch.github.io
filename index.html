@@ -11,6 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="codemirror/lib/codemirror.js"></script>
+		<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="codemirror/theme/ambiance.css">
+		<link rel="stylesheet" href="codemirror/theme/ambiance-mobile.css">
+		<script src="codemirror/mode/javascript/javascript.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -34,7 +39,7 @@
 						<div class="inner">
 							<h1>Hi, I'm <strong id="name">Ferran Maylinch</strong></h1>
 							<p>I <span id="activities">frequently code and sometimes teach</span></p>
-							<p>Now I'm working at <span id="job"><a target="_blank" href="https://cloud.yandex.com/en/">Yandex Cloud</a></span></p>
+							<p>Now I <span id="job">work at <a target="_blank" href="https://cloud.yandex.com/en/">Yandex Cloud</a></span></p>
 						</div>
 					</section>
 
@@ -47,26 +52,7 @@
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
-<textarea name="message" id="message" rows="10">
-let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
-let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
-
-update("#name", [ "May" ]);
-update("#activities", [ "read", "workout", music ]);
-update("#job", [ "becoming a " + youtuber ]);
-
-function update(selector, values) {
-  let value = values.length == 1
-    ? values[0]
-    : values.slice(0, values.length-1).join(", ") +
-      " and " + values[values.length-1];
-  document.querySelector(selector).innerHTML = value;
-}
-
-function link(text, url) {
-  return '<a target="_blank" href="' + url + '">' + text + '</a>';
-}
-</textarea>
+										<textarea name="message" id="message" rows="10"></textarea>
 									</div>
 								</div>
 							</form>
@@ -87,7 +73,9 @@ function link(text, url) {
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>Thanks to <a href="http://html5up.net">HTML5 UP</a> for this HTML template</li>
+						<li>Template by <a target="_blank" href="http://html5up.net">HTML5 UP</a></li>
+						<li>Code editor by <a target="_blank" href="https://codemirror.net/">CodeMirror</a></li>
+						<li>Programming answers by <a target="_blank" href="https://stackoverflow.com/">StackOverflow</a></li>
 					</ul>
 				</div>
 			</footer>
