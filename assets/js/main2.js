@@ -1,5 +1,6 @@
 let updatedData = false;
 let myCodeMirror;
+const errors = document.getElementById("errors");
 
 /** Prepare myCodeMirror when page is loaded */
 window.addEventListener('load', (event) => {
@@ -79,8 +80,14 @@ document.querySelector(".button.submit").addEventListener("click", (e) => {
 });
 
 function applyUpdates() {
+    errors.innerText = "";
     const code = myCodeMirror.getValue();
     const funcString = "(document, window) => { " + code + " }";
-    const func = eval(funcString);
-    func(document, window);
+    try {
+        const func = eval(funcString);
+        func(document, window);
+    } catch (e) {
+        console.log(e);
+        errors.innerText = e;
+    }
 }
