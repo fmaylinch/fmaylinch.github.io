@@ -1,4 +1,4 @@
-let scrolledToIntro = false;
+let updatedData = false;
 let myCodeMirror;
 
 /** Prepare myCodeMirror when page is loaded */
@@ -6,38 +6,47 @@ window.addEventListener('load', (event) => {
     const textArea = document.querySelector("#message");
     myCodeMirror = CodeMirror.fromTextArea(textArea, {
         mode:  "javascript",
-        theme: "ambiance",
+        theme: "panda-syntax",
     });
     myCodeMirror.setValue(getFunctionBody(updateData));
 });
 
-/** This function is called, we just write the body to myCodeMirror */
+/**
+ * This function is not called directly.
+ * We copy the body to {@link #myCodeMirror},
+ * and execute the code in {@link #applyUpdates}.
+ */
 function updateData(document) {
     // Data to display above
     let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
     let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
-    update("#name", [ "May" ]);
-    update("#activities", [ "read", "workout", music ]);
-    update("#job", [ "want to be a " + youtuber ]);
+    set("#name", ["May"]);
+    set("#like", ["read", "workout", music]);
+    set("#now", ["wanna be a " + youtuber]);
 
-    // Updates an element of the page, by its CSS selector
-    function update(selector, values) {
-        let value = values.length == 1
-          ? values[0]
-          : values.slice(0, values.length-1).join(", ") +
-          " and " + values[values.length-1];
-        document.querySelector(selector).innerHTML = value;
+    // Updates the content of a page element, by its CSS selector
+    function set(selector, values) {
+      let element = document.querySelector(selector);
+      element.innerHTML = join(values);
+    }
+
+    // Joins the values with commas and "and"
+    function join(values) {
+      return values.length === 1
+        ? values[0]
+        : values.slice(0, values.length-1).join(", ")
+          + " and " + values[values.length-1];
     }
 
     // Builds an HTML link
     function link(text, url) {
-        return '<a target="_blank" href="' + url + '">' + text + '</a>';
+      return `<a target="_blank" href="${url}">${text}</a>`;
     }
 }
 
 /** Get function body as string, without indentation */
 function getFunctionBody(f) {
-    return f.toString()
+    return f.toString(2)
       // take function body - https://stackoverflow.com/a/14886101/1121497
       .match(/function[^{]+\{([\s\S]*)\}$/)[1]
       // remove indentation
@@ -48,17 +57,21 @@ function getFunctionBody(f) {
 /** Execute code when button is clicked */
 document.querySelector(".button.submit").addEventListener("click", (e) => {
     e.preventDefault();    //stop form from submitting
-    if (!scrolledToIntro) {
-        const $sidebar = $('#sidebar');
-        const $sidebar_a = $sidebar.find('a');
-        $sidebar_a[0].click();
-        scrolledToIntro = true;
+    if (!updatedData) {
+        updatedData = true;
+        // https://stackoverflow.com/a/28488360/1121497
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const timeout = scrollTop === 0 ? 0 : 1000;
-        setTimeout(applyUpdates, timeout);
+        if (scrollTop === 0) {
+            applyUpdates();
+        } else {
+            // scroll to intro section and delay updates
+            const introSectionLink = $('#sidebar a')[0];
+            introSectionLink.click();
+            setTimeout(applyUpdates, 1000);
+        }
         // shrink intro section
         setTimeout( () => {
-            $( "#intro" ).animate({'min-height': '0'}, 1500);
+            $('#intro').animate({'min-height': '0'}, 1500);
         }, 2000);
     } else {
         applyUpdates();
@@ -67,7 +80,7 @@ document.querySelector(".button.submit").addEventListener("click", (e) => {
 
 function applyUpdates() {
     const code = myCodeMirror.getValue();
-    const funcString = "(document) => { " + code + " }";
+    const funcString = "(document, window) => { " + code + " }";
     const func = eval(funcString);
-    func(document);
+    func(document, window);
 }
