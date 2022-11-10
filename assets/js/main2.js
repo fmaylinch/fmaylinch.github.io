@@ -18,14 +18,14 @@ window.addEventListener('load', (event) => {
  * and execute the code in {@link #applyUpdates}.
  */
 function updateData(document) {
-    // Data to display above
+    // You can modify this code :)
     let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
     let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
     set("#name", ["May"]);
     set("#like", ["read", "workout", music]);
     set("#now", ["wanna be a " + youtuber]);
 
-    // Updates the content of a page element, by its CSS selector
+    // Updates a page element, by its CSS selector
     function set(selector, values) {
       let element = document.querySelector(selector);
       element.innerHTML = join(values);
