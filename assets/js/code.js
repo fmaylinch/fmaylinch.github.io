@@ -81,7 +81,8 @@ function getFunctionBody(f) {
 function scrollToTopThen(f) {
     // https://stackoverflow.com/a/28488360/1121497
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop === 0) {
+    errors.innerText = scrollTop;
+    if (scrollTop < 70) {
         f();
     } else {
         // scroll to intro section and delay updates
@@ -92,7 +93,7 @@ function scrollToTopThen(f) {
 }
 
 function executeCode() {
-    errors.innerText = "";
+    //errors.innerText = "";
     const code = myCodeMirror.getValue();
     const codeAsFunction = "(document, window) => { " + code + " }";
     try {
