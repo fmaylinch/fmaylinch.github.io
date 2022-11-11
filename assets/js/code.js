@@ -81,7 +81,6 @@ function getFunctionBody(f) {
 function scrollToTopThen(f) {
     // https://stackoverflow.com/a/28488360/1121497
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    errors.innerText = scrollTop;
     if (scrollTop < 70) {
         f();
     } else {
@@ -93,7 +92,7 @@ function scrollToTopThen(f) {
 }
 
 function executeCode() {
-    //errors.innerText = "";
+    errors.innerText = "";
     const code = myCodeMirror.getValue();
     const codeAsFunction = "(document, window) => { " + code + " }";
     try {
