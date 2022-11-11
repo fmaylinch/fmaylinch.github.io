@@ -21,7 +21,7 @@ function updateData(document) {
     // You can modify this code :)
     let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
     let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
-    set("#name", ["May"]);
+    fade("#name", ["May"]);
     set("#like", ["read", "workout", music]);
     set("#now", ["wanna be a " + youtuber]);
 
@@ -29,6 +29,15 @@ function updateData(document) {
     function set(selector, values) {
       let element = document.querySelector(selector);
       element.innerHTML = join(values);
+    }
+
+    // It's like set(), but uses jQuery for a fade-in-out effect
+    function fade(selector, values) {
+        let elem = $(selector);
+        elem.fadeOut('slow', () => {
+            elem.html(join(values));
+            elem.fadeIn('slow');
+        });
     }
 
     // Joins the values with commas and "and"
