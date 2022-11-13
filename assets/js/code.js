@@ -38,6 +38,7 @@ function updateData(document) {
     fade("#name", ["May"]);
     set("#like", ["read", "workout", music]);
     set("#now", ["wanna be a " + youtuber]);
+    fade(".button", ["Run it again"]);
 
     // Updates a page element, by its CSS selector
     function set(selector, values) {
