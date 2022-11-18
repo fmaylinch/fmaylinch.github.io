@@ -34,29 +34,33 @@ document.querySelector(".button.submit").addEventListener("click", (e) => {
 function updateData(document) {
     // You can modify this code :)
     let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
-    let youtuber = link("famous Youtuber", "https://www.youtube.com/user/ferranmaylinch");
-    fade("#name", ["May"]);
-    set("#like", ["read", "workout", music]);
-    set("#now", ["wanna be a " + youtuber]);
-    fade(".button", ["Run it again"]);
+    let youtuber = link("Youtuber", "https://www.youtube.com/user/ferranmaylinch");
+    let n = random(1000_000);
+    fade("#name", random(["May", "Fer", "Ferran", "I"]));
+    set("#like", join(["read", "workout", music]));
+    set("#now", "wanna be a " + youtuber + " with " + n + " subscribers");
+    fade(".button", "Run it again");
 
     // Updates a page element, by its CSS selector
-    function set(selector, values) {
+    function set(selector, value) {
       let element = document.querySelector(selector);
-      element.innerHTML = join(values);
+      element.innerHTML = value;
     }
 
     // It's like set(), but uses jQuery for a fade-in-out effect
-    function fade(selector, values) {
-        let elem = $(selector);
-        elem.fadeOut('slow', () => {
-            elem.html(join(values));
-            elem.fadeIn('slow');
-        });
+    function fade(selector, value) {
+      let elem = $(selector);
+      elem.fadeOut('slow', () => {
+        elem.html(value);
+        elem.fadeIn('slow');
+      });
     }
 
     // Joins the values with commas and "and"
     function join(values) {
+      if (!Array.isArray(values)) {
+        return values;
+      }
       return values.length === 1
         ? values[0]
         : values.slice(0, values.length-1).join(", ")
@@ -66,6 +70,15 @@ function updateData(document) {
     // Builds an HTML link
     function link(text, url) {
       return `<a target="_blank" href="${url}">${text}</a>`;
+    }
+
+    // Returns a random number between 0 and n-1.
+    // If n is an array, returns a random element of n.
+    function random(n) {
+      if (Array.isArray(n)) {
+        return n[random(n.length)];
+      }
+      return Math.floor(Math.random() * n);
     }
 }
 
