@@ -51,7 +51,7 @@ function updateData(document) {
     const action = random(["try", "run", "execute", "modify"])
     const js = link("JavaScript", "https://developer.mozilla.org/docs/Web/JavaScript")
     fade("#text1", "You can " + action  + " the " + js + " code below")
-    const functions = join(["set", "fade", "join", "link", "random"]);
+    const functions = join(["fade", "join", "link", "random"]);
     fade("#text2", "Use functions like " + functions)
     fade(".button.run", "Run it again")
 
