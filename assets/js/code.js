@@ -1,6 +1,7 @@
 let updatedData = false;
 let myCodeMirror;
 const errors = document.getElementById("errors");
+const CodeKey = "code";
 
 /** Prepare myCodeMirror when page is loaded */
 window.addEventListener('load', (event) => {
@@ -9,7 +10,14 @@ window.addEventListener('load', (event) => {
         mode:  "javascript",
         theme: "panda-syntax",
     });
-    myCodeMirror.setValue(getFunctionBody(updateData));
+    let code = window.localStorage.getItem(CodeKey);
+    if (code) {
+      console.log("Found code from a previous session");
+    } else {
+      console.log("Initializing code");
+      code = getFunctionBody(updateData);
+    }
+    myCodeMirror.setValue(code);
 });
 
 /** Execute code when button is clicked */
@@ -34,11 +42,12 @@ document.querySelector(".button.submit").addEventListener("click", (e) => {
 function updateData(document) {
     // You can modify this code :)
     let music = link("write songs", "https://soundcloud.com/ferran-maylinch");
-    let youtuber = link("Youtuber", "https://www.youtube.com/user/ferranmaylinch");
     let n = random(1000_000);
+    let subscribers = link(n + " subscribers",
+      "https://www.youtube.com/user/ferranmaylinch");
     fade("#name", random(["May", "Fer", "Ferran", "I"]));
     set("#like", join(["read", "workout", music]));
-    set("#now", "wanna be a " + youtuber + " with " + n + " subscribers");
+    set("#now", "want to have " + subscribers);
     fade(".button", "Run it again");
 
     // Updates a page element, by its CSS selector
@@ -108,6 +117,7 @@ function scrollToTopThen(f) {
 function executeCode() {
     errors.innerText = "";
     const code = myCodeMirror.getValue();
+    window.localStorage.setItem(CodeKey, code);
     const codeAsFunction = "(document, window) => { " + code + " }";
     try {
         const func = eval(codeAsFunction);
