@@ -1,5 +1,9 @@
 @import url(fontawesome-all.min.css);
 
+.button.reset {
+	display: none;
+}
+
 /*
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
