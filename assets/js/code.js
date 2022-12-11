@@ -124,10 +124,10 @@ function executeCode() {
     errors.innerText = "";
     const code = myCodeMirror.getValue();
     window.localStorage.setItem(CodeKey, code);
-    const codeAsFunction = "(document, window) => {\n" + code + "\n}";
+    const codeAsFunction = "(document, window, codeMirror) => {\n" + code + "\n}";
     try {
         const func = eval(codeAsFunction);
-        func(document, window);
+        func(document, window, myCodeMirror);
     } catch (e) {
         console.log(e);
         errors.innerText = e;
