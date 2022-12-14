@@ -94,6 +94,15 @@ function updateData(document) {
       }
       return Math.floor(Math.random() * n)
     }
+
+    // Loads code from url and replaces current code in editor
+    function fetchCode(url) {
+      fetch(url)
+        .then(resp => resp.text())
+        .then(code => {
+          codeMirror.setValue(code)
+        })
+    }
 }
 
 /** Get function body as string, without indentation */
