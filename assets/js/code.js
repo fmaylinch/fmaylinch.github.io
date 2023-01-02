@@ -54,6 +54,9 @@ function updateData(document) {
     const functions = join(["fade", "join", "link", "random"]);
     fade("#text2", "Use functions like " + functions)
     fade(".button.run", "Run it again")
+    
+    // Arkham Horror LCG tracker
+    //fetchCode("https://gist.githubusercontent.com/fmaylinch/c511180f974da8d352663d4f2e499438/raw");
 
     // Updates a page element, by its CSS selector
     function set(selector, value) {
