@@ -10,15 +10,42 @@ window.addEventListener('load', (event) => {
         mode:  "javascript",
         theme: "panda-syntax",
     });
-    let code = window.localStorage.getItem(CodeKey);
-    if (code) {
-      console.log("Found code from a previous session");
-    } else {
-      console.log("Initializing code");
-      code = getFunctionBody(updateData);
-    }
-    myCodeMirror.setValue(code);
+
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+  if (params.fetchCode) {
+    loadCodeFromParams(params);
+  } else {
+    loadCodeFromStorage();
+  }
 });
+
+function loadCodeFromParams(params) {
+  console.log('Loading code from: ' + params.fetchCode);
+  fetch(params.fetchCode)
+    .then(resp => resp.text())
+    .then(code => {
+      myCodeMirror.setValue(code);
+      if (params.runCode === 'true') {
+        executeCode();
+        shrinkIntroSection();
+      }
+    })
+    .catch(e => {
+      myCodeMirror.setValue('// Could not load: ' + params.fetchCode + '\n// Error: ' + e);
+    });
+}
+
+function loadCodeFromStorage() {
+  let code = window.localStorage.getItem(CodeKey);
+  if (code) {
+    console.log('Found code from a previous session');
+  } else {
+    console.log('Initializing code');
+    code = getFunctionBody(updateData);
+  }
+  myCodeMirror.setValue(code);
+}
 
 /** Execute code when run button is clicked */
 document.querySelector(".button.run").addEventListener("click", (e) => {
@@ -55,9 +82,6 @@ function updateData(document) {
     fade("#text2", "Use functions like " + functions)
     fade(".button.run", "Run it again")
     
-    // Arkham Horror LCG tracker
-    //fetchCode("https://gist.githubusercontent.com/fmaylinch/c511180f974da8d352663d4f2e499438/raw");
-
     // Updates a page element, by its CSS selector
     function set(selector, value) {
       let element = document.querySelector(selector)
@@ -68,8 +92,7 @@ function updateData(document) {
     function fade(selector, value) {
       let elem = $(selector)
       elem.fadeOut('slow', () => {
-        elem.html(value)
-        elem.fadeIn('slow')
+        elem.html(value).fadeIn('slow')
       });
     }
 
