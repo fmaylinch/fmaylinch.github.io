@@ -5,11 +5,12 @@ const CodeKey = "code";
 
 /** Prepare myCodeMirror when page is loaded */
 window.addEventListener('load', (event) => {
-    const textArea = document.querySelector("#message");
-    myCodeMirror = CodeMirror.fromTextArea(textArea, {
-        mode:  "javascript",
-        theme: "panda-syntax",
-    });
+  const textArea = document.querySelector("#message");
+  myCodeMirror = CodeMirror.fromTextArea(textArea, {
+    mode:  "javascript",
+    theme: "panda-syntax",
+  });
+  myCodeMirror.setSize(null, 400);
 
   const urlSearchParams = new URLSearchParams(window.location.search);
   const params = Object.fromEntries(urlSearchParams.entries());
@@ -159,10 +160,10 @@ function executeCode() {
     errors.innerText = "";
     const code = myCodeMirror.getValue();
     window.localStorage.setItem(CodeKey, code);
-    const codeAsFunction = "(document, window, codeMirror) => {\n" + code + "\n}";
+    const codeAsFunction = "(codeMirror) => {\n" + code + "\n}";
     try {
         const func = eval(codeAsFunction);
-        func(document, window, myCodeMirror);
+        func(myCodeMirror);
     } catch (e) {
         console.log(e);
         errors.innerText = e;
