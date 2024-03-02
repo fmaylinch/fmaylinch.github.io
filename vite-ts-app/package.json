@@ -11,5 +11,14 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.24.1",
+    "cm6-theme-material-dark": "^0.2.0",
+    "cm6-theme-nord": "^0.2.0",
+    "cm6-theme-solarized-dark": "^0.2.0",
+    "codemirror": "^6.0.1"
   }
 }

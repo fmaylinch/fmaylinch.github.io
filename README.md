@@ -10,11 +10,6 @@ In case you need an http server to open `index.html`:
 http-server
 ```
 
-To do:
-- Show how to load the Arkham Horror snippet.
-- Adapt the code in `src/assets/js/code.js` to Typescript.
-- To do that I need to adapt `CodeMirror` to Typescript (or. bypass the `CodeMirror` object)
-
 The previous `index.html` was named to `index-old`.
 
 And the previous `index.html` was renamed to `codethen.html`. That page
