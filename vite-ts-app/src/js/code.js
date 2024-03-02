@@ -30,12 +30,7 @@ function initCodeProcessing() {
     /** Reset code when reset button is clicked */
     document.querySelector(".button.reset").addEventListener("click", (e) => {
         e.preventDefault();
-        // TODO: doesn't work if code is minimized
-        //myCodeMirror.setValue(getFunctionBody(updateData));
-        loadCodeFromParams({
-            fetchCode: "https://gist.githubusercontent.com/fmaylinch/03145a94a4a9e044f6f6e8888f2c9662/raw",
-            runCode: 'false'
-        })
+        resetCode();
     });
 }
 
@@ -62,13 +57,19 @@ function loadCodeFromStorage() {
     myCodeMirror.setValue(code);
   } else {
     console.log('Initializing code');
-    // TODO: this doesn't work if the code is minimised
-    // myCodeMirror.setValue(getFunctionBody(updateData));
-    loadCodeFromParams({
-        fetchCode: "https://gist.githubusercontent.com/fmaylinch/03145a94a4a9e044f6f6e8888f2c9662/raw/69fec4cadb761b2b68f0eec2c40fc31e06128ce6/fmaylinch.github.io-code.js",
-        runCode: 'false'
-    })
+    resetCode();
   }
+}
+
+/**
+ * Now we can't do: myCodeMirror.setValue(getFunctionBody(updateData));
+ * Because the code is minimised by vite.
+ */
+function resetCode() {
+    loadCodeFromParams({
+        fetchCode: "https://gist.githubusercontent.com/fmaylinch/03145a94a4a9e044f6f6e8888f2c9662/raw",
+        runCode: 'false'
+    });
 }
 
 /**
