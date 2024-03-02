@@ -1,10 +1,7 @@
-//import './style.css'
-//import typescriptLogo from './typescript.svg'
-//import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import './assets/js/code.js'
-import { initCodeProcessing } from "./assets/js/code";
-import { initTemplate } from "./assets/js/main";
+import './js/code.js'
+import { initCodeProcessing } from "./js/code";
+import { initTemplate } from "./js/main";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div>
