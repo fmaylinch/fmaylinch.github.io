@@ -2,8 +2,11 @@ import { EditorView } from '@codemirror/view'
 import { basicSetup } from 'codemirror'
 import { EditorState } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
-import { createTheme } from 'thememirror';
 import { tags } from '@lezer/highlight';
+
+// I copied the source code here, so I can tweak it if necessary
+//import { createTheme } from 'thememirror';
+import createTheme from './create-theme.ts';
 
 let myCodeMirror : EditorView;
 let errors : HTMLElement;
@@ -19,28 +22,30 @@ function initCodeProcessing() {
         variant: 'dark',
         settings: {
             background: '#292A2B',
-            foreground: '#E6E6E6',
-            caret: '#ff2c6d',
-            selection: '#FFF',
+            foreground: '#d3d3d3',
+            fontSize: "16px",
+            fontFamily: "'Operator Mono', 'Source Code Pro', Menlo, Monaco, Consolas, Courier New, monospace",
+            caret: '#67ddee',
+            selection: 'rgba(166,146,217,0.37)',
             gutterBackground: '#292a2b',
-            gutterForeground: '#e6e6e677',
+            gutterForeground: 'rgba(138,138,138,0.47)',
             lineHighlight: 'rgba(99, 123, 156, 0.1)',
         },
         styles: [
             { tag: tags.comment, color: '#737888', fontStyle: "italic" },
-            { tag: tags.string, color: '#12b9a1', fontWeight: "bold" },
+            { tag: tags.string, color: '#12b9a1' },
             { tag: tags.docString, color: '#FFB86C' },
-            { tag: tags.definitionOperator, color: '#e6e6e6' },
+            { tag: tags.definitionOperator, color: '#d3d3d3' },
             { tag: tags.operator, color: '#67ddee' },
             { tag: tags.paren, color: '#adadad' },
-            { tag: tags.squareBracket, color: '#d5d5d5' },
+            { tag: tags.squareBracket, color: '#d3d3d3' },
             { tag: tags.meta, color: '#b084eb' },
             { tag: tags.number, color: '#6cceea' },
-            { tag: tags.null, color: '#b6204d', fontWeight: "bold" },
-            { tag: tags.keyword, color: 'rgb(203, 90, 161)', fontWeight: "bold" },
-            { tag: tags.definitionKeyword, color: 'rgb(203, 90, 161)', fontWeight: "bold" },
-            { tag: tags.variableName, color: 'rgb(147, 130, 192)', fontWeight: "bold" },
-            { tag: tags.function(tags.variableName), color: '#ffb86c', fontWeight: "bold" },
+            { tag: tags.null, color: '#b6204d' },
+            { tag: tags.keyword, color: 'rgb(203, 90, 161)' },
+            { tag: tags.definitionKeyword, color: 'rgb(203, 90, 161)' },
+            { tag: tags.variableName, color: 'rgb(147, 130, 192)' },
+            { tag: tags.function(tags.variableName), color: '#ffb86c' },
             { tag: tags.typeName, color: '#ff9ac1' },
         ],
     });

@@ -42,7 +42,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
                             </ul>
                         </div>
                         <form method="post" action="#">
-                            <div id="message" style="max-height: 400px; overflow: auto"></div>
+                            <div id="message" style="max-height: 400px; overflow: auto;"></div>
                         </form>
                         <div>
                             <ul class="actions">
