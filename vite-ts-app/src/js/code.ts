@@ -3,6 +3,7 @@ import { basicSetup } from 'codemirror'
 import { EditorState } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
 import { tags } from '@lezer/highlight';
+import { RemoteStorage } from 'remote-storage'
 
 // I copied the source code here, so I can tweak it if necessary
 //import { createTheme } from 'thememirror';
@@ -142,10 +143,10 @@ function executeCode() {
     errors.innerText = "";
     const code = myCodeMirror.state.doc.toString();
     window.localStorage.setItem(CodeKey, code);
-    const codeAsFunction = "(codeMirrorEditorView) => {\n" + code + "\n}";
+    const codeAsFunction = "(codeMirrorEditorView, RemoteStorage) => {\n" + code + "\n}";
     try {
         const func = eval(codeAsFunction);
-        func(myCodeMirror);
+        func(myCodeMirror, RemoteStorage);
     } catch (e) {
         console.log(e);
         errors.innerText = "" + e;
