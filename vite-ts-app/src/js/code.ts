@@ -4,6 +4,11 @@ import { EditorState } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
 import { tags } from '@lezer/highlight';
 import { RemoteStorage } from 'remote-storage'
+import * as babel from '@babel/standalone'
+import React from 'react'
+import {createRoot, Root} from 'react-dom/client';
+
+let reactRoot: Root; // initialized later
 
 // I copied the source code here, so I can tweak it if necessary
 //import { createTheme } from 'thememirror';
@@ -56,7 +61,7 @@ function initCodeProcessing() {
         state: EditorState.create({
             extensions: [
                 basicSetup,
-                javascript(),
+                javascript({jsx: true}),
                 myTheme,
             ]
         }),
@@ -133,7 +138,7 @@ function loadCodeFromStorage() {
  */
 function resetCode() {
     loadCodeFromParams({
-        fetchCode: "https://gist.githubusercontent.com/fmaylinch/03145a94a4a9e044f6f6e8888f2c9662/raw",
+        fetchCode: "https://gist.githubusercontent.com/fmaylinch/298018ad34503e15fc2c1ebd6fba7cf9/raw",
         runCode: 'false'
     });
 }
@@ -143,10 +148,19 @@ function executeCode() {
     errors.innerText = "";
     const code = myCodeMirror.state.doc.toString();
     window.localStorage.setItem(CodeKey, code);
-    const codeAsFunction = "(codeMirrorEditorView, RemoteStorage) => {\n" + code + "\n}";
     try {
-        const func = eval(codeAsFunction);
-        func(myCodeMirror, RemoteStorage);
+        const codeAsFunction = `(codeMirrorEditorView, RemoteStorage, React, reactRoot) => {
+           ${code}
+        }`;
+        const presets = ['react'];
+        const babelResult = babel.transform(codeAsFunction, { presets });
+        const func = eval(babelResult?.code!)
+
+        if (!reactRoot) { // React complains if it's created again
+            reactRoot = createRoot(document.getElementById("main")!);
+        }
+
+        func(myCodeMirror, RemoteStorage, React, reactRoot);
     } catch (e) {
         console.log(e);
         errors.innerText = "" + e;

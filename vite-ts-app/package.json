@@ -9,10 +9,18 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__standalone": "^7.1.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.24.1",
+    "@babel/standalone": "^7.24.4",
     "@codemirror/lang-javascript": "^6.2.2",
     "@codemirror/state": "^6.4.1",
     "@codemirror/view": "^6.24.1",
