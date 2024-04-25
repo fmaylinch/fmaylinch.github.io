@@ -144,7 +144,6 @@ function resetCode() {
 }
 
 function executeCode() {
-    document.querySelector<HTMLElement>(".button.reset")!.style.display = "block";
     errors.innerText = "";
     const code = myCodeMirror.state.doc.toString();
     window.localStorage.setItem(CodeKey, code);
