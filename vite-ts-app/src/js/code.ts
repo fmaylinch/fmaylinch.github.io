@@ -29,7 +29,7 @@ function initCodeProcessing() {
         settings: {
             background: '#292A2B',
             foreground: '#d3d3d3',
-            fontSize: "16px",
+            fontSize: "14px",
             fontFamily: "'Operator Mono', 'Source Code Pro', Menlo, Monaco, Consolas, Courier New, monospace",
             caret: '#67ddee',
             selection: 'rgba(166,146,217,0.37)',
