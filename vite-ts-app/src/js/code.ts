@@ -7,6 +7,7 @@ import { RemoteStorage } from 'remote-storage'
 import * as babel from '@babel/standalone'
 import React from 'react'
 import {createRoot, Root} from 'react-dom/client';
+import * as UseHooks from "@uidotdev/usehooks";
 
 let reactRoot: Root; // initialized later
 
@@ -148,7 +149,7 @@ function executeCode() {
     const code = myCodeMirror.state.doc.toString();
     window.localStorage.setItem(CodeKey, code);
     try {
-        const codeAsFunction = `(codeMirrorEditorView, RemoteStorage, React, reactRoot) => {
+        const codeAsFunction = `(codeMirrorEditorView, RemoteStorage, React, reactRoot, UseHooks) => {
            ${code}
         }`;
         const presets = ['react'];
@@ -159,7 +160,7 @@ function executeCode() {
             reactRoot = createRoot(document.getElementById("main")!);
         }
 
-        func(myCodeMirror, RemoteStorage, React, reactRoot);
+        func(myCodeMirror, RemoteStorage, React, reactRoot, UseHooks);
     } catch (e) {
         console.log(e);
         errors.innerText = "" + e;
