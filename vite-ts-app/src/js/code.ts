@@ -3,7 +3,8 @@ import { basicSetup } from 'codemirror'
 import { EditorState } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
 import { tags } from '@lezer/highlight';
-import { RemoteStorage } from 'remote-storage'
+// import { RemoteStorage } from 'remote-storage' // TODO: doesn't seem to work anymore, so I created a Supabase adapter
+import { RemoteStorage } from './supabase-remote-storage.ts'
 import * as babel from '@babel/standalone'
 import React from 'react'
 import {createRoot, Root} from 'react-dom/client';
