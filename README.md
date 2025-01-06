@@ -1,8 +1,7 @@
 # Ferran Maylinch
 
-Currently, the `index.html` (and folders `assets` and `vite-public`) are generated  from `vite-ts-app`
-by running `npm run build` from `vite-ts-app` and moving and resulting files in `dist` to the root folder. 
-You can do `mv vite-ts-app/dist/* .` (after removing the files moved that last time).
+Currently, the `index.html` (and folders `assets` and `vite-public`)
+are generated from `vite-ts-app` by running `./rebuild.sh` from `vite-ts-app`. 
 
 In case you need an http server to open `index.html`:
 ```bash
