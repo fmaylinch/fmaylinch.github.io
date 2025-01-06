@@ -13,38 +13,39 @@ class RemoteStorage {
     }
 
     async getItem(itemName: string) {
-        console.log(`Getting '${itemName}' from remote storage...`);
+        const id = this.buildId(itemName);
+        console.log(`Getting value of '${id}' from remote storage...`);
         const { data, error } = await supabase
             .from('remoteStorage')
-            .select('item_value')
-            .eq('item_name', itemName)
-            .eq('user_id', this.options.userId)
-            .eq('instance_id', this.options.instanceId);
+            .select('value')
+            .eq('id', id);
         if (error) {
             console.log(`Error in supabase select: ${error}`);
         }
         if (data && data.length >= 1) {
             console.log(`Got '${itemName}' value from remote storage`);
-            return data[0].item_value
+            return data[0].value
         }
         return data
     }
 
-    async setItem(itemName: string, itemValue: object) {
-        console.log(`Setting '${itemName}' to remote storage`);
+    async setItem(itemName: string, value: object) {
+        const id = this.buildId(itemName);
+        console.log(`Setting value of ${id} to remote storage`);
         const { data, error } = await supabase
             .from('remoteStorage')
-            .update({ item_value: itemValue })
-            .eq('item_name', itemName)
-            .eq('user_id', this.options.userId)
-            .eq('instance_id', this.options.instanceId)
-            .select();
+            .upsert({ id, value })
+            .select()
         if (error) {
             console.log(`Error in supabase update: ${error}`);
         } else {
             console.log(`Value of '${itemName}' has been set to remote storage`);
         }
         return data;
+    }
+
+    private buildId(itemName: string) {
+        return `${this.options.instanceId}-${this.options.userId}-${itemName}`;
     }
 }
 
