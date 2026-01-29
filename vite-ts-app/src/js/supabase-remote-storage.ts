@@ -1,15 +1,13 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://fraxxrlznvspwllyovre.supabase.co';
-
 class RemoteStorage {
-    private options: { userId: string; instanceId: string };
+    private options: { userId: string; instanceId: string; supabaseKey: string; supabaseUrl: string };
     private supabase: any;
 
-    constructor(options: {userId: string, instanceId: string}, supabaseKey: string) {
+    constructor(options: {userId: string, instanceId: string, supabaseKey: string, supabaseUrl: string}) {
         console.log("Creating RemoteStorage with options:", options);
         this.options = options;
-        this.supabase = createClient(supabaseUrl, supabaseKey);
+        this.supabase = createClient(options.supabaseUrl, options.supabaseKey);
     }
 
     async getItem(itemName: string) {
