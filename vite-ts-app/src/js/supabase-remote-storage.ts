@@ -1,21 +1,21 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://fraxxrlznvspwllyovre.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyYXh4cmx6bnZzcHdsbHlvdnJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU3NjE3MDIsImV4cCI6MjA1MTMzNzcwMn0.4vFfLBTuWYE4NoOQ3QAZH90lDcAjGtLRbXCxSjgPbuU';
-const supabase = createClient(supabaseUrl, supabaseKey)
 
 class RemoteStorage {
     private options: { userId: string; instanceId: string };
+    private supabase: any;
 
-    constructor(options: {userId: string, instanceId: string}) {
+    constructor(options: {userId: string, instanceId: string}, supabaseKey: string) {
         console.log("Creating RemoteStorage with options:", options);
         this.options = options;
+        this.supabase = createClient(supabaseUrl, supabaseKey);
     }
 
     async getItem(itemName: string) {
         const id = this.buildId(itemName);
         console.log(`Getting value of '${id}' from remote storage...`);
-        const { data, error } = await supabase
+        const { data, error } = await this.supabase
             .from('remoteStorage')
             .select('value')
             .eq('id', id);
@@ -32,7 +32,7 @@ class RemoteStorage {
     async setItem(itemName: string, value: object) {
         const id = this.buildId(itemName);
         console.log(`Setting value of ${id} to remote storage`);
-        const { data, error } = await supabase
+        const { data, error } = await this.supabase
             .from('remoteStorage')
             .upsert({ id, value })
             .select()
